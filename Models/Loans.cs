@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BraveHeroCooperation.Models
 {
-    public class Loan
+    public class Loans
     {
         public int Id { get; set; }
         [Required] public int MemberId { get; set; }
