@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BraveHeroCooperation.Models
 {
-    public class Exchanges
+    public class Exchange
     {
         public int Id { get; set; }
         [Required] public int MemberId { get; set; }
