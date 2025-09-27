@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Corvus.Models
 {
-    public class InHouse
+    public class Inhouse
     {
         public int Id { get; set; }
         
