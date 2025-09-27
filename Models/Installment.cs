@@ -11,7 +11,7 @@ namespace BraveHeroCooperation.Models
     {
         public int Id { get; set; }
         [Required] public int LoanId { get; set; }
-        public Loans Loan { get; set; }
+        public Loan Loan { get; set; }
         [Required] public decimal Amount { get; set; }
         public DateTime PaymentDate { get; set; } = DateTime.UtcNow;
         public string? ProofPath { get; set; }
