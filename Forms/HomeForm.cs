@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Corvus.Forms
 {
-    public partial class HomeForms : Form
+    public partial class HomeForm : Form
     {
-        public HomeForms()
+        public HomeForm()
         {
             InitializeComponent();
         }

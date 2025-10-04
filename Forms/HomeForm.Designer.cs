@@ -1,6 +1,6 @@
 ﻿namespace Corvus.Forms
 {
-    partial class HomeForms
+    partial class HomeForm
     {
         /// <summary>
         /// Required designer variable.
