@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             pictureBox1 = new PictureBox();
             LoginLabel = new Label();
             label2 = new Label();
@@ -43,7 +44,9 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(-8, -5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(427, 477);
             pictureBox1.TabIndex = 0;
@@ -52,16 +55,18 @@
             // LoginLabel
             // 
             LoginLabel.AutoSize = true;
-            LoginLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LoginLabel.Location = new Point(595, 55);
+            LoginLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LoginLabel.ForeColor = SystemColors.ButtonHighlight;
+            LoginLabel.Location = new Point(547, 62);
             LoginLabel.Name = "LoginLabel";
-            LoginLabel.Size = new Size(75, 31);
+            LoginLabel.Size = new Size(188, 38);
             LoginLabel.TabIndex = 1;
-            LoginLabel.Text = "Login";
+            LoginLabel.Text = "Corvus Login";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = SystemColors.ControlLightLight;
             label2.Location = new Point(458, 131);
             label2.Name = "label2";
             label2.Size = new Size(75, 20);
@@ -71,6 +76,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = SystemColors.ControlLightLight;
             label3.Location = new Point(458, 215);
             label3.Name = "label3";
             label3.Size = new Size(70, 20);
@@ -84,6 +90,7 @@
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(344, 27);
             txtUsername.TabIndex = 4;
+            txtUsername.TextChanged += txtUsername_TextChanged;
             // 
             // txtPassword
             // 
@@ -94,31 +101,40 @@
             // 
             // btnSubmit
             // 
+            btnSubmit.BackColor = Color.DimGray;
+            btnSubmit.ForeColor = SystemColors.ButtonHighlight;
             btnSubmit.Location = new Point(483, 307);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(107, 43);
             btnSubmit.TabIndex = 6;
-            btnSubmit.Text = "button1";
-            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Text = "Submit";
+            btnSubmit.UseVisualStyleBackColor = false;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // linkLblForgot
             // 
+            linkLblForgot.ActiveLinkColor = Color.WhiteSmoke;
             linkLblForgot.AutoSize = true;
+            linkLblForgot.LinkColor = Color.White;
             linkLblForgot.Location = new Point(591, 381);
             linkLblForgot.Name = "linkLblForgot";
             linkLblForgot.Size = new Size(118, 20);
             linkLblForgot.TabIndex = 8;
             linkLblForgot.TabStop = true;
             linkLblForgot.Text = "Forgot Password";
+            linkLblForgot.LinkClicked += linkLblForgot_LinkClicked;
             // 
             // btnRegister
             // 
+            btnRegister.BackColor = Color.DimGray;
+            btnRegister.ForeColor = SystemColors.ButtonHighlight;
             btnRegister.Location = new Point(678, 307);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(107, 43);
             btnRegister.TabIndex = 9;
-            btnRegister.Text = "button2";
-            btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.Text = "Register";
+            btnRegister.UseVisualStyleBackColor = false;
+            btnRegister.Click += btnRegister_Click;
             // 
             // lblValidate
             // 
@@ -133,6 +149,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DimGray;
             ClientSize = new Size(837, 474);
             Controls.Add(lblValidate);
             Controls.Add(btnRegister);
