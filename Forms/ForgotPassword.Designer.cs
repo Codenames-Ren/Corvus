@@ -42,22 +42,25 @@
             // 
             // btnSubmit
             // 
-            btnSubmit.Location = new Point(36, 149);
+            btnSubmit.BackColor = SystemColors.ControlDark;
+            btnSubmit.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSubmit.Location = new Point(38, 204);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(76, 23);
             btnSubmit.TabIndex = 9;
             btnSubmit.Text = "Submit";
-            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.UseVisualStyleBackColor = false;
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(138, 149);
+            btnBack.BackColor = SystemColors.ControlDark;
+            btnBack.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.Location = new Point(140, 204);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(76, 23);
             btnBack.TabIndex = 10;
             btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
-            btnBack.Click += button2_Click;
+            btnBack.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -71,7 +74,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(338, 198);
+            label2.Location = new Point(339, 143);
             label2.Name = "label2";
             label2.Size = new Size(202, 15);
             label2.TabIndex = 12;
@@ -80,7 +83,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(36, 198);
+            label3.Location = new Point(37, 143);
             label3.Name = "label3";
             label3.Size = new Size(165, 15);
             label3.TabIndex = 13;
@@ -89,7 +92,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(36, 277);
+            label4.Location = new Point(36, 266);
             label4.Name = "label4";
             label4.Size = new Size(57, 15);
             label4.TabIndex = 14;
@@ -104,30 +107,31 @@
             // 
             // txtColor
             // 
-            txtColor.Location = new Point(36, 230);
+            txtColor.Location = new Point(37, 175);
             txtColor.Name = "txtColor";
             txtColor.Size = new Size(263, 23);
             txtColor.TabIndex = 16;
             // 
             // txtSinger
             // 
-            txtSinger.Location = new Point(338, 230);
+            txtSinger.Location = new Point(339, 175);
             txtSinger.Name = "txtSinger";
             txtSinger.Size = new Size(263, 23);
             txtSinger.TabIndex = 17;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(36, 306);
+            txtPassword.Location = new Point(36, 294);
             txtPassword.Name = "txtPassword";
             txtPassword.ReadOnly = true;
-            txtPassword.Size = new Size(434, 23);
+            txtPassword.Size = new Size(263, 23);
             txtPassword.TabIndex = 18;
             // 
             // ForgotPassword
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(668, 397);
             Controls.Add(txtPassword);
             Controls.Add(txtSinger);
