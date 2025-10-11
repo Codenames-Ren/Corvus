@@ -8,18 +8,61 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Corvus.Forms;
+using Corvus.Models;
+
 namespace Corvus.Forms
 {
     public partial class AdminForm : Form
     {
-        public AdminForm()
+        Member? loggedMember = null;
+        public AdminForm(Member member)
         {
+            loggedMember = member; // admin
             InitializeComponent();
+            this.Text = "Corvus Cooperation (Administrator: " +
+                loggedMember.MemberId + " - " + loggedMember.FullName + ")";
         }
-
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        public void route(System.Windows.Forms.Control control)
         {
-
+            this.panelDisplay.Controls.Clear();
+            this.panelDisplay.Dock = DockStyle.Fill;
+            this.panelDisplay.Controls.Add(control);
+        }
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+            route(new DashboardAdminPage(loggedMember));
+        }
+        private void accessToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            route(new AccessPage(loggedMember));
+        }
+        private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            route(new ConfigPage());
+        }
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loggedMember = null;
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+        }
+        private void memberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            route(new MemberPage());
+        }
+        private void productToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            route(new ProductPage());
+        }
+        private void acrossCooperationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            route(new AcrossPage());
+        }
+        private void approvalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            route(new ApprovalPage(loggedMember));
         }
     }
 }
