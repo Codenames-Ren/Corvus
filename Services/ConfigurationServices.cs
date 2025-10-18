@@ -9,10 +9,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Corvus.Services
 {
-    public class ConfigurationServicecs
+    public class ConfigurationServices
     {
         private readonly AppDbContext _db;
-        public ConfigurationServicecs(AppDbContext db) => _db = db;
+        public ConfigurationServices(AppDbContext db) => _db = db;
 
         public async Task<Configuration?> GetConfig()
         {
@@ -20,7 +20,7 @@ namespace Corvus.Services
             return config;
         }
 
-        public async Task addOrUpdate(String terminologi1, string terminologi2, string terminologi3, decimal exchangeRate, decimal inhouseFee, decimal acrossFee)
+        public async Task addOrUpdate(String terminologi1, String terminologi2, String terminologi3, Decimal exchangeRate, Decimal inhouseFee, Decimal acrossFee)
         {
             Boolean isNew = false;
             var config = await _db.Configurations.FirstOrDefaultAsync(x => x.Id == 1);
