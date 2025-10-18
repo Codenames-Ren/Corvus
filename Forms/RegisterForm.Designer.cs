@@ -1,4 +1,5 @@
-﻿namespace Corvus.Forms
+﻿
+namespace Corvus.Forms
 {
     partial class RegisterForm
     {
@@ -64,7 +65,7 @@
             label1.Size = new Size(76, 20);
             label1.TabIndex = 0;
             label1.Text = "Full Name";
-            label1.Click += this.label1_Click;
+            //label1.Click += this.label1_Click;
             // 
             // label2
             // 
@@ -75,7 +76,7 @@
             label2.Size = new Size(75, 20);
             label2.TabIndex = 1;
             label2.Text = "Username";
-            label2.Click += this.label2_Click;
+            //label2.Click += this.label2_Click;
             // 
             // label3
             // 
@@ -322,6 +323,46 @@
             Load += RegisterForm_Load;
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

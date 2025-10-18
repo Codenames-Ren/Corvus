@@ -31,20 +31,22 @@
             label1 = new Label();
             cmbMember = new ComboBox();
             btnSubmit = new Button();
-            checkedListBoxAccess = new CheckedListBox();
+            listBoxAccess = new CheckedListBox();
             label2 = new Label();
             dataGridViewAccess = new DataGridView();
             groupBox1 = new GroupBox();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            labelAddress = new Label();
-            labelPhone = new Label();
-            labelEmail = new Label();
-            labelJoinDate = new Label();
+            labePhoneAlt = new Label();
+            label8 = new Label();
             labelFullName = new Label();
+            labelJoinDate = new Label();
+            labelEmail = new Label();
+            labelPhone = new Label();
+            labelAddress = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAccess).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -76,14 +78,14 @@
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = true;
             // 
-            // checkedListBoxAccess
+            // listBoxAccess
             // 
-            checkedListBoxAccess.FormattingEnabled = true;
-            checkedListBoxAccess.Items.AddRange(new object[] { "Grant All", "Loan", "Saving", "Transfer - Inhouse", "Transfer - Accross", "Exchange" });
-            checkedListBoxAccess.Location = new Point(14, 75);
-            checkedListBoxAccess.Name = "checkedListBoxAccess";
-            checkedListBoxAccess.Size = new Size(340, 112);
-            checkedListBoxAccess.TabIndex = 3;
+            listBoxAccess.FormattingEnabled = true;
+            listBoxAccess.Items.AddRange(new object[] { "Grant All", "Loan", "Saving", "Transfer - Inhouse", "Transfer - Accross", "Exchange" });
+            listBoxAccess.Location = new Point(14, 75);
+            listBoxAccess.Name = "listBoxAccess";
+            listBoxAccess.Size = new Size(340, 112);
+            listBoxAccess.TabIndex = 3;
             // 
             // label2
             // 
@@ -105,6 +107,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(labePhoneAlt);
+            groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(labelFullName);
             groupBox1.Controls.Add(labelJoinDate);
             groupBox1.Controls.Add(labelEmail);
@@ -122,87 +126,23 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Details";
             // 
-            // label3
+            // labePhoneAlt
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(6, 32);
-            label3.Name = "label3";
-            label3.Size = new Size(61, 15);
-            label3.TabIndex = 7;
-            label3.Text = "Full Name";
+            labePhoneAlt.AutoSize = true;
+            labePhoneAlt.Location = new Point(132, 129);
+            labePhoneAlt.Name = "labePhoneAlt";
+            labePhoneAlt.Size = new Size(16, 15);
+            labePhoneAlt.TabIndex = 18;
+            labePhoneAlt.Text = "...";
             // 
-            // label4
+            // label8
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(6, 56);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 15);
-            label4.TabIndex = 8;
-            label4.Text = "Join Date";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(6, 81);
-            label5.Name = "label5";
-            label5.Size = new Size(36, 15);
-            label5.TabIndex = 9;
-            label5.Text = "Email";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(6, 105);
-            label6.Name = "label6";
-            label6.Size = new Size(41, 15);
-            label6.TabIndex = 10;
-            label6.Text = "Phone";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(6, 129);
-            label7.Name = "label7";
-            label7.Size = new Size(49, 15);
-            label7.TabIndex = 11;
-            label7.Text = "Address";
-            // 
-            // labelAddress
-            // 
-            labelAddress.AutoSize = true;
-            labelAddress.Location = new Point(132, 129);
-            labelAddress.Name = "labelAddress";
-            labelAddress.Size = new Size(16, 15);
-            labelAddress.TabIndex = 12;
-            labelAddress.Text = "...";
-            // 
-            // labelPhone
-            // 
-            labelPhone.AutoSize = true;
-            labelPhone.Location = new Point(132, 105);
-            labelPhone.Name = "labelPhone";
-            labelPhone.Size = new Size(16, 15);
-            labelPhone.TabIndex = 13;
-            labelPhone.Text = "...";
-            // 
-            // labelEmail
-            // 
-            labelEmail.AutoSize = true;
-            labelEmail.Location = new Point(132, 81);
-            labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(16, 15);
-            labelEmail.TabIndex = 14;
-            labelEmail.Text = "...";
-            labelEmail.Click += label9_Click;
-            // 
-            // labelJoinDate
-            // 
-            labelJoinDate.AutoSize = true;
-            labelJoinDate.Location = new Point(132, 56);
-            labelJoinDate.Name = "labelJoinDate";
-            labelJoinDate.Size = new Size(16, 15);
-            labelJoinDate.TabIndex = 15;
-            labelJoinDate.Text = "...";
+            label8.AutoSize = true;
+            label8.Location = new Point(6, 129);
+            label8.Name = "label8";
+            label8.Size = new Size(59, 15);
+            label8.TabIndex = 17;
+            label8.Text = "Phone Alt";
             // 
             // labelFullName
             // 
@@ -213,6 +153,87 @@
             labelFullName.TabIndex = 16;
             labelFullName.Text = "...";
             // 
+            // labelJoinDate
+            // 
+            labelJoinDate.AutoSize = true;
+            labelJoinDate.Location = new Point(132, 56);
+            labelJoinDate.Name = "labelJoinDate";
+            labelJoinDate.Size = new Size(16, 15);
+            labelJoinDate.TabIndex = 15;
+            labelJoinDate.Text = "...";
+            // 
+            // labelEmail
+            // 
+            labelEmail.AutoSize = true;
+            labelEmail.Location = new Point(132, 81);
+            labelEmail.Name = "labelEmail";
+            labelEmail.Size = new Size(16, 15);
+            labelEmail.TabIndex = 14;
+            labelEmail.Text = "...";
+            // 
+            // labelPhone
+            // 
+            labelPhone.AutoSize = true;
+            labelPhone.Location = new Point(132, 105);
+            labelPhone.Name = "labelPhone";
+            labelPhone.Size = new Size(16, 15);
+            labelPhone.TabIndex = 13;
+            labelPhone.Text = "...";
+            // 
+            // labelAddress
+            // 
+            labelAddress.AutoSize = true;
+            labelAddress.Location = new Point(132, 157);
+            labelAddress.Name = "labelAddress";
+            labelAddress.Size = new Size(16, 15);
+            labelAddress.TabIndex = 12;
+            labelAddress.Text = "...";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(6, 157);
+            label7.Name = "label7";
+            label7.Size = new Size(49, 15);
+            label7.TabIndex = 11;
+            label7.Text = "Address";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(6, 105);
+            label6.Name = "label6";
+            label6.Size = new Size(41, 15);
+            label6.TabIndex = 10;
+            label6.Text = "Phone";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(6, 81);
+            label5.Name = "label5";
+            label5.Size = new Size(36, 15);
+            label5.TabIndex = 9;
+            label5.Text = "Email";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(6, 56);
+            label4.Name = "label4";
+            label4.Size = new Size(55, 15);
+            label4.TabIndex = 8;
+            label4.Text = "Join Date";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(6, 32);
+            label3.Name = "label3";
+            label3.Size = new Size(61, 15);
+            label3.TabIndex = 7;
+            label3.Text = "Full Name";
+            // 
             // AccessPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -220,7 +241,7 @@
             Controls.Add(groupBox1);
             Controls.Add(dataGridViewAccess);
             Controls.Add(label2);
-            Controls.Add(checkedListBoxAccess);
+            Controls.Add(listBoxAccess);
             Controls.Add(btnSubmit);
             Controls.Add(cmbMember);
             Controls.Add(label1);
@@ -238,7 +259,7 @@
         private Label label1;
         private ComboBox cmbMember;
         private Button btnSubmit;
-        private CheckedListBox checkedListBoxAccess;
+        private CheckedListBox listBoxAccess;
         private Label label2;
         private DataGridView dataGridViewAccess;
         private GroupBox groupBox1;
@@ -252,5 +273,7 @@
         private Label labelEmail;
         private Label labelPhone;
         private Label labelAddress;
+        private Label labePhoneAlt;
+        private Label label8;
     }
 }
