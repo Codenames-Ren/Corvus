@@ -58,110 +58,134 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(49, 32);
             label1.Name = "label1";
             label1.Size = new Size(76, 20);
             label1.TabIndex = 0;
             label1.Text = "Full Name";
+            label1.Click += this.label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(420, 32);
             label2.Name = "label2";
             label2.Size = new Size(75, 20);
             label2.TabIndex = 1;
             label2.Text = "Username";
+            label2.Click += this.label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(797, 32);
             label3.Name = "label3";
             label3.Size = new Size(70, 20);
             label3.TabIndex = 2;
             label3.Text = "Password";
+            label3.Click += this.label3_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(49, 115);
             label4.Name = "label4";
             label4.Size = new Size(59, 20);
             label4.TabIndex = 3;
             label4.Text = "Card ID";
+            label4.Click += this.label4_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(420, 115);
             label5.Name = "label5";
             label5.Size = new Size(50, 20);
             label5.TabIndex = 4;
             label5.Text = "Phone";
+            label5.Click += this.label5_Click;
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Location = new Point(797, 115);
             label6.Name = "label6";
             label6.Size = new Size(73, 20);
             label6.TabIndex = 5;
             label6.Text = "Phone Alt";
+            label6.Click += this.label6_Click;
             // 
             // label7
             // 
             label7.AutoSize = true;
+            label7.ForeColor = SystemColors.ButtonHighlight;
             label7.Location = new Point(49, 227);
             label7.Name = "label7";
             label7.Size = new Size(46, 20);
             label7.TabIndex = 6;
             label7.Text = "Email";
+            label7.Click += this.label7_Click;
             // 
             // label8
             // 
             label8.AutoSize = true;
+            label8.ForeColor = SystemColors.ButtonHighlight;
             label8.Location = new Point(420, 227);
             label8.Name = "label8";
             label8.Size = new Size(94, 20);
             label8.TabIndex = 7;
             label8.Text = "Reference ID";
+            label8.Click += this.label8_Click;
             // 
             // label9
             // 
             label9.AutoSize = true;
+            label9.ForeColor = SystemColors.ButtonHighlight;
             label9.Location = new Point(797, 227);
             label9.Name = "label9";
             label9.Size = new Size(62, 20);
             label9.TabIndex = 8;
             label9.Text = "Address";
+            label9.Click += this.label9_Click;
             // 
             // label10
             // 
             label10.AutoSize = true;
+            label10.ForeColor = SystemColors.ButtonHighlight;
             label10.Location = new Point(49, 330);
             label10.Name = "label10";
             label10.Size = new Size(168, 20);
             label10.TabIndex = 9;
             label10.Text = "What is your fav colour?";
+            label10.Click += this.label10_Click;
             // 
             // label11
             // 
             label11.AutoSize = true;
+            label11.ForeColor = SystemColors.ButtonHighlight;
             label11.Location = new Point(420, 330);
             label11.Name = "label11";
             label11.Size = new Size(194, 20);
             label11.TabIndex = 10;
             label11.Text = "Who is your fav singer/artist";
+            label11.Click += label11_Click;
             // 
             // btnSubmit
             // 
+            btnSubmit.BackColor = Color.DimGray;
             btnSubmit.Location = new Point(32, 414);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(119, 47);
             btnSubmit.TabIndex = 11;
             btnSubmit.Text = "Submit";
-            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.UseVisualStyleBackColor = false;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // lblRegValidate
             // 
@@ -244,12 +268,14 @@
             // 
             // btnCancel
             // 
+            btnCancel.BackColor = Color.DimGray;
             btnCancel.Location = new Point(178, 414);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(119, 47);
             btnCancel.TabIndex = 24;
             btnCancel.Text = "Back";
-            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // txtAdress
             // 
@@ -263,7 +289,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1149, 485);
+            BackColor = Color.DimGray;
+            ClientSize = new Size(1149, 493);
             Controls.Add(txtAdress);
             Controls.Add(btnCancel);
             Controls.Add(txtHint2);
@@ -289,8 +316,10 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            ForeColor = SystemColors.ButtonHighlight;
             Name = "RegisterForm";
             Text = "RegisterForm";
+            Load += RegisterForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
