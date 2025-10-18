@@ -35,9 +35,9 @@
             txtInhouse = new TextBox();
             txtAcross = new TextBox();
             btnUpdate = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
+            textTerminologi1 = new Label();
+            textTerminologi2 = new Label();
+            textTerminologi3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -96,33 +96,34 @@
             btnUpdate.TabIndex = 6;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
-            // label1
+            // textTerminologi1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(49, 8);
-            label1.Name = "label1";
-            label1.Size = new Size(101, 20);
-            label1.TabIndex = 7;
-            label1.Text = "Terminologi 1";
+            textTerminologi1.AutoSize = true;
+            textTerminologi1.Location = new Point(49, 8);
+            textTerminologi1.Name = "textTerminologi1";
+            textTerminologi1.Size = new Size(101, 20);
+            textTerminologi1.TabIndex = 7;
+            textTerminologi1.Text = "Terminologi 1";
             // 
-            // label2
+            // textTerminologi2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(432, 8);
-            label2.Name = "label2";
-            label2.Size = new Size(101, 20);
-            label2.TabIndex = 8;
-            label2.Text = "Terminologi 2";
+            textTerminologi2.AutoSize = true;
+            textTerminologi2.Location = new Point(432, 8);
+            textTerminologi2.Name = "textTerminologi2";
+            textTerminologi2.Size = new Size(101, 20);
+            textTerminologi2.TabIndex = 8;
+            textTerminologi2.Text = "Terminologi 2";
             // 
-            // label3
+            // textTerminologi3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(808, 8);
-            label3.Name = "label3";
-            label3.Size = new Size(101, 20);
-            label3.TabIndex = 9;
-            label3.Text = "Terminologi 3";
+            textTerminologi3.AutoSize = true;
+            textTerminologi3.Location = new Point(808, 8);
+            textTerminologi3.Name = "textTerminologi3";
+            textTerminologi3.Size = new Size(101, 20);
+            textTerminologi3.TabIndex = 9;
+            textTerminologi3.Text = "Terminologi 3";
             // 
             // label4
             // 
@@ -158,9 +159,9 @@
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(textTerminologi3);
+            Controls.Add(textTerminologi2);
+            Controls.Add(textTerminologi1);
             Controls.Add(btnUpdate);
             Controls.Add(txtAcross);
             Controls.Add(txtInhouse);
@@ -170,6 +171,7 @@
             Controls.Add(txtExchangeView);
             Name = "ConfigPage";
             Size = new Size(1215, 573);
+            Load += ConfigPage_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -183,9 +185,9 @@
         private TextBox txtInhouse;
         private TextBox txtAcross;
         private Button btnUpdate;
-        private Label label1;
-        private Label label2;
-        private Label label3;
+        private Label textTerminologi1;
+        private Label textTerminologi2;
+        private Label textTerminologi3;
         private Label label4;
         private Label label5;
         private Label label6;
