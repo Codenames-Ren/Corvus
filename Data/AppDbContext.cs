@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BraveHeroCooperation.Models;
 using Corvus.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,6 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Corvus.Data
 {
+    // Bayu
     public class AppDbContext : DbContext
     {
         public DbSet<Member> Members => Set<Member>();

@@ -330,6 +330,26 @@ namespace Corvus.Forms
             throw new NotImplementedException();
         }
 
+        private void label9_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         private void label5_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
@@ -345,22 +365,12 @@ namespace Corvus.Forms
             throw new NotImplementedException();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void label9_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
