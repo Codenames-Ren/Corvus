@@ -1,4 +1,5 @@
-﻿namespace Corvus.Forms
+﻿
+namespace Corvus.Forms
 {
     partial class LoanPage
     {
@@ -30,43 +31,43 @@
         {
             button7 = new Button();
             lblLoan = new Label();
-            dataGridLoan = new DataGridView();
+            dataGridViewLoan = new DataGridView();
             btnNewLoan = new Button();
             btnApplyLoan = new Button();
-            btnShowSlipGaji = new Button();
-            btnBrowseSlipGaji = new Button();
-            txtDocumentSlipGaji = new TextBox();
+            buttonShowSlip = new Button();
+            buttonFileSlip = new Button();
+            textBoxSlip = new TextBox();
             lblDocumentSlipGaji = new Label();
-            btnShowDocumentKTP = new Button();
-            btnBrowseDocumentKTP = new Button();
-            txtDocumentKTP = new TextBox();
+            buttonShowKtp = new Button();
+            buttonFileKtp = new Button();
+            textBoxKtp = new TextBox();
             lblDocumentKTP = new Label();
-            txtMaxAmount = new TextBox();
-            lblMaxAmount = new Label();
-            txtTenor = new TextBox();
-            lblTenor = new Label();
-            txtInterest = new TextBox();
-            lblInterest = new Label();
-            txtAmount = new TextBox();
-            lblAmount = new Label();
-            btnShow = new Button();
-            btnBrowse = new Button();
-            txtDocumentKK = new TextBox();
+            textBoxMaxAmount = new TextBox();
+            TextMaxAmount = new Label();
+            textBoxTenor = new TextBox();
+            textTenor = new Label();
+            textBoxInterest = new TextBox();
+            textInterest = new Label();
+            textBoxAmount = new TextBox();
+            textAmount = new Label();
+            buttonShowKk = new Button();
+            buttonFileKk = new Button();
+            textBoxKk = new TextBox();
             lblDocumentKK = new Label();
-            txtDueDate = new TextBox();
+            textBoxDate = new TextBox();
             lblDueDate = new Label();
             txtInterestFine = new TextBox();
-            txtMinAmount = new TextBox();
+            textBoxMinAmount = new TextBox();
             lblInterestFine = new Label();
-            lblMinAmount = new Label();
+            textMinAmount = new Label();
             txtAdmin = new TextBox();
             lblAdmin = new Label();
             lblLoanType = new Label();
-            lblId = new Label();
-            cmbLoanType = new ComboBox();
-            txtloanid = new TextBox();
-            lblLoanID = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridLoan).BeginInit();
+            LebeLId = new Label();
+            comboLoanMaster = new ComboBox();
+            textBoxLoanId = new TextBox();
+            LabelId = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewLoan).BeginInit();
             SuspendLayout();
             // 
             // button7
@@ -88,13 +89,13 @@
             lblLoan.TabIndex = 74;
             lblLoan.Text = "Loan";
             // 
-            // dataGridLoan
+            // dataGridViewLoan
             // 
-            dataGridLoan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridLoan.Location = new Point(434, 43);
-            dataGridLoan.Name = "dataGridLoan";
-            dataGridLoan.Size = new Size(434, 296);
-            dataGridLoan.TabIndex = 73;
+            dataGridViewLoan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewLoan.Location = new Point(434, 43);
+            dataGridViewLoan.Name = "dataGridViewLoan";
+            dataGridViewLoan.Size = new Size(434, 296);
+            dataGridViewLoan.TabIndex = 73;
             // 
             // btnNewLoan
             // 
@@ -114,31 +115,31 @@
             btnApplyLoan.Text = "Apply Loan";
             btnApplyLoan.UseVisualStyleBackColor = true;
             // 
-            // btnShowSlipGaji
+            // buttonShowSlip
             // 
-            btnShowSlipGaji.Location = new Point(344, 411);
-            btnShowSlipGaji.Name = "btnShowSlipGaji";
-            btnShowSlipGaji.Size = new Size(75, 23);
-            btnShowSlipGaji.TabIndex = 70;
-            btnShowSlipGaji.Text = "Show";
-            btnShowSlipGaji.UseVisualStyleBackColor = true;
+            buttonShowSlip.Location = new Point(344, 411);
+            buttonShowSlip.Name = "buttonShowSlip";
+            buttonShowSlip.Size = new Size(75, 23);
+            buttonShowSlip.TabIndex = 70;
+            buttonShowSlip.Text = "Show";
+            buttonShowSlip.UseVisualStyleBackColor = true;
             // 
-            // btnBrowseSlipGaji
+            // buttonFileSlip
             // 
-            btnBrowseSlipGaji.Location = new Point(239, 411);
-            btnBrowseSlipGaji.Name = "btnBrowseSlipGaji";
-            btnBrowseSlipGaji.Size = new Size(75, 23);
-            btnBrowseSlipGaji.TabIndex = 69;
-            btnBrowseSlipGaji.Text = "Browse";
-            btnBrowseSlipGaji.UseVisualStyleBackColor = true;
+            buttonFileSlip.Location = new Point(239, 411);
+            buttonFileSlip.Name = "buttonFileSlip";
+            buttonFileSlip.Size = new Size(75, 23);
+            buttonFileSlip.TabIndex = 69;
+            buttonFileSlip.Text = "Browse";
+            buttonFileSlip.UseVisualStyleBackColor = true;
             // 
-            // txtDocumentSlipGaji
+            // textBoxSlip
             // 
-            txtDocumentSlipGaji.Location = new Point(239, 382);
-            txtDocumentSlipGaji.Name = "txtDocumentSlipGaji";
-            txtDocumentSlipGaji.ReadOnly = true;
-            txtDocumentSlipGaji.Size = new Size(180, 23);
-            txtDocumentSlipGaji.TabIndex = 68;
+            textBoxSlip.Location = new Point(239, 382);
+            textBoxSlip.Name = "textBoxSlip";
+            textBoxSlip.ReadOnly = true;
+            textBoxSlip.Size = new Size(180, 23);
+            textBoxSlip.TabIndex = 68;
             // 
             // lblDocumentSlipGaji
             // 
@@ -150,31 +151,31 @@
             lblDocumentSlipGaji.TabIndex = 67;
             lblDocumentSlipGaji.Text = "Document Slip Gaji";
             // 
-            // btnShowDocumentKTP
+            // buttonShowKtp
             // 
-            btnShowDocumentKTP.Location = new Point(335, 304);
-            btnShowDocumentKTP.Name = "btnShowDocumentKTP";
-            btnShowDocumentKTP.Size = new Size(75, 23);
-            btnShowDocumentKTP.TabIndex = 66;
-            btnShowDocumentKTP.Text = "Show";
-            btnShowDocumentKTP.UseVisualStyleBackColor = true;
+            buttonShowKtp.Location = new Point(335, 304);
+            buttonShowKtp.Name = "buttonShowKtp";
+            buttonShowKtp.Size = new Size(75, 23);
+            buttonShowKtp.TabIndex = 66;
+            buttonShowKtp.Text = "Show";
+            buttonShowKtp.UseVisualStyleBackColor = true;
             // 
-            // btnBrowseDocumentKTP
+            // buttonFileKtp
             // 
-            btnBrowseDocumentKTP.Location = new Point(230, 304);
-            btnBrowseDocumentKTP.Name = "btnBrowseDocumentKTP";
-            btnBrowseDocumentKTP.Size = new Size(75, 23);
-            btnBrowseDocumentKTP.TabIndex = 65;
-            btnBrowseDocumentKTP.Text = "Browse";
-            btnBrowseDocumentKTP.UseVisualStyleBackColor = true;
+            buttonFileKtp.Location = new Point(230, 304);
+            buttonFileKtp.Name = "buttonFileKtp";
+            buttonFileKtp.Size = new Size(75, 23);
+            buttonFileKtp.TabIndex = 65;
+            buttonFileKtp.Text = "Browse";
+            buttonFileKtp.UseVisualStyleBackColor = true;
             // 
-            // txtDocumentKTP
+            // textBoxKtp
             // 
-            txtDocumentKTP.Location = new Point(230, 275);
-            txtDocumentKTP.Name = "txtDocumentKTP";
-            txtDocumentKTP.ReadOnly = true;
-            txtDocumentKTP.Size = new Size(180, 23);
-            txtDocumentKTP.TabIndex = 64;
+            textBoxKtp.Location = new Point(230, 275);
+            textBoxKtp.Name = "textBoxKtp";
+            textBoxKtp.ReadOnly = true;
+            textBoxKtp.Size = new Size(180, 23);
+            textBoxKtp.TabIndex = 64;
             // 
             // lblDocumentKTP
             // 
@@ -186,102 +187,102 @@
             lblDocumentKTP.TabIndex = 63;
             lblDocumentKTP.Text = "Document KTP";
             // 
-            // txtMaxAmount
+            // textBoxMaxAmount
             // 
-            txtMaxAmount.Location = new Point(239, 216);
-            txtMaxAmount.Name = "txtMaxAmount";
-            txtMaxAmount.ReadOnly = true;
-            txtMaxAmount.Size = new Size(180, 23);
-            txtMaxAmount.TabIndex = 62;
+            textBoxMaxAmount.Location = new Point(239, 216);
+            textBoxMaxAmount.Name = "textBoxMaxAmount";
+            textBoxMaxAmount.ReadOnly = true;
+            textBoxMaxAmount.Size = new Size(180, 23);
+            textBoxMaxAmount.TabIndex = 62;
             // 
-            // lblMaxAmount
+            // TextMaxAmount
             // 
-            lblMaxAmount.AutoSize = true;
-            lblMaxAmount.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMaxAmount.Location = new Point(250, 196);
-            lblMaxAmount.Name = "lblMaxAmount";
-            lblMaxAmount.Size = new Size(82, 17);
-            lblMaxAmount.TabIndex = 61;
-            lblMaxAmount.Text = "Max Amount";
+            TextMaxAmount.AutoSize = true;
+            TextMaxAmount.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TextMaxAmount.Location = new Point(250, 196);
+            TextMaxAmount.Name = "TextMaxAmount";
+            TextMaxAmount.Size = new Size(82, 17);
+            TextMaxAmount.TabIndex = 61;
+            TextMaxAmount.Text = "Max Amount";
             // 
-            // txtTenor
+            // textBoxTenor
             // 
-            txtTenor.Location = new Point(239, 157);
-            txtTenor.Name = "txtTenor";
-            txtTenor.ReadOnly = true;
-            txtTenor.Size = new Size(180, 23);
-            txtTenor.TabIndex = 60;
+            textBoxTenor.Location = new Point(239, 157);
+            textBoxTenor.Name = "textBoxTenor";
+            textBoxTenor.ReadOnly = true;
+            textBoxTenor.Size = new Size(180, 23);
+            textBoxTenor.TabIndex = 60;
             // 
-            // lblTenor
+            // textTenor
             // 
-            lblTenor.AutoSize = true;
-            lblTenor.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTenor.Location = new Point(248, 137);
-            lblTenor.Name = "lblTenor";
-            lblTenor.Size = new Size(41, 17);
-            lblTenor.TabIndex = 59;
-            lblTenor.Text = "Tenor";
+            textTenor.AutoSize = true;
+            textTenor.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textTenor.Location = new Point(248, 137);
+            textTenor.Name = "textTenor";
+            textTenor.Size = new Size(41, 17);
+            textTenor.TabIndex = 59;
+            textTenor.Text = "Tenor";
             // 
-            // txtInterest
+            // textBoxInterest
             // 
-            txtInterest.Location = new Point(239, 102);
-            txtInterest.Name = "txtInterest";
-            txtInterest.ReadOnly = true;
-            txtInterest.Size = new Size(180, 23);
-            txtInterest.TabIndex = 58;
+            textBoxInterest.Location = new Point(239, 102);
+            textBoxInterest.Name = "textBoxInterest";
+            textBoxInterest.ReadOnly = true;
+            textBoxInterest.Size = new Size(180, 23);
+            textBoxInterest.TabIndex = 58;
             // 
-            // lblInterest
+            // textInterest
             // 
-            lblInterest.AutoSize = true;
-            lblInterest.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblInterest.Location = new Point(250, 82);
-            lblInterest.Name = "lblInterest";
-            lblInterest.Size = new Size(51, 17);
-            lblInterest.TabIndex = 57;
-            lblInterest.Text = "Interest";
+            textInterest.AutoSize = true;
+            textInterest.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textInterest.Location = new Point(250, 82);
+            textInterest.Name = "textInterest";
+            textInterest.Size = new Size(51, 17);
+            textInterest.TabIndex = 57;
+            textInterest.Text = "Interest";
             // 
-            // txtAmount
+            // textBoxAmount
             // 
-            txtAmount.Location = new Point(239, 43);
-            txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(180, 23);
-            txtAmount.TabIndex = 56;
+            textBoxAmount.Location = new Point(239, 43);
+            textBoxAmount.Name = "textBoxAmount";
+            textBoxAmount.Size = new Size(180, 23);
+            textBoxAmount.TabIndex = 56;
             // 
-            // lblAmount
+            // textAmount
             // 
-            lblAmount.AutoSize = true;
-            lblAmount.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAmount.Location = new Point(248, 23);
-            lblAmount.Name = "lblAmount";
-            lblAmount.Size = new Size(53, 17);
-            lblAmount.TabIndex = 55;
-            lblAmount.Text = "Amount";
+            textAmount.AutoSize = true;
+            textAmount.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textAmount.Location = new Point(248, 23);
+            textAmount.Name = "textAmount";
+            textAmount.Size = new Size(53, 17);
+            textAmount.TabIndex = 55;
+            textAmount.Text = "Amount";
             // 
-            // btnShow
+            // buttonShowKk
             // 
-            btnShow.Location = new Point(128, 411);
-            btnShow.Name = "btnShow";
-            btnShow.Size = new Size(75, 23);
-            btnShow.TabIndex = 54;
-            btnShow.Text = "Show";
-            btnShow.UseVisualStyleBackColor = true;
+            buttonShowKk.Location = new Point(128, 411);
+            buttonShowKk.Name = "buttonShowKk";
+            buttonShowKk.Size = new Size(75, 23);
+            buttonShowKk.TabIndex = 54;
+            buttonShowKk.Text = "Show";
+            buttonShowKk.UseVisualStyleBackColor = true;
             // 
-            // btnBrowse
+            // buttonFileKk
             // 
-            btnBrowse.Location = new Point(23, 411);
-            btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(75, 23);
-            btnBrowse.TabIndex = 53;
-            btnBrowse.Text = "Browse";
-            btnBrowse.UseVisualStyleBackColor = true;
+            buttonFileKk.Location = new Point(23, 411);
+            buttonFileKk.Name = "buttonFileKk";
+            buttonFileKk.Size = new Size(75, 23);
+            buttonFileKk.TabIndex = 53;
+            buttonFileKk.Text = "Browse";
+            buttonFileKk.UseVisualStyleBackColor = true;
             // 
-            // txtDocumentKK
+            // textBoxKk
             // 
-            txtDocumentKK.Location = new Point(23, 382);
-            txtDocumentKK.Name = "txtDocumentKK";
-            txtDocumentKK.ReadOnly = true;
-            txtDocumentKK.Size = new Size(180, 23);
-            txtDocumentKK.TabIndex = 52;
+            textBoxKk.Location = new Point(23, 382);
+            textBoxKk.Name = "textBoxKk";
+            textBoxKk.ReadOnly = true;
+            textBoxKk.Size = new Size(180, 23);
+            textBoxKk.TabIndex = 52;
             // 
             // lblDocumentKK
             // 
@@ -293,12 +294,12 @@
             lblDocumentKK.TabIndex = 51;
             lblDocumentKK.Text = "Document KK";
             // 
-            // txtDueDate
+            // textBoxDate
             // 
-            txtDueDate.Location = new Point(23, 329);
-            txtDueDate.Name = "txtDueDate";
-            txtDueDate.Size = new Size(180, 23);
-            txtDueDate.TabIndex = 50;
+            textBoxDate.Location = new Point(23, 329);
+            textBoxDate.Name = "textBoxDate";
+            textBoxDate.Size = new Size(180, 23);
+            textBoxDate.TabIndex = 50;
             // 
             // lblDueDate
             // 
@@ -318,13 +319,13 @@
             txtInterestFine.Size = new Size(180, 23);
             txtInterestFine.TabIndex = 48;
             // 
-            // txtMinAmount
+            // textBoxMinAmount
             // 
-            txtMinAmount.Location = new Point(23, 216);
-            txtMinAmount.Name = "txtMinAmount";
-            txtMinAmount.ReadOnly = true;
-            txtMinAmount.Size = new Size(180, 23);
-            txtMinAmount.TabIndex = 47;
+            textBoxMinAmount.Location = new Point(23, 216);
+            textBoxMinAmount.Name = "textBoxMinAmount";
+            textBoxMinAmount.ReadOnly = true;
+            textBoxMinAmount.Size = new Size(180, 23);
+            textBoxMinAmount.TabIndex = 47;
             // 
             // lblInterestFine
             // 
@@ -336,15 +337,15 @@
             lblInterestFine.TabIndex = 46;
             lblInterestFine.Text = "Interest Fine";
             // 
-            // lblMinAmount
+            // textMinAmount
             // 
-            lblMinAmount.AutoSize = true;
-            lblMinAmount.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMinAmount.Location = new Point(34, 196);
-            lblMinAmount.Name = "lblMinAmount";
-            lblMinAmount.Size = new Size(79, 17);
-            lblMinAmount.TabIndex = 45;
-            lblMinAmount.Text = "Min Amount";
+            textMinAmount.AutoSize = true;
+            textMinAmount.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textMinAmount.Location = new Point(34, 196);
+            textMinAmount.Name = "textMinAmount";
+            textMinAmount.Size = new Size(79, 17);
+            textMinAmount.TabIndex = 45;
+            textMinAmount.Text = "Min Amount";
             // 
             // txtAdmin
             // 
@@ -374,41 +375,42 @@
             lblLoanType.TabIndex = 42;
             lblLoanType.Text = "Loan Type";
             // 
-            // lblId
+            // LebeLId
             // 
-            lblId.AutoSize = true;
-            lblId.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblId.Location = new Point(148, 26);
-            lblId.Name = "lblId";
-            lblId.Size = new Size(17, 17);
-            lblId.TabIndex = 41;
-            lblId.Text = "...";
+            LebeLId.AutoSize = true;
+            LebeLId.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LebeLId.Location = new Point(148, 26);
+            LebeLId.Name = "LebeLId";
+            LebeLId.Size = new Size(17, 17);
+            LebeLId.TabIndex = 41;
+            LebeLId.Text = "...";
             // 
-            // cmbLoanType
+            // comboLoanMaster
             // 
-            cmbLoanType.FormattingEnabled = true;
-            cmbLoanType.Location = new Point(23, 102);
-            cmbLoanType.Name = "cmbLoanType";
-            cmbLoanType.Size = new Size(180, 23);
-            cmbLoanType.TabIndex = 40;
+            comboLoanMaster.FormattingEnabled = true;
+            comboLoanMaster.Location = new Point(23, 102);
+            comboLoanMaster.Name = "comboLoanMaster";
+            comboLoanMaster.Size = new Size(180, 23);
+            comboLoanMaster.TabIndex = 40;
+            comboLoanMaster.SelectedIndexChanged += cmbLoanType_SelectedIndexChanged;
             // 
-            // txtloanid
+            // textBoxLoanId
             // 
-            txtloanid.Location = new Point(23, 46);
-            txtloanid.Name = "txtloanid";
-            txtloanid.ReadOnly = true;
-            txtloanid.Size = new Size(180, 23);
-            txtloanid.TabIndex = 39;
+            textBoxLoanId.Location = new Point(23, 46);
+            textBoxLoanId.Name = "textBoxLoanId";
+            textBoxLoanId.ReadOnly = true;
+            textBoxLoanId.Size = new Size(180, 23);
+            textBoxLoanId.TabIndex = 39;
             // 
-            // lblLoanID
+            // LabelId
             // 
-            lblLoanID.AutoSize = true;
-            lblLoanID.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLoanID.Location = new Point(32, 26);
-            lblLoanID.Name = "lblLoanID";
-            lblLoanID.Size = new Size(52, 17);
-            lblLoanID.TabIndex = 38;
-            lblLoanID.Text = "Loan ID";
+            LabelId.AutoSize = true;
+            LabelId.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LabelId.Location = new Point(32, 26);
+            LabelId.Name = "LabelId";
+            LabelId.Size = new Size(52, 17);
+            LabelId.TabIndex = 38;
+            LabelId.Text = "Loan ID";
             // 
             // LoanPage
             // 
@@ -416,88 +418,93 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(button7);
             Controls.Add(lblLoan);
-            Controls.Add(dataGridLoan);
+            Controls.Add(dataGridViewLoan);
             Controls.Add(btnNewLoan);
             Controls.Add(btnApplyLoan);
-            Controls.Add(btnShowSlipGaji);
-            Controls.Add(btnBrowseSlipGaji);
-            Controls.Add(txtDocumentSlipGaji);
+            Controls.Add(buttonShowSlip);
+            Controls.Add(buttonFileSlip);
+            Controls.Add(textBoxSlip);
             Controls.Add(lblDocumentSlipGaji);
-            Controls.Add(btnShowDocumentKTP);
-            Controls.Add(btnBrowseDocumentKTP);
-            Controls.Add(txtDocumentKTP);
+            Controls.Add(buttonShowKtp);
+            Controls.Add(buttonFileKtp);
+            Controls.Add(textBoxKtp);
             Controls.Add(lblDocumentKTP);
-            Controls.Add(txtMaxAmount);
-            Controls.Add(lblMaxAmount);
-            Controls.Add(txtTenor);
-            Controls.Add(lblTenor);
-            Controls.Add(txtInterest);
-            Controls.Add(lblInterest);
-            Controls.Add(txtAmount);
-            Controls.Add(lblAmount);
-            Controls.Add(btnShow);
-            Controls.Add(btnBrowse);
-            Controls.Add(txtDocumentKK);
+            Controls.Add(textBoxMaxAmount);
+            Controls.Add(TextMaxAmount);
+            Controls.Add(textBoxTenor);
+            Controls.Add(textTenor);
+            Controls.Add(textBoxInterest);
+            Controls.Add(textInterest);
+            Controls.Add(textBoxAmount);
+            Controls.Add(textAmount);
+            Controls.Add(buttonShowKk);
+            Controls.Add(buttonFileKk);
+            Controls.Add(textBoxKk);
             Controls.Add(lblDocumentKK);
-            Controls.Add(txtDueDate);
+            Controls.Add(textBoxDate);
             Controls.Add(lblDueDate);
             Controls.Add(txtInterestFine);
-            Controls.Add(txtMinAmount);
+            Controls.Add(textBoxMinAmount);
             Controls.Add(lblInterestFine);
-            Controls.Add(lblMinAmount);
+            Controls.Add(textMinAmount);
             Controls.Add(txtAdmin);
             Controls.Add(lblAdmin);
             Controls.Add(lblLoanType);
-            Controls.Add(lblId);
-            Controls.Add(cmbLoanType);
-            Controls.Add(txtloanid);
-            Controls.Add(lblLoanID);
+            Controls.Add(LebeLId);
+            Controls.Add(comboLoanMaster);
+            Controls.Add(textBoxLoanId);
+            Controls.Add(LabelId);
             Name = "LoanPage";
-            Size = new Size(907, 525);
-            ((System.ComponentModel.ISupportInitialize)dataGridLoan).EndInit();
+            Size = new Size(987, 525);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewLoan).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void cmbLoanType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
 
         private Button button7;
         private Label lblLoan;
-        private DataGridView dataGridLoan;
+        private DataGridView dataGridViewLoan;
         private Button btnNewLoan;
         private Button btnApplyLoan;
-        private Button btnShowSlipGaji;
-        private Button btnBrowseSlipGaji;
-        private TextBox txtDocumentSlipGaji;
+        private Button buttonShowSlip;
+        private Button buttonFileSlip;
+        private TextBox textBoxSlip;
         private Label lblDocumentSlipGaji;
-        private Button btnShowDocumentKTP;
-        private Button btnBrowseDocumentKTP;
-        private TextBox txtDocumentKTP;
+        private Button buttonShowKtp;
+        private Button buttonFileKtp;
+        private TextBox textBoxKtp;
         private Label lblDocumentKTP;
-        private TextBox txtMaxAmount;
-        private Label lblMaxAmount;
-        private TextBox txtTenor;
-        private Label lblTenor;
-        private TextBox txtInterest;
-        private Label lblInterest;
-        private TextBox txtAmount;
-        private Label lblAmount;
-        private Button btnShow;
-        private Button btnBrowse;
-        private TextBox txtDocumentKK;
+        private TextBox textBoxMaxAmount;
+        private Label TextMaxAmount;
+        private TextBox textBoxTenor;
+        private Label textTenor;
+        private TextBox textBoxInterest;
+        private Label textInterest;
+        private TextBox textBoxAmount;
+        private Label textAmount;
+        private Button buttonShowKk;
+        private Button buttonFileKk;
+        private TextBox textBoxKk;
         private Label lblDocumentKK;
-        private TextBox txtDueDate;
+        private TextBox textBoxDate;
         private Label lblDueDate;
         private TextBox txtInterestFine;
-        private TextBox txtMinAmount;
+        private TextBox textBoxMinAmount;
         private Label lblInterestFine;
-        private Label lblMinAmount;
+        private Label textMinAmount;
         private TextBox txtAdmin;
         private Label lblAdmin;
         private Label lblLoanType;
-        private Label lblId;
-        private ComboBox cmbLoanType;
-        private TextBox txtloanid;
-        private Label lblLoanID;
+        private Label LebeLId;
+        private ComboBox comboLoanMaster;
+        private TextBox textBoxLoanId;
+        private Label LabelId;
     }
 }

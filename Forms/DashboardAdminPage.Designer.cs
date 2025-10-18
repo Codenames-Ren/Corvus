@@ -360,6 +360,7 @@
             Controls.Add(picMember);
             Name = "DashboardAdminPage";
             Size = new Size(961, 472);
+            Load += DashboardAdminPage_Load;
             ((System.ComponentModel.ISupportInitialize)picMember).EndInit();
             ((System.ComponentModel.ISupportInitialize)picBalance).EndInit();
             ((System.ComponentModel.ISupportInitialize)picinhouse).EndInit();

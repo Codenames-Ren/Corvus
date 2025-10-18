@@ -47,6 +47,8 @@
             buttonUpdate = new Button();
             labelUpdate = new Label();
             dataGridViewMember = new DataGridView();
+            label9 = new Label();
+            labelAddress = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMember).BeginInit();
             SuspendLayout();
             // 
@@ -94,7 +96,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(57, 287);
+            label5.Location = new Point(57, 305);
             label5.Name = "label5";
             label5.Size = new Size(39, 15);
             label5.TabIndex = 7;
@@ -203,14 +205,14 @@
             // comboBoxStatus
             // 
             comboBoxStatus.FormattingEnabled = true;
-            comboBoxStatus.Location = new Point(46, 305);
+            comboBoxStatus.Location = new Point(46, 323);
             comboBoxStatus.Name = "comboBoxStatus";
             comboBoxStatus.Size = new Size(251, 23);
             comboBoxStatus.TabIndex = 15;
             // 
             // buttonUpdate
             // 
-            buttonUpdate.Location = new Point(46, 351);
+            buttonUpdate.Location = new Point(46, 369);
             buttonUpdate.Name = "buttonUpdate";
             buttonUpdate.Size = new Size(82, 26);
             buttonUpdate.TabIndex = 16;
@@ -221,7 +223,7 @@
             // 
             labelUpdate.AutoSize = true;
             labelUpdate.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelUpdate.Location = new Point(178, 351);
+            labelUpdate.Location = new Point(178, 369);
             labelUpdate.Name = "labelUpdate";
             labelUpdate.Size = new Size(18, 20);
             labelUpdate.TabIndex = 17;
@@ -235,10 +237,32 @@
             dataGridViewMember.Size = new Size(561, 332);
             dataGridViewMember.TabIndex = 18;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(46, 272);
+            label9.Name = "label9";
+            label9.Size = new Size(62, 20);
+            label9.TabIndex = 19;
+            label9.Text = "Address";
+            // 
+            // labelAddress
+            // 
+            labelAddress.AutoSize = true;
+            labelAddress.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelAddress.Location = new Point(178, 272);
+            labelAddress.Name = "labelAddress";
+            labelAddress.Size = new Size(18, 20);
+            labelAddress.TabIndex = 20;
+            labelAddress.Text = "...";
+            // 
             // MemberPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(labelAddress);
+            Controls.Add(label9);
             Controls.Add(dataGridViewMember);
             Controls.Add(labelUpdate);
             Controls.Add(buttonUpdate);
@@ -286,5 +310,7 @@
         private Button buttonUpdate;
         private Label labelUpdate;
         private DataGridView dataGridViewMember;
+        private Label label9;
+        private Label labelAddress;
     }
 }
