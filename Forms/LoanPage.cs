@@ -10,6 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using Corvus.Data;
+using Corvus.Models;
+using Corvus.Services;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Corvus.Forms
@@ -17,7 +20,7 @@ namespace Corvus.Forms
     public partial class LoanPage : UserControl
     {
         Member loggedMember;
-        InstallmentForm installmentForm;
+        Installment installmentForm;
         private object labelId;
 
         public LoanPage(Member member)
@@ -28,17 +31,17 @@ namespace Corvus.Forms
 
         private void buttonFileKTP_Click(object sender, EventArgs e)
         {
-            textBoxKtp.Text = FileHelper.UploadDocument("KTP");
+            txtDocumentKTP.Text = FileHelper.UploadDocument("KTP");
         }
 
         private void buttonFileKK_Click(object sender, EventArgs e)
         {
-            textBoxKk.Text = FileHelper.UploadDocument("KK");
+            txtDocumentKK.Text = FileHelper.UploadDocument("KK");
         }
 
         private void buttonFileSlip_Click(object sender, EventArgs e)
         {
-            textBoxSlip.Text = FileHelper.UploadDocument("Slip Gaji");
+            txtDocumentSlipGaji.Text = FileHelper.UploadDocument("Slip Gaji");
         }
 
         private void LoanPage_Load(object sender, EventArgs e)
@@ -54,7 +57,7 @@ namespace Corvus.Forms
         private void SetLoanDropdown(AppDbContext db)
         {
             ProductService productService = new ProductService(db);
-            comboLoanMaster.DataSource = productService.SetDropdownLoan();
+            comboLoanMaster.DataSource = productService.SetDropDownLoan();
             comboLoanMaster.DisplayMember = "DisplayName";
             comboLoanMaster.ValueMember = "Id";
         }
@@ -99,12 +102,12 @@ namespace Corvus.Forms
             textBoxInterest.Text = "";
             textBoxAmount.Text = "";
             textBoxLoanId.Text = RandomNumberGenerator.GetString("1234567890", 6);
-            labelId.Text = "";
+            LabelId.Text = "";
         }
 
         private async void LoadLoanGrid(AppDbContext db)
         {
-            LoanService loanService = new LoanService(db);
+            LoanServices loanService = new LoanServices(db);
             dataGridViewLoan.DataSource = await loanService.LoadLoanGrid(loggedMember.Id);
 
             dataGridViewLoan.Columns[0].DataPropertyName = "Id";
@@ -126,7 +129,7 @@ namespace Corvus.Forms
             {
                 int idLoan = int.Parse(dataGridViewLoan.Rows[e.RowIndex].Cells[0].Value.ToString());
                 AppDbContext db = new AppDbContext();
-                LoanService loanService = new LoanService(db);
+                LoanServices loanService = new LoanServices(db);
                 var loan = loanService.GetLoanById(idLoan);
 
                 if (loan != null)
@@ -143,12 +146,12 @@ namespace Corvus.Forms
                         textBoxAmount.Text = loan.Amount.ToString();
                         textBoxMinAmount.Text = loan.MinAmount.ToString();
                         textBoxMaxAmount.Text = loan.MaxAmount.ToString();
-                        LabelId.Text = loan.Id.ToString();
+                        Label.Text = loan.Id.ToString();
                         comboLoanMaster.SelectedIndex = 0;
                         comboLoanMaster.Enabled = false;
 
                         if (installmentForm == null)
-                            installmentForm = new InstallmentForm(loggedMember, 0);
+                            installmentForm = new Installment(loggedMember, 0);
 
                         installmentForm.SetLoan(loan.Id);
                         installmentForm.Show();

@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Corvus.Data;
+using Corvus.Models;
+using Corvus.Services;
 
 namespace Corvus.Forms
 {
@@ -22,13 +24,13 @@ namespace Corvus.Forms
         private async void ConfigPage_Load(object sender, EventArgs e)
         {
             AppDbContext db = new AppDbContext();
-            ConfigurationService service = new ConfigurationService(db);
-            Configuration config = await service.GetConfiguration();
+            ConfigurationServices service = new ConfigurationServices(db);
+            Models.Configuration config = await service.GetConfig();
             if (config != null)
             {
                 textTerminologi1.Text = config.terminologi1;
                 textTerminologi2.Text = config.terminologi2;
-                textTerminologi3.Text = config.terminologi3;
+                textTerminologi3.Text = config.terminolog3;
                 txtExchangeView.Text = config.exchangeRate.ToString();
                 txtInhouseView.Text = config.transferInhouseFee.ToString();
                 txtAcrossView.Text = config.transferAcrossFee.ToString();
@@ -42,7 +44,7 @@ namespace Corvus.Forms
             decimal accrossFee = decimal.Parse(txtAcrossView.Text);
 
             AppDbContext db = new AppDbContext();
-            ConfigurationService service = new ConfigurationService(db);
+            ConfigurationServices service = new ConfigurationServices(db);
             await service.addOrUpdate(textTerminologi1.Text, textTerminologi2.Text, textTerminologi3.Text, exchangeRate, inhouseFee, accrossFee);
             MessageBox.Show("Configuration updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
