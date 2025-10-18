@@ -10,7 +10,7 @@ namespace Corvus.Models
     public class Balance
     {
         public int Id { get; set; }
-        public Member member { get; set; }
+        public String MemberCode { get; set; }
         public decimal amount { get; set; }
         public DateTime updateOn { get; set; }
         public string transactionName    { get; set; }
