@@ -151,11 +151,11 @@ namespace Corvus.Forms
                         comboLoanMaster.SelectedIndex = 0;
                         comboLoanMaster.Enabled = false;
 
-                        if (installmentForm == null)
-                            installmentForm = new Installment(loggedMember, 0);
+                        //if (installmentForm == null)
+                            //installmentForm = new Installment(loggedMember, 0);
 
-                        installmentForm.SetLoan(loan.Id);
-                        installmentForm.Show();
+                        //installmentForm.SetLoan(loan.Id);
+                        //installmentForm.Show();
                     }
                     else
                     {
@@ -220,11 +220,11 @@ namespace Corvus.Forms
 
         private void HideInstallment()
         {
-            if (installmentForm == null)
-                installmentForm = new Installment(loggedMember, 0);
+            //if (installmentForm == null)
+                //installmentForm = new Installment(loggedMember, 0);
 
-            installmentForm.SetLoan(0);
-            installmentForm.Hide();
+            //installmentForm.SetLoan(0);
+            //installmentForm.Hide();
         }
 
         private void ResetDropdown()
@@ -245,7 +245,7 @@ namespace Corvus.Forms
                 int idLoanMaster = int.Parse(comboLoanMaster.SelectedValue.ToString());
                 AppDbContext db = new AppDbContext();
                 ProductService productService = new ProductService(db);
-                LoanMaster? loanMaster = await productService.FindLoanById(idLoanMaster);
+                LoanMaster? loanMaster = await productService.findLoanById(idLoanMaster);
 
                 if (loanMaster != null)
                 {

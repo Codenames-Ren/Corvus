@@ -58,39 +58,11 @@ namespace Corvus.Forms
         }
         private void acrossCooperationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            route(new AcrossPage());
+            //route(new AcrossPage());
         }
         private void approvalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             route(new ApprovalPage(loggedMember));
-        }
-    }
-
-    public class AcrossPage : Control
-    {
-        public AcrossPage()
-        {
-            InitializeComponent();
-        }
-
-        private void AcrossPage_Load(object sender, EventArgs e)
-        {
-            // TODO: Initialize page
-            LoadData();
-        }
-
-        private void LoadData()
-        {
-            // TODO: Load across cooperation data
-            // Example:
-            // AppDbContext db = new AppDbContext();
-            // var data = db.AcrossCooperations.ToList();
-            // dataGridView.DataSource = data;
-        }
-
-        private void buttonRefresh_Click(object sender, EventArgs e)
-        {
-            LoadData();
         }
     }
 }

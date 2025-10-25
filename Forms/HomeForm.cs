@@ -148,7 +148,7 @@ namespace Corvus.Forms
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Text = title + " << Profile Page >>";
-            route(new ProfilePage(loggedMember));
+            //route(new ProfilePage(loggedMember));
         }
 
         private void loanToolStripMenuItem_Click(object sender, EventArgs e)
