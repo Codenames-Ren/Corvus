@@ -68,7 +68,7 @@ namespace Corvus.Services
                 var hash = BCrypt.Net.BCrypt.HashPassword(password);
                 user.PasswordHash = hash;
                 _db.Update(user);
-                await _db.SaveChangesAsync();
+                await _db.SaveChangesAsync();   
                 return password;
             }
             return "";
