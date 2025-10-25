@@ -1,5 +1,7 @@
-﻿using Corvus.Data;
+﻿using BraveHeroCooperation.Utils;
+using Corvus.Data;
 using Corvus.Models;
+using Corvus.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +32,7 @@ namespace Corvus.Forms
             AppDbContext db = new AppDbContext();
             if (comboProduct.SelectedIndex == 1)
             {
-                LoanService loanService = new LoanService(db);
+                LoanServices loanService = new LoanServices(db);
                 dataGridViewApproval.AutoGenerateColumns = true;
                 dataGridViewApproval.DataSource = await loanService.LoadsApproval();
 
@@ -92,7 +94,7 @@ namespace Corvus.Forms
                     }
                     else
                     {
-                        LoanService loanService = new LoanService(db);
+                        LoanServices loanService = new LoanServices(db);
                         DialogResult result = MessageBox.Show("Approve?", "Decision", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                         int idLoan = int.Parse(dataGridViewApproval.Rows[e.RowIndex].Cells[0].Value.ToString());
                         if (result == DialogResult.Yes)

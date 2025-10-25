@@ -24,7 +24,7 @@ namespace Corvus.Forms
         private void MemberPage_Load(object sender, EventArgs e)
         {
             loadGridMember();
-            string? id = labelId.Text;
+            string? id = labelCardId.Text;
             if (id == null || id == "" || id == "...")
             {
                 buttonUpdate.Visible = false;
