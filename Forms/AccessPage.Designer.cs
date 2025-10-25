@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             cmbMember = new ComboBox();
             btnSubmit = new Button();
@@ -47,8 +48,12 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
+            memberBindingSource = new BindingSource(components);
+            accessBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridViewAccess).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)memberBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)accessBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -250,6 +255,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewAccess).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)memberBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)accessBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -275,5 +282,7 @@
         private Label labelAddress;
         private Label labePhoneAlt;
         private Label label8;
+        private BindingSource memberBindingSource;
+        private BindingSource accessBindingSource;
     }
 }

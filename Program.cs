@@ -1,3 +1,6 @@
+using Corvus.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace Corvus
 {
     internal static class Program
@@ -12,6 +15,30 @@ namespace Corvus
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+
+            try
+            {
+                using (var db = new AppDbContext())
+                {
+                    db.Database.Migrate();
+                }
+
+                // show login form
+                using var login = new Forms.LoginForm();
+                login.ShowDialog();
+
+                /* if (login.ShowDialog() == DialogResult.OK)
+                {
+                Application.Run(new Forms.HomeForm(Login.LoggedInUser));
+
+                } */
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database Connection Failed!\nPlease Check Your Nework" +
+                "\nCode:" + ex.Message,
+                "Database Connection ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-    }
+    }   
 }
