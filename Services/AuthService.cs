@@ -51,8 +51,8 @@ namespace Corvus.Services
                 IsActive = true,
                 Level = "public",
                 Status = "public",
-                Quest1 = quest1,
-                Quest2 = quest2,
+                quest1 = quest1,
+                quest2 = quest2,
                 MemberId = memberId
             };
             _db.Members.Add(m);
@@ -61,10 +61,10 @@ namespace Corvus.Services
 
         public async Task<string> ResetPasswordAsync(string username, string quest1, string quest2)
         {
-            var user = await _db.Members.FirstOrDefaultAsync(x => x.Username == username && x.IsActive && x.Quest1 == quest1.Trim() && x.Quest2 == quest2.Trim());
+            var user = await _db.Members.FirstOrDefaultAsync(x => x.Username == username && x.IsActive && x.quest1 == quest1.Trim() && x.quest2 == quest2.Trim());
             if (user != null)
             {
-                string password = RandomNumberGenerator.GetString(6, false);
+                string password = RandomNumberGenerator.GetHexString(6, false);
                 var hash = BCrypt.Net.BCrypt.HashPassword(password);
                 user.PasswordHash = hash;
                 _db.Update(user);
