@@ -41,6 +41,7 @@
             acrossToolStripMenuItem = new ToolStripMenuItem();
             exchangeToolStripMenuItem = new ToolStripMenuItem();
             historyToolStripMenuItem = new ToolStripMenuItem();
+            panelDisplay = new Panel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,19 +64,19 @@
             // dashboardToolStripMenuItem
             // 
             dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            dashboardToolStripMenuItem.Size = new Size(138, 22);
+            dashboardToolStripMenuItem.Size = new Size(137, 22);
             dashboardToolStripMenuItem.Text = "Dashboard";
             // 
             // terminologiToolStripMenuItem
             // 
             terminologiToolStripMenuItem.Name = "terminologiToolStripMenuItem";
-            terminologiToolStripMenuItem.Size = new Size(138, 22);
+            terminologiToolStripMenuItem.Size = new Size(137, 22);
             terminologiToolStripMenuItem.Text = "Terminologi";
             // 
             // logToolStripMenuItem
             // 
             logToolStripMenuItem.Name = "logToolStripMenuItem";
-            logToolStripMenuItem.Size = new Size(138, 22);
+            logToolStripMenuItem.Size = new Size(137, 22);
             logToolStripMenuItem.Text = "Logout";
             // 
             // profileToolStripMenuItem
@@ -101,27 +102,27 @@
             // 
             transferToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { InhouseToolStripMenuItem, acrossToolStripMenuItem });
             transferToolStripMenuItem.Name = "transferToolStripMenuItem";
-            transferToolStripMenuItem.Size = new Size(61, 20);
+            transferToolStripMenuItem.Size = new Size(60, 20);
             transferToolStripMenuItem.Text = "Transfer";
             transferToolStripMenuItem.Click += transferToolStripMenuItem_Click;
             // 
             // InhouseToolStripMenuItem
             // 
             InhouseToolStripMenuItem.Name = "InhouseToolStripMenuItem";
-            InhouseToolStripMenuItem.Size = new Size(180, 22);
+            InhouseToolStripMenuItem.Size = new Size(116, 22);
             InhouseToolStripMenuItem.Text = "Inhouse";
             // 
             // acrossToolStripMenuItem
             // 
             acrossToolStripMenuItem.Name = "acrossToolStripMenuItem";
-            acrossToolStripMenuItem.Size = new Size(180, 22);
+            acrossToolStripMenuItem.Size = new Size(116, 22);
             acrossToolStripMenuItem.Text = "Across";
             acrossToolStripMenuItem.Click += acrossToolStripMenuItem_Click;
             // 
             // exchangeToolStripMenuItem
             // 
             exchangeToolStripMenuItem.Name = "exchangeToolStripMenuItem";
-            exchangeToolStripMenuItem.Size = new Size(69, 20);
+            exchangeToolStripMenuItem.Size = new Size(70, 20);
             exchangeToolStripMenuItem.Text = "Exchange";
             // 
             // historyToolStripMenuItem
@@ -130,11 +131,19 @@
             historyToolStripMenuItem.Size = new Size(57, 20);
             historyToolStripMenuItem.Text = "History";
             // 
+            // panelDisplay
+            // 
+            panelDisplay.Location = new Point(12, 27);
+            panelDisplay.Name = "panelDisplay";
+            panelDisplay.Size = new Size(776, 344);
+            panelDisplay.TabIndex = 1;
+            // 
             // HomeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(panelDisplay);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "HomeForm";
@@ -161,5 +170,6 @@
         private ToolStripMenuItem historyToolStripMenuItem;
         private ToolStripMenuItem InhouseToolStripMenuItem;
         private ToolStripMenuItem acrossToolStripMenuItem;
+        private Panel panelDisplay;
     }
 }
