@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BraveHeroCooperation.Models;
+using Corvus.Models;
 
 namespace Corvus.Models
 {
