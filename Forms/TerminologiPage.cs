@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Corvus.Data;
 using Corvus.Models;
+using Corvus.Services;
 
 namespace Corvus.Forms
 {
@@ -24,8 +25,8 @@ namespace Corvus.Forms
         private async void TerminologiPage_Load(object sender, EventArgs e)
         {
             AppDbContext db = new AppDbContext();
-            ConfigurationService service = new ConfigurationService(db);
-            Configuration? configuration = await service.GetConfiguration();
+            ConfigurationServices service = new ConfigurationServices(db);
+            Configuration? configuration = await service.GetConfig();
             if (configuration != null) {
                 lblAcross.Text = configuration.terminologi1;
                 lblExchange.Text = configuration.terminologi2;
