@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Corvus.Data;
 using Corvus.Models;
+using Corvus.Services;
 
 namespace Corvus.Forms
 {
     public partial class LoginForm : Form
     {
+        public Member? LoggedInUser {  get; set; }
         public LoginForm()
         {
             InitializeComponent();
@@ -44,7 +46,7 @@ namespace Corvus.Forms
             if (user != null)
             {
                 LoggedInUser = user;
-                if (LoggedInUser.level == "admin")
+                if (LoggedInUser.Level == "admin")
                 {
                     this.Hide();
                     AdminForm form = new AdminForm(LoggedInUser);
@@ -53,7 +55,7 @@ namespace Corvus.Forms
                 else
                 {
                     AccessService accessService = new AccessService(db);
-                    Access access = await accessService.GetAccess(user.id);
+                    Access access = await accessService.GetAccess(user.Id);
                     if (access == null)
                     {
                         lblValidate.Text = "Access Is Not Granted By Admin!";
