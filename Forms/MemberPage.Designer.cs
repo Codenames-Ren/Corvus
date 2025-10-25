@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -49,7 +50,9 @@
             dataGridViewMember = new DataGridView();
             label9 = new Label();
             labelAddress = new Label();
+            memberBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridViewMember).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)memberBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -285,6 +288,7 @@
             Name = "MemberPage";
             Size = new Size(929, 454);
             ((System.ComponentModel.ISupportInitialize)dataGridViewMember).EndInit();
+            ((System.ComponentModel.ISupportInitialize)memberBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -312,5 +316,6 @@
         private DataGridView dataGridViewMember;
         private Label label9;
         private Label labelAddress;
+        private BindingSource memberBindingSource;
     }
 }

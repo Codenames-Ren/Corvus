@@ -16,6 +16,7 @@ namespace Corvus.Forms
 {
     public partial class ApprovalPage : UserControl
     {
+        Member loggedMember;
         public ApprovalPage(Member member)
         {
             loggedMember = member;
