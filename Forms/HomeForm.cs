@@ -1,5 +1,7 @@
-﻿using Corvus.Forms;
+﻿using Corvus.Data;
+using Corvus.Forms;
 using Corvus.Models;
+using Corvus.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,7 +89,7 @@ namespace Corvus.Forms
                             accessSegment = parts[1].Trim();
                     }
 
-                    foreach (ToolStripMenuItem menu in menuHome.Items)
+                    foreach (ToolStripMenuItem menu in menuStrip1.Items)
                     {
                         if (menu.Text != null && menu.Text.Contains(accessSegment))
                         {

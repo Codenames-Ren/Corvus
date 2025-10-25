@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using BraveHeroCooperation.Utils;
 using Corvus.Data;
 using Corvus.Models;
 using Corvus.Services;
@@ -21,7 +22,6 @@ namespace Corvus.Forms
     {
         Member loggedMember;
         Installment installmentForm;
-        private object labelId;
 
         public LoanPage(Member member)
         {
@@ -31,17 +31,17 @@ namespace Corvus.Forms
 
         private void buttonFileKTP_Click(object sender, EventArgs e)
         {
-            txtDocumentKTP.Text = FileHelper.UploadDocument("KTP");
+            textBoxKtp.Text = FileHelper.UploadDocument("KTP");
         }
 
         private void buttonFileKK_Click(object sender, EventArgs e)
         {
-            txtDocumentKK.Text = FileHelper.UploadDocument("KK");
+            textBoxKk.Text = FileHelper.UploadDocument("KK");
         }
 
         private void buttonFileSlip_Click(object sender, EventArgs e)
         {
-            txtDocumentSlipGaji.Text = FileHelper.UploadDocument("Slip Gaji");
+            textBoxSlip.Text = FileHelper.UploadDocument("Slip Gaji");
         }
 
         private void LoanPage_Load(object sender, EventArgs e)
@@ -65,7 +65,6 @@ namespace Corvus.Forms
         private void buttonNewLoan_Click(object sender, EventArgs e)
         {
             SetDefaultField();
-            SetChosenField();
             ResetField();
             comboLoanMaster.Enabled = true;
             HideInstallment();
@@ -101,6 +100,8 @@ namespace Corvus.Forms
             textBoxTenor.Text = "";
             textBoxInterest.Text = "";
             textBoxAmount.Text = "";
+            textBoxMinAmount.Text = "";
+            textBoxMaxAmount.Text = "";
             textBoxLoanId.Text = RandomNumberGenerator.GetString("1234567890", 6);
             LabelId.Text = "";
         }
@@ -114,7 +115,7 @@ namespace Corvus.Forms
             dataGridViewLoan.Columns[1].DataPropertyName = "LoanId";
             dataGridViewLoan.Columns[2].DataPropertyName = "Amount";
             dataGridViewLoan.Columns[3].DataPropertyName = "Outstanding";
-            dataGridViewLoan.Columns[4].DataPropertyName = "Interest";
+            dataGridViewLoan.Columns[4].DataPropertyName = "TenorLeft";
 
             dataGridViewLoan.Columns[0].Visible = false;
             dataGridViewLoan.Columns[1].HeaderText = "Loan ID";
@@ -123,14 +124,14 @@ namespace Corvus.Forms
             dataGridViewLoan.Columns[4].HeaderText = "Tenor Left";
         }
 
-        private void dataGridViewLoan_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void dataGridViewLoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 int idLoan = int.Parse(dataGridViewLoan.Rows[e.RowIndex].Cells[0].Value.ToString());
                 AppDbContext db = new AppDbContext();
                 LoanServices loanService = new LoanServices(db);
-                var loan = loanService.GetLoanById(idLoan);
+                var loan = await loanService.findById(idLoan);
 
                 if (loan != null)
                 {
@@ -144,9 +145,9 @@ namespace Corvus.Forms
                         textBoxInterest.Text = loan.Interest.ToString();
                         textBoxTenor.Text = loan.Tenor.ToString();
                         textBoxAmount.Text = loan.Amount.ToString();
-                        textBoxMinAmount.Text = loan.MinAmount.ToString();
-                        textBoxMaxAmount.Text = loan.MaxAmount.ToString();
-                        Label.Text = loan.Id.ToString();
+                        textBoxMinAmount.Text = loan.Amount.ToString();
+                        textBoxMaxAmount.Text = loan.TotalAmount.ToString();
+                        LabelId.Text = loan.Id.ToString();
                         comboLoanMaster.SelectedIndex = 0;
                         comboLoanMaster.Enabled = false;
 
@@ -172,7 +173,16 @@ namespace Corvus.Forms
         private async void buttonApply_Click(object sender, EventArgs e)
         {
             AppDbContext db = new AppDbContext();
-            LoanService loanService = new LoanService(db);
+            LoanServices loanService = new LoanServices(db);
+
+            // Validation
+            if (string.IsNullOrEmpty(textBoxAmount.Text) ||
+                string.IsNullOrEmpty(textBoxMinAmount.Text) ||
+                string.IsNullOrEmpty(textBoxMaxAmount.Text))
+            {
+                MessageBox.Show("Please fill in all required fields.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             decimal amount = decimal.Parse(textBoxAmount.Text);
             decimal minAmount = decimal.Parse(textBoxMinAmount.Text);
@@ -180,27 +190,38 @@ namespace Corvus.Forms
 
             if (amount < minAmount || amount > maxAmount)
             {
-                MessageBox.Show("Invalid amount.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show($"Amount must be between {minAmount} and {maxAmount}.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            await loanService.SaveOrUpdate(
+            // Match parameter dengan service: saveOrUpdate(Member member, string amount, string ktp,
+            //                                              string kk, string slip, string dueDate, string interest,
+            //                                              string interestFine, string loanId, string tenor, string adminFee)
+            await loanService.saveOrUpdate(
                 loggedMember,
-                textBoxLoanId.Text,
-                textBoxKtp.Text,
-                textBoxKk.Text,
-                textBoxSlip.Text,
-                textBoxDate.Text,
-                textBoxTenor.Text,
-                textBoxInterest.Text,
-                textBoxAmount.Text
+                textBoxAmount.Text,           // amount
+                textBoxKtp.Text,              // ktp
+                textBoxKk.Text,               // kk
+                textBoxSlip.Text,             // slip
+                textBoxDate.Text,             // dueDate
+                textBoxInterest.Text,         // interest
+                "0",                          // interestFine (default 0, bisa diganti sesuai kebutuhan)
+                textBoxLoanId.Text,           // loanId
+                textBoxTenor.Text,            // tenor
+                "0"                           // adminFee (default 0, bisa diganti sesuai kebutuhan)
             );
+
+            MessageBox.Show("Loan application submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Reload grid dan reset form
+            LoadLoanGrid(db);
+            ResetField();
         }
 
         private void HideInstallment()
         {
             if (installmentForm == null)
-                installmentForm = new InstallmentForm(loggedMember, 0);
+                installmentForm = new Installment(loggedMember, 0);
 
             installmentForm.SetLoan(0);
             installmentForm.Hide();
@@ -208,11 +229,11 @@ namespace Corvus.Forms
 
         private void ResetDropdown()
         {
-            textInterest.Text = "";
-            textTenor.Text = "";
+            textBoxInterest.Text = "";
+            textBoxTenor.Text = "";
             textBoxMinAmount.Text = "";
             textBoxMaxAmount.Text = "";
-            textAmount.Text = "";
+            textBoxAmount.Text = "";
         }
 
         private async void comboLoanMaster_SelectedIndexChanged(object sender, EventArgs e)
@@ -228,8 +249,8 @@ namespace Corvus.Forms
 
                 if (loanMaster != null)
                 {
-                    textInterest.Text = loanMaster.Interest.ToString();
-                    textTenor.Text = loanMaster.Tenor.ToString();
+                    textBoxInterest.Text = loanMaster.Interest.ToString();
+                    textBoxTenor.Text = loanMaster.Tenor.ToString();
                     textBoxMinAmount.Text = loanMaster.MinAmount.ToString();
                     textBoxMaxAmount.Text = loanMaster.MaxAmount.ToString();
                 }
