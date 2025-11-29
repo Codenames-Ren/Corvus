@@ -47,5 +47,11 @@ namespace Corvus.Services
             }
             await _db.SaveChangesAsync();
         }
+
+        public async Task Update(Configuration config)
+        {
+            _db.Configurations.Update(config);
+            await _db.SaveChangesAsync();
+        }
     }
 }

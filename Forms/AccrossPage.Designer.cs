@@ -43,69 +43,77 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(28, 20);
+            label1.Location = new Point(46, 32);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(45, 20);
+            label1.Size = new Size(71, 32);
             label1.TabIndex = 0;
             label1.Text = "Coop";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(705, 20);
+            label2.Location = new Point(1146, 32);
+            label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new Size(65, 20);
+            label2.Size = new Size(105, 32);
             label2.TabIndex = 1;
             label2.Text = "Member";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(28, 359);
+            label3.Location = new Point(46, 574);
+            label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
-            label3.Size = new Size(61, 20);
+            label3.Size = new Size(98, 32);
             label3.TabIndex = 2;
             label3.Text = "Transfer";
             // 
             // dgvCoop
             // 
             dgvCoop.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCoop.Location = new Point(23, 57);
+            dgvCoop.Location = new Point(37, 91);
+            dgvCoop.Margin = new Padding(5);
             dgvCoop.Name = "dgvCoop";
             dgvCoop.RowHeadersWidth = 51;
-            dgvCoop.Size = new Size(637, 258);
+            dgvCoop.Size = new Size(1035, 413);
             dgvCoop.TabIndex = 3;
             // 
             // dgvMember
             // 
             dgvMember.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMember.Location = new Point(705, 57);
+            dgvMember.Location = new Point(1146, 91);
+            dgvMember.Margin = new Padding(5);
             dgvMember.Name = "dgvMember";
             dgvMember.RowHeadersWidth = 51;
-            dgvMember.Size = new Size(637, 258);
+            dgvMember.Size = new Size(1035, 413);
             dgvMember.TabIndex = 4;
             // 
             // dgvTransfer
             // 
             dgvTransfer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTransfer.Location = new Point(23, 392);
+            dgvTransfer.Location = new Point(37, 627);
+            dgvTransfer.Margin = new Padding(5);
             dgvTransfer.Name = "dgvTransfer";
             dgvTransfer.RowHeadersWidth = 51;
-            dgvTransfer.Size = new Size(1319, 303);
+            dgvTransfer.Size = new Size(2143, 485);
             dgvTransfer.TabIndex = 5;
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(632, 719);
+            btnRefresh.Location = new Point(1027, 1150);
+            btnRefresh.Margin = new Padding(5);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(109, 39);
+            btnRefresh.Size = new Size(177, 62);
             btnRefresh.TabIndex = 6;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // AccrossPage
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(btnRefresh);
             Controls.Add(dgvTransfer);
@@ -114,8 +122,10 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(5);
             Name = "AccrossPage";
-            Size = new Size(1372, 781);
+            Size = new Size(2230, 1250);
+            Load += AccrossPage_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCoop).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvMember).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvTransfer).EndInit();
