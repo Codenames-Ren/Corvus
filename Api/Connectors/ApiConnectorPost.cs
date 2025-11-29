@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Corvus.Api.Models;
 
 namespace Corvus.Api.Connectors
 {
@@ -12,7 +13,7 @@ namespace Corvus.Api.Connectors
         private readonly HttpClient _httpClient = new HttpClient();
         private string _baseUrl = "http://localhost:20254/";
 
-        public async Task<CoopRegisterResponse> CoopRegisterAsync(CoopRegisterPayload data)
+        public async Task<CoopApiResponse> CoopRegisterAsync(CoopPayload data)
         {
             var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
             string json = JsonSerializer.Serialize(data, options);
@@ -23,7 +24,7 @@ namespace Corvus.Api.Connectors
             response.EnsureSuccessStatusCode();
 
             string responseJson = await response.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<CoopRegisterResponse>(responseJson,
+            return JsonSerializer.Deserialize<CoopApiResponse>(responseJson,
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
         }
 
