@@ -125,7 +125,7 @@
             Margin = new Padding(5);
             Name = "AccrossPage";
             Size = new Size(2230, 1250);
-            Load += AccrossPage_Load;
+            //Load += AccrossPage_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCoop).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvMember).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvTransfer).EndInit();
