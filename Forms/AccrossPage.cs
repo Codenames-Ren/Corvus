@@ -50,8 +50,8 @@ namespace Corvus.Forms
                         CoopApiResponse? coopApiResponse = await connectorPost.CoopRegisterAsync(
                             new CoopPayload
                             {
-                                name = "Corvys",
-                                address = "Picung",
+                                name = "Corvus",
+                                address = "Siberia",
                                 code = ""
                             });
 
