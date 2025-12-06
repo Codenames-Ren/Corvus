@@ -187,6 +187,7 @@
             // 
             // timerInbox
             // 
+            timerInbox.Interval = 100000;
             timerInbox.Tick += timerInbox_Tick;
             // 
             // AccrossTransferPage
