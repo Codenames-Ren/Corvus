@@ -14,6 +14,7 @@ namespace Corvus.Data
     public class AppDbContext : DbContext
     {
         public DbSet<Member> Members => Set<Member>();
+        public DbSet<Balance>Balances => Set<Balance>();
         public DbSet<Access> Accesses => Set<Access>();
         public DbSet<Configuration> Configurations => Set<Configuration>();
         public DbSet<LoanMaster> LoanMasters => Set<LoanMaster>();
