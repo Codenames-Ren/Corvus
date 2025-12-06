@@ -53,89 +53,100 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(27, 32);
+            label1.Location = new Point(44, 51);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(61, 20);
+            label1.Size = new Size(96, 32);
             label1.TabIndex = 0;
             label1.Text = "Balance";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(27, 112);
+            label2.Location = new Point(44, 179);
+            label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new Size(82, 20);
+            label2.Size = new Size(131, 32);
             label2.TabIndex = 1;
             label2.Text = "Beneficiary";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(27, 187);
+            label3.Location = new Point(44, 299);
+            label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
-            label3.Size = new Size(62, 20);
+            label3.Size = new Size(100, 32);
             label3.TabIndex = 2;
             label3.Text = "Amount";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(27, 263);
+            label4.Location = new Point(44, 421);
+            label4.Margin = new Padding(5, 0, 5, 0);
             label4.Name = "label4";
-            label4.Size = new Size(87, 20);
+            label4.Size = new Size(139, 32);
             label4.TabIndex = 3;
             label4.Text = "Transfer Ref";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(27, 342);
+            label5.Location = new Point(44, 547);
+            label5.Margin = new Padding(5, 0, 5, 0);
             label5.Name = "label5";
-            label5.Size = new Size(65, 20);
+            label5.Size = new Size(103, 32);
             label5.TabIndex = 4;
             label5.Text = "Remarks";
             // 
             // txtBalance
             // 
-            txtBalance.Location = new Point(27, 66);
+            txtBalance.Location = new Point(44, 106);
+            txtBalance.Margin = new Padding(5, 5, 5, 5);
             txtBalance.Name = "txtBalance";
-            txtBalance.Size = new Size(317, 27);
+            txtBalance.Size = new Size(513, 39);
             txtBalance.TabIndex = 5;
             // 
             // txtBeneficiary
             // 
-            txtBeneficiary.Location = new Point(27, 144);
+            txtBeneficiary.Location = new Point(44, 230);
+            txtBeneficiary.Margin = new Padding(5, 5, 5, 5);
             txtBeneficiary.Name = "txtBeneficiary";
-            txtBeneficiary.Size = new Size(317, 27);
+            txtBeneficiary.Size = new Size(513, 39);
             txtBeneficiary.TabIndex = 6;
             // 
             // txtAmount
             // 
-            txtAmount.Location = new Point(27, 223);
+            txtAmount.Location = new Point(44, 357);
+            txtAmount.Margin = new Padding(5, 5, 5, 5);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(317, 27);
+            txtAmount.Size = new Size(513, 39);
             txtAmount.TabIndex = 7;
             // 
             // txtTransfer
             // 
-            txtTransfer.Location = new Point(27, 296);
+            txtTransfer.Location = new Point(44, 474);
+            txtTransfer.Margin = new Padding(5, 5, 5, 5);
             txtTransfer.Name = "txtTransfer";
-            txtTransfer.Size = new Size(317, 27);
+            txtTransfer.Size = new Size(513, 39);
             txtTransfer.TabIndex = 8;
             // 
             // txtRemarks
             // 
-            txtRemarks.Location = new Point(27, 375);
+            txtRemarks.Location = new Point(44, 600);
+            txtRemarks.Margin = new Padding(5, 5, 5, 5);
             txtRemarks.Multiline = true;
             txtRemarks.Name = "txtRemarks";
-            txtRemarks.Size = new Size(317, 125);
+            txtRemarks.Size = new Size(513, 198);
             txtRemarks.TabIndex = 9;
             // 
             // btnSubmit
             // 
-            btnSubmit.Location = new Point(27, 520);
+            btnSubmit.Location = new Point(44, 832);
+            btnSubmit.Margin = new Padding(5, 5, 5, 5);
             btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(132, 37);
+            btnSubmit.Size = new Size(214, 59);
             btnSubmit.TabIndex = 10;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = true;
@@ -143,9 +154,10 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(212, 520);
+            btnClear.Location = new Point(344, 832);
+            btnClear.Margin = new Padding(5, 5, 5, 5);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(132, 37);
+            btnClear.Size = new Size(214, 59);
             btnClear.TabIndex = 11;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
@@ -153,37 +165,41 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(482, 9);
+            label6.Location = new Point(783, 14);
+            label6.Margin = new Padding(5, 0, 5, 0);
             label6.Name = "label6";
-            label6.Size = new Size(71, 20);
+            label6.Size = new Size(114, 32);
             label6.TabIndex = 12;
             label6.Text = "Incoming";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(482, 296);
+            label7.Location = new Point(783, 474);
+            label7.Margin = new Padding(5, 0, 5, 0);
             label7.Name = "label7";
-            label7.Size = new Size(72, 20);
+            label7.Size = new Size(116, 32);
             label7.TabIndex = 13;
             label7.Text = "Outgoing";
             // 
             // dgvIncoming
             // 
             dgvIncoming.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvIncoming.Location = new Point(482, 32);
+            dgvIncoming.Location = new Point(783, 51);
+            dgvIncoming.Margin = new Padding(5, 5, 5, 5);
             dgvIncoming.Name = "dgvIncoming";
             dgvIncoming.RowHeadersWidth = 51;
-            dgvIncoming.Size = new Size(585, 251);
+            dgvIncoming.Size = new Size(951, 402);
             dgvIncoming.TabIndex = 14;
             // 
             // dgvOutgoing
             // 
             dgvOutgoing.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOutgoing.Location = new Point(482, 319);
+            dgvOutgoing.Location = new Point(783, 510);
+            dgvOutgoing.Margin = new Padding(5, 5, 5, 5);
             dgvOutgoing.Name = "dgvOutgoing";
             dgvOutgoing.RowHeadersWidth = 51;
-            dgvOutgoing.Size = new Size(585, 251);
+            dgvOutgoing.Size = new Size(951, 402);
             dgvOutgoing.TabIndex = 15;
             // 
             // timerInbox
@@ -192,9 +208,9 @@
             // 
             // AccrossTransferPage
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1131, 606);
+            ClientSize = new Size(1838, 970);
             Controls.Add(dgvOutgoing);
             Controls.Add(dgvIncoming);
             Controls.Add(label7);
@@ -211,8 +227,10 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(5, 5, 5, 5);
             Name = "AccrossTransferPage";
             Text = "AccrossTransferPage";
+            Load += AccrossTransferPage_Load;
             ((System.ComponentModel.ISupportInitialize)dgvIncoming).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvOutgoing).EndInit();
             ResumeLayout(false);
