@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -44,6 +45,7 @@
             label7 = new Label();
             dgvIncoming = new DataGridView();
             dgvOutgoing = new DataGridView();
+            timerInbox = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)dgvIncoming).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvOutgoing).BeginInit();
             SuspendLayout();
@@ -183,6 +185,10 @@
             dgvOutgoing.Size = new Size(585, 251);
             dgvOutgoing.TabIndex = 15;
             // 
+            // timerInbox
+            // 
+            timerInbox.Tick += timerInbox_Tick;
+            // 
             // AccrossTransferPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -230,5 +236,6 @@
         private Label label7;
         private DataGridView dgvIncoming;
         private DataGridView dgvOutgoing;
+        private System.Windows.Forms.Timer timerInbox;
     }
 }

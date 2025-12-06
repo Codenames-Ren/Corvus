@@ -16,5 +16,10 @@ namespace Corvus.Forms
         {
             InitializeComponent();
         }
+
+        private void timerInbox_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
