@@ -63,7 +63,7 @@ namespace Corvus.Forms
             if (configuration == null)
                 message = "Configuration not found!";
             if (configuration != null)
-                if (configuration.terminologi3 == null || configuration.terminologi3 == "-")
+                if (configuration.terminolog3 == null || configuration.terminolog3 == "-")
                 {
                     message = " Coop not registered to Across System. Please Contact administrator.";
                 }
@@ -72,14 +72,14 @@ namespace Corvus.Forms
                     MemberApiResponse? memberApiResponse = await connectorPost.MemberRegistrationAsync(
                         new MemberPayload
                         {
-                            name = loggedMember.Fullname,
-                            address = loggedMember.Adress,
+                            name = loggedMember.FullName,
+                            address = loggedMember.Address,
                             code = loggedMember.MemberId,
-                            coopCode = configuration.terminologi3!
+                            coopCode = configuration.terminolog3!
                         });
                     if (memberApiResponse != null && memberApiResponse.ResponseCode == "00")
                     {
-                    loggedMember.ReferenceId = configuration.terminologi3!;
+                    loggedMember.ReferenceId = configuration.terminolog3!;
                     memberService.Update(loggedMember);
 
                     BalanceService balanceService = new BalanceService(db);
@@ -96,6 +96,7 @@ namespace Corvus.Forms
             {
                 message = ex.Message;
             }
+            return message;
         }
         
         private void timerInbox_Tick(object sender, EventArgs e)
@@ -115,7 +116,7 @@ namespace Corvus.Forms
             {
                 amount = transferAmount,
                 benefCode = txtBeneficiary.Text,
-                coopCode = loggedMember.Member.id,
+                coopCode = loggedMember.MemberId,
                 fee = Double.Parse(config?.transferAcrossFee.ToString()),
                 remarks = txtRemarks.Text,
                 transferRef = txtTransfer.Text,
@@ -124,7 +125,7 @@ namespace Corvus.Forms
             if (response != null && response.ResponseCode == "00") 
             {
                 BalanceService balanceService = new BalanceService(db);
-                Balance? balance = await balanceService.getBalance(loggedMember.Member.id);
+                Balance? balance = await balanceService.getBalance(loggedMember.MemberId);
                 if (balance != null)
                 {
                     balance.amount -= Decimal.Parse(txtAmount.ToString());
