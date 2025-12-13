@@ -52,7 +52,6 @@
             btnReload = new Button();
             dgvSaving = new DataGridView();
             this.txtSavingID = new TextBox();
-            this.txtSavingType = new TextBox();
             this.txtAdminFee = new TextBox();
             this.txtMinAmount = new TextBox();
             txtInterestFine = new TextBox();
@@ -66,6 +65,7 @@
             txtDocumentSlipGaji = new TextBox();
             lblSavingID = new Label();
             btnNewSaving = new Button();
+            cmbSavingMaster = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvSaving).BeginInit();
             SuspendLayout();
             // 
@@ -280,20 +280,15 @@
             // 
             this.txtSavingID.Location = new Point(31, 44);
             this.txtSavingID.Name = "txtSavingID";
+            this.txtSavingID.ReadOnly = true;
             this.txtSavingID.Size = new Size(276, 27);
             this.txtSavingID.TabIndex = 24;
-            // 
-            // txtSavingType
-            // 
-            this.txtSavingType.Location = new Point(31, 107);
-            this.txtSavingType.Name = "txtSavingType";
-            this.txtSavingType.Size = new Size(276, 27);
-            this.txtSavingType.TabIndex = 25;
             // 
             // txtAdminFee
             // 
             this.txtAdminFee.Location = new Point(31, 171);
             this.txtAdminFee.Name = "txtAdminFee";
+            this.txtAdminFee.ReadOnly = true;
             this.txtAdminFee.Size = new Size(276, 27);
             this.txtAdminFee.TabIndex = 26;
             // 
@@ -301,6 +296,7 @@
             // 
             this.txtMinAmount.Location = new Point(32, 237);
             this.txtMinAmount.Name = "txtMinAmount";
+            this.txtMinAmount.ReadOnly = true;
             this.txtMinAmount.Size = new Size(276, 27);
             this.txtMinAmount.TabIndex = 27;
             // 
@@ -308,6 +304,7 @@
             // 
             txtInterestFine.Location = new Point(31, 300);
             txtInterestFine.Name = "txtInterestFine";
+            txtInterestFine.ReadOnly = true;
             txtInterestFine.Size = new Size(276, 27);
             txtInterestFine.TabIndex = 28;
             // 
@@ -322,6 +319,7 @@
             // 
             txtDocumentKK.Location = new Point(32, 427);
             txtDocumentKK.Name = "txtDocumentKK";
+            txtDocumentKK.ReadOnly = true;
             txtDocumentKK.Size = new Size(276, 27);
             txtDocumentKK.TabIndex = 30;
             // 
@@ -336,6 +334,7 @@
             // 
             txtInterest.Location = new Point(339, 107);
             txtInterest.Name = "txtInterest";
+            txtInterest.ReadOnly = true;
             txtInterest.Size = new Size(276, 27);
             txtInterest.TabIndex = 32;
             // 
@@ -343,6 +342,7 @@
             // 
             txtTenor.Location = new Point(339, 171);
             txtTenor.Name = "txtTenor";
+            txtTenor.ReadOnly = true;
             txtTenor.Size = new Size(276, 27);
             txtTenor.TabIndex = 33;
             // 
@@ -350,6 +350,7 @@
             // 
             txtMaxAmount.Location = new Point(340, 237);
             txtMaxAmount.Name = "txtMaxAmount";
+            txtMaxAmount.ReadOnly = true;
             txtMaxAmount.Size = new Size(276, 27);
             txtMaxAmount.TabIndex = 34;
             // 
@@ -357,6 +358,7 @@
             // 
             txtDocumentKTP.Location = new Point(339, 297);
             txtDocumentKTP.Name = "txtDocumentKTP";
+            txtDocumentKTP.ReadOnly = true;
             txtDocumentKTP.Size = new Size(276, 27);
             txtDocumentKTP.TabIndex = 35;
             // 
@@ -364,6 +366,7 @@
             // 
             txtDocumentSlipGaji.Location = new Point(340, 427);
             txtDocumentSlipGaji.Name = "txtDocumentSlipGaji";
+            txtDocumentSlipGaji.ReadOnly = true;
             txtDocumentSlipGaji.Size = new Size(276, 27);
             txtDocumentSlipGaji.TabIndex = 36;
             // 
@@ -385,10 +388,19 @@
             btnNewSaving.Text = "New Saving";
             btnNewSaving.UseVisualStyleBackColor = true;
             // 
+            // cmbSavingMaster
+            // 
+            cmbSavingMaster.FormattingEnabled = true;
+            cmbSavingMaster.Location = new Point(32, 106);
+            cmbSavingMaster.Name = "cmbSavingMaster";
+            cmbSavingMaster.Size = new Size(271, 28);
+            cmbSavingMaster.TabIndex = 39;
+            // 
             // SavingPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(cmbSavingMaster);
             Controls.Add(btnNewSaving);
             Controls.Add(lblSavingID);
             Controls.Add(txtDocumentSlipGaji);
@@ -402,7 +414,6 @@
             Controls.Add(txtInterestFine);
             Controls.Add(this.txtMinAmount);
             Controls.Add(this.txtAdminFee);
-            Controls.Add(this.txtSavingType);
             Controls.Add(this.txtSavingID);
             Controls.Add(dgvSaving);
             Controls.Add(btnReload);
@@ -474,5 +485,6 @@
         private TextBox txtDocumentSlipGaji;
         private Label lblSavingID;
         private Button btnNewSaving;
+        private ComboBox cmbSavingMaster;
     }
 }
