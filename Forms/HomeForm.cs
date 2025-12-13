@@ -177,5 +177,11 @@ namespace Corvus.Forms
         {
 
         }
+
+        private void exchangeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Text = title + "<< Echange Transfer Page >>";
+            route(new ExchangePage(loggedMember));
+        }
     }
 }
