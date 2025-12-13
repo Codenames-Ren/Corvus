@@ -41,9 +41,11 @@ namespace Corvus.Forms
                 decimal amount = Convert.ToDecimal(txtAmount.Text);
                 decimal rate = Convert.ToDecimal(txtRate.Text);
                 decimal fee = Convert.ToDecimal(txtFee.Text);
+                decimal subtotal = amount * rate;
 
                 decimal total = (amount * rate) + fee;
                 txtTotal.Text = total.ToString("0.00");
+                txtSubTotal.Text = total.ToString("0.00");
             }
             catch (Exception)
             {
