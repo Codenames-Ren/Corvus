@@ -46,10 +46,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(132, 42);
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(118, 29);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(105, 20);
+            label1.Size = new Size(206, 38);
             label1.TabIndex = 0;
             label1.Text = "Exchange USD";
             // 

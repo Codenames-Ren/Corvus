@@ -16,7 +16,7 @@ namespace Corvus.Forms
     public partial class ExchangePage : UserControl
     {
         Member loggedMember;
-        public ExchangePage()
+        public ExchangePage(Member member)
         {
             loggedMember = member;
             InitializeComponent();
