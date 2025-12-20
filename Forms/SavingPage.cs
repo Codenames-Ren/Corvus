@@ -51,7 +51,9 @@ namespace Corvus.Forms
         private void SetSavingDropDown(AppDbContext db)
         {
             ProductService productService = new ProductService(db);
-            loanMasterBindingSource.DataSource = productService.SetDropDownSaving();
+            //loanMasterBindingSource.DataSource = productService.SetDropDownSaving();
+            Object obj = productService.SetDropDownSaving();
+            cmbSavingMaster.Items.Add(obj);
             cmbSavingMaster.DisplayMember = "DisplayName";
             cmbSavingMaster.ValueMember = "Id";
         }
@@ -86,7 +88,7 @@ namespace Corvus.Forms
             txtDueDate.Text = "";
             txtAmount.Text = "";
             ResetDropDown();
-            txtLoanId.Text = RandomNumberGenerator.GetString("1234567890", 6);
+            txtSavingID.Text = RandomNumberGenerator.GetString("1234567890", 6);
             lblSavingID.Text = "";
         }
 
@@ -103,17 +105,25 @@ namespace Corvus.Forms
         private async void LoadSavingGrid(AppDbContext db)
         {
             SavingService savingService = new SavingService(db);
-            loanBindingSource.DataSource = await savingService.LoadSavingGrid(loggedMember);
+            //loanBindingSource.DataSource = await savingService.LoadSavingGrid(loggedMember);
 
-            dgvSaving.Columns[0].DataPropertyName = "Id";
-            dgvSaving.Columns[1].DataPropertyName = "SavingId";
-            dgvSaving.Columns[2].DataPropertyName = "Amount";
-            dgvSaving.Columns[3].DataPropertyName = "Tenor";
+            //dgvSaving.Columns[0].DataPropertyName = "Id";
+            //dgvSaving.Columns[1].DataPropertyName = "SavingId";
+            //dgvSaving.Columns[2].DataPropertyName = "Amount";
+            //dgvSaving.Columns[3].DataPropertyName = "Tenor";
+
+            List<Saving> listSaving = await savingService.LoadSavingGrid(loggedMember.Id);
+            foreach (Saving s in listSaving)
+            {
+                dgvSaving.Rows.Add(s.Id, s.SavingId, s.Amount, s.Tenor);
+            }
+
 
             dgvSaving.Columns[0].Visible = false;
             dgvSaving.Columns[1].HeaderText = "Saving ID";
             dgvSaving.Columns[2].HeaderText = "Amount";
             dgvSaving.Columns[3].HeaderText = "Tenor";
+
         }
 
         private async void comboLoanMaster_SelectedIndexChanged(object sender, EventArgs e)
