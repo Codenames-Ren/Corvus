@@ -44,10 +44,12 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = SystemColors.ControlDark;
+            menuStrip1.ImageScalingSize = new Size(32, 32);
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, memberToolStripMenuItem, accessToolStripMenuItem, productToolStripMenuItem, approvalToolStripMenuItem, acrossToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Padding = new Padding(11, 4, 0, 4);
+            menuStrip1.Size = new Size(1486, 46);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -55,67 +57,70 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { configurationToolStripMenuItem, logoutToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(37, 20);
+            fileToolStripMenuItem.Size = new Size(71, 38);
             fileToolStripMenuItem.Text = "FIle";
             // 
             // configurationToolStripMenuItem
             // 
             configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
-            configurationToolStripMenuItem.Size = new Size(148, 22);
+            configurationToolStripMenuItem.Size = new Size(294, 44);
             configurationToolStripMenuItem.Text = "Configuration";
             // 
             // logoutToolStripMenuItem
             // 
             logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            logoutToolStripMenuItem.Size = new Size(148, 22);
+            logoutToolStripMenuItem.Size = new Size(294, 44);
             logoutToolStripMenuItem.Text = "Logout";
             // 
             // memberToolStripMenuItem
             // 
             memberToolStripMenuItem.Name = "memberToolStripMenuItem";
-            memberToolStripMenuItem.Size = new Size(64, 20);
+            memberToolStripMenuItem.Size = new Size(125, 38);
             memberToolStripMenuItem.Text = "Member";
             // 
             // accessToolStripMenuItem
             // 
             accessToolStripMenuItem.Name = "accessToolStripMenuItem";
-            accessToolStripMenuItem.Size = new Size(55, 20);
+            accessToolStripMenuItem.Size = new Size(104, 38);
             accessToolStripMenuItem.Text = "Access";
             // 
             // productToolStripMenuItem
             // 
             productToolStripMenuItem.Name = "productToolStripMenuItem";
-            productToolStripMenuItem.Size = new Size(61, 20);
+            productToolStripMenuItem.Size = new Size(116, 38);
             productToolStripMenuItem.Text = "Product";
             // 
             // approvalToolStripMenuItem
             // 
             approvalToolStripMenuItem.Name = "approvalToolStripMenuItem";
-            approvalToolStripMenuItem.Size = new Size(67, 20);
+            approvalToolStripMenuItem.Size = new Size(129, 38);
             approvalToolStripMenuItem.Text = "Approval";
             // 
             // acrossToolStripMenuItem
             // 
             acrossToolStripMenuItem.Name = "acrossToolStripMenuItem";
-            acrossToolStripMenuItem.Size = new Size(123, 20);
+            acrossToolStripMenuItem.Size = new Size(241, 38);
             acrossToolStripMenuItem.Text = "Across Cooperation";
+            acrossToolStripMenuItem.Click += acrossToolStripMenuItem_Click;
             // 
             // panelDisplay
             // 
-            panelDisplay.Location = new Point(0, 27);
+            panelDisplay.Location = new Point(0, 58);
+            panelDisplay.Margin = new Padding(6, 6, 6, 6);
             panelDisplay.Name = "panelDisplay";
-            panelDisplay.Size = new Size(800, 427);
+            panelDisplay.Size = new Size(1486, 911);
             panelDisplay.TabIndex = 1;
             // 
             // AdminForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1486, 960);
             Controls.Add(panelDisplay);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(6, 6, 6, 6);
             Name = "AdminForm";
             Text = "Corvus Cooperation";
             menuStrip1.ResumeLayout(false);

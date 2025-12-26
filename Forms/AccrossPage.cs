@@ -30,49 +30,7 @@ namespace Corvus.Forms
 
         private async Task AccrossPage_Load(object sender, EventArgs e)
         {
-            String message = "";
-            AppDbContext db = new AppDbContext();
-            ConnectorPost connectorPost = new ConnectorPost();
-            ConfigurationServices configurationService = new ConfigurationServices(db);
-            Models.Configuration? configuration = await configurationService.GetConfig();
-            if (configuration == null)
-                message = "Configuration not found!";
-
-            if (configuration != null)
-            {
-                if (configuration.terminolog3 == null || configuration.terminolog3 == "-")
-                {
-                    DialogResult result = MessageBox.Show("Not registered yet. Register Now!",
-                        "Regist Across", MessageBoxButtons.OK);
-
-                    if (result == DialogResult.OK)
-                    {
-                        CoopApiResponse? coopApiResponse = await connectorPost.CoopRegisterAsync(
-                            new CoopPayload
-                            {
-                                name = "Corvus",
-                                address = "Siberia",
-                                code = ""
-                            });
-
-                        if (coopApiResponse != null && coopApiResponse.CoopCode != null)
-                        {
-                            configuration.terminolog3 = coopApiResponse.CoopCode;
-                            configurationService.Update(configuration);
-
-                            LoadData();
-                        }
-                        else
-                        {
-                            message = "Failed to register coop to across system: " + coopApiResponse?.ResponseMessage;
-                        }
-                    }
-                }
-                else
-                {
-                    LoadData();
-                }
-            }
+            
 
         }
 
@@ -133,6 +91,53 @@ namespace Corvus.Forms
             if (message != "")
             {
                 MessageBox.Show("Failed to load data from API.\n Error: " + message);
+            }
+        }
+
+        private async void AccrossPage_Load_1(object sender, EventArgs e)
+        {
+            String message = "";
+            AppDbContext db = new AppDbContext();
+            ConnectorPost connectorPost = new ConnectorPost();
+            ConfigurationServices configurationService = new ConfigurationServices(db);
+            Models.Configuration? configuration = await configurationService.GetConfig();
+            if (configuration == null)
+                message = "Configuration not found!";
+
+            if (configuration != null)
+            {
+                if (configuration.terminolog3 == null || configuration.terminolog3 == "-")
+                {
+                    DialogResult result = MessageBox.Show("Not registered yet. Register Now!",
+                        "Regist Across", MessageBoxButtons.OK);
+
+                    if (result == DialogResult.OK)
+                    {
+                        CoopApiResponse? coopApiResponse = await connectorPost.CoopRegisterAsync(
+                            new CoopPayload
+                            {
+                                name = "Corvus",
+                                address = "Siberia",
+                                code = ""
+                            });
+
+                        if (coopApiResponse != null && coopApiResponse.CoopCode != null)
+                        {
+                            configuration.terminolog3 = coopApiResponse.CoopCode;
+                            configurationService.Update(configuration);
+
+                            LoadData();
+                        }
+                        else
+                        {
+                            message = "Failed to register coop to across system: " + coopApiResponse?.ResponseMessage;
+                        }
+                    }
+                }
+                else
+                {
+                    LoadData();
+                }
             }
         }
     }

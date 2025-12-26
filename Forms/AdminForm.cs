@@ -64,5 +64,10 @@ namespace Corvus.Forms
         {
             route(new ApprovalPage(loggedMember));
         }
+
+        private void acrossToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            route(new AccrossPage());
+        }
     }
 }
