@@ -11,16 +11,17 @@ namespace Corvus.Api.Connectors
     public class ConnectorPost
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private string _baseUrl = "http://localhost:20254/";
+        private string _baseUrl = "http://103.82.242.90:20254/";
 
         public async Task<CoopApiResponse> CoopRegisterAsync(CoopPayload data)
         {
             var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
             string json = JsonSerializer.Serialize(data, options);
 
+            var requestUrl = $"{_baseUrl.TrimEnd('/')}/coop/save";
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            HttpResponseMessage response = await _httpClient.PostAsync(_baseUrl + "coop/new", content);
+            HttpResponseMessage response = await _httpClient.PostAsync(requestUrl, content);
             response.EnsureSuccessStatusCode();
 
             string responseJson = await response.Content.ReadAsStringAsync();
@@ -65,7 +66,9 @@ namespace Corvus.Api.Connectors
 
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            HttpResponseMessage response = await _httpClient.PostAsync(_baseUrl + "transfer/new", content);
+            var requestUrl = $"{_baseUrl.TrimEnd('/')}/transfer/save";
+
+            HttpResponseMessage response = await _httpClient.PostAsync(requestUrl, content);
             response.EnsureSuccessStatusCode();
 
             string responseJson = await response.Content.ReadAsStringAsync();
