@@ -36,7 +36,7 @@ namespace Corvus.Api.Connectors
 
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            HttpResponseMessage response = await _httpClient.PostAsync(_baseUrl + "member/new", content);
+            HttpResponseMessage response = await _httpClient.PostAsync(_baseUrl + "member/save", content);
             response.EnsureSuccessStatusCode();
 
             string responseJson = await response.Content.ReadAsStringAsync();

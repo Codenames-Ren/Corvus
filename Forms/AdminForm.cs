@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Corvus.Forms;
+using Corvus.Forms.AdminMenus;
 using Corvus.Models;
 
 namespace Corvus.Forms

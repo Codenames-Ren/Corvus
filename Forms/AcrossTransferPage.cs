@@ -50,7 +50,7 @@ namespace Corvus.Forms.MemberMenus
                 Balance? balance = await balanceService.getBalance(loggedMember.MemberId);
                 if (balance != null)
                 {
-                    textBalance.Text = balance.Amount.ToString();
+                    textBalance.Text = balance.amount.ToString();
                 }
 
                 labelMyBenef.Text = "My Benef: " + loadMyBenef();
@@ -63,14 +63,14 @@ namespace Corvus.Forms.MemberMenus
             String message = "Succes";
             MemberService memberService = new MemberService(db);
             ConnectorPost connectorPost = new ConnectorPost();
-            ConfigurationService configurationService = new ConfigurationService(db);
+            ConfigurationServices configurationService = new ConfigurationServices(db);
             Configuration? configuration = await configurationService.GetConfig();
             if (configuration == null)
                 message = "Configuration not found!";
 
             if (configuration != null)
             {
-                if (configuration.terminologi3 == null || configuration.terminologi3 == "-")
+                if (configuration.terminolog3 == null || configuration.terminolog3 == "-")
                 {
                     message = "Coop not registered to Across System. Please contact administrator.";
                 }
@@ -82,12 +82,12 @@ namespace Corvus.Forms.MemberMenus
                             name = loggedMember.FullName,
                             address = loggedMember.Address,
                             code = loggedMember.MemberId,
-                            coopCode = configuration.terminologi3!
+                            coopCode = configuration.terminolog3!
                         });
 
                     if (memberApiResponse != null && memberApiResponse.ResponseCode == "00")
                     {
-                        loggedMember.ReferenceId = configuration.terminologi3!;
+                        loggedMember.ReferenceId = configuration.terminolog3!;
                         memberService.Update(loggedMember);
 
                         BalanceService balanceService = new BalanceService(db);
@@ -112,7 +112,7 @@ namespace Corvus.Forms.MemberMenus
         private async void buttonSubmit_Click(object sender, EventArgs e)
         {
             AppDbContext db = new AppDbContext();
-            ConfigurationService configService = new ConfigurationService(db);
+            ConfigurationServices configService = new ConfigurationServices(db);
             Configuration? config = await configService.GetConfig();
             ConnectorPost connectorPost = new ConnectorPost();
             Double transferAmount = Double.Parse(textAmount.Text);
@@ -134,17 +134,17 @@ namespace Corvus.Forms.MemberMenus
                 Balance? balance = await balanceService.getBalance(loggedMember.MemberId);
                 if (balance != null)
                 {
-                    balance.Amount -= Decimal.Parse(transferAmount.ToString());
-                    balance.UpdateOn = DateTime.UtcNow;
-                    balance.TransactionName = "Across Transfer";
-                    balance.Flow = "OUT";
+                    balance.amount -= Decimal.Parse(transferAmount.ToString());
+                    balance.updateOn = DateTime.UtcNow;
+                    balance.transactionName = "Across Transfer";
+                    balance.flow = "OUT";
                     balanceService.Update(balance);
 
-                    textBalance.Text = balance.Amount.ToString();
+                    textBalance.Text = balance.amount.ToString();
 
                     BalanceApiResponse? balanceApiResponse = await connectorPost.BalanceUpdateAsync(new BalancePayload
                     {
-                        amount = Double.Parse(balance.Amount.ToString()),
+                        amount = Double.Parse(balance.amount.ToString()),
                         memberCode = loggedMember.MemberId,
                     });
 

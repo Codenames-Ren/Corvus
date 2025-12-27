@@ -2,7 +2,6 @@
 using Corvus.Api.Models;
 using Corvus.Data;
 using Corvus.Forms.MemberMenus;
-using Corvus.Forms.PublicMenus;
 using Corvus.Models;
 using Corvus.Services;
 
@@ -146,7 +145,7 @@ namespace Corvus.Forms
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Text = title + " << Profile Page >>";
-            route(new ProfilePage(loggedMember));
+            //route(new ProfilePage(loggedMember));
         }
 
         private void loanToolStripMenuItem_Click(object sender, EventArgs e)
