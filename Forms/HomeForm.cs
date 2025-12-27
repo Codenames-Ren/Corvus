@@ -1,16 +1,10 @@
-﻿using Corvus.Data;
-using Corvus.Forms;
+﻿using Corvus.Api.Connectors;
+using Corvus.Api.Models;
+using Corvus.Data;
+using Corvus.Forms.MemberMenus;
+using Corvus.Forms.PublicMenus;
 using Corvus.Models;
 using Corvus.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Corvus.Forms
 {
@@ -18,7 +12,8 @@ namespace Corvus.Forms
     {
         Member loggedMember;
         string title;
-
+        private System.Threading.Timer? balanceTimer;
+        private bool isSyncRunning = false;
         public HomeForm(Member member)
         {
             loggedMember = member;
@@ -41,15 +36,15 @@ namespace Corvus.Forms
             savingToolStripMenuItem.Enabled = false;
             transferToolStripMenuItem.Enabled = false;
             exchangeToolStripMenuItem.Enabled = false;
-            InhouseToolStripMenuItem.Enabled = false;
-            acrossToolStripMenuItem.Enabled = false;
+            inhouseToolStripMenuItem.Enabled = false;
+            acrossCooperationToolStripMenuItem.Enabled = false;
 
             loanToolStripMenuItem.ToolTipText = "Disabled";
             savingToolStripMenuItem.ToolTipText = "Disabled";
             transferToolStripMenuItem.ToolTipText = "Disabled";
             exchangeToolStripMenuItem.ToolTipText = "Disabled";
-            InhouseToolStripMenuItem.ToolTipText = "Disabled";
-            acrossToolStripMenuItem.ToolTipText = "Disabled";
+            inhouseToolStripMenuItem.ToolTipText = "Disabled";
+            acrossCooperationToolStripMenuItem.ToolTipText = "Disabled";
         }
 
         public void grantAllMenu()
@@ -58,8 +53,8 @@ namespace Corvus.Forms
             savingToolStripMenuItem.Enabled = true;
             transferToolStripMenuItem.Enabled = true;
             exchangeToolStripMenuItem.Enabled = true;
-            InhouseToolStripMenuItem.Enabled = true;
-            acrossToolStripMenuItem.Enabled = true;
+            inhouseToolStripMenuItem.Enabled = true;
+            acrossCooperationToolStripMenuItem.Enabled = true;
         }
 
         public void grantAccess()
@@ -89,7 +84,7 @@ namespace Corvus.Forms
                             accessSegment = parts[1].Trim();
                     }
 
-                    foreach (ToolStripMenuItem menu in menuStrip1.Items)
+                    foreach (ToolStripMenuItem menu in menuHome.Items)
                     {
                         if (menu.Text != null && menu.Text.Contains(accessSegment))
                         {
@@ -119,16 +114,19 @@ namespace Corvus.Forms
 
         private void manualToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
             autoDisableMenu();
             grantAccess();
+            //StartBackgroundScheduler();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -148,7 +146,7 @@ namespace Corvus.Forms
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Text = title + " << Profile Page >>";
-            //route(new ProfilePage(loggedMember));
+            route(new ProfilePage(loggedMember));
         }
 
         private void loanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,30 +155,62 @@ namespace Corvus.Forms
             route(new LoanPage(loggedMember));
         }
 
-        private void HomeForm_Load_1(object sender, EventArgs e)
+        private void acrossCooperationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            autoDisableMenu();
-            grantAccess();
+            this.Text = title + " << Across Transfer Page >>";
+            route(new AcrossTransferPage(loggedMember));
         }
 
-        private void transferToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        //private void StartBackgroundScheduler()
+        //{
+        //    if (isSyncRunning) return;
 
+        //    // Timer jalan tiap 3 detik (3000 ms)
+        //    balanceTimer = new System.Threading.Timer(async _ => await SyncBalanceAsync(), null, 0, 3000);
+        //    isSyncRunning = true;
+        //}
+
+        private void StopBackgroundScheduler()
+        {
+            balanceTimer?.Dispose();
+            isSyncRunning = false;
         }
 
-        private void acrossToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void profileToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        //private async Task SyncBalanceAsync()
+        //{
+        //    try
+        //    {
+        //        AppDbContext db = new AppDbContext();
+        //        BalanceService balanceService = new BalanceService(db);
+        //        Balance? balance = await balanceService.getBalance(loggedMember.MemberId);
+        //        if (balance != null)
+        //        {
+        //            Console.WriteLine($"Syncing balance for member {loggedMember.MemberId}: {balance.Amount}");
+        //            ConnectorPost connector = new ConnectorPost();
+        //            BalanceApiResponse? response = await connector.BalanceUpdateAsync(new BalancePayload
+        //            {
+        //                amount = Double.Parse(balance.Amount.ToString()),
+        //                memberCode = loggedMember.MemberId
+        //            });
+        //            if (response != null && response.ResponseCode == "00")
+        //            {
+        //                Console.WriteLine($"Balance sync successful for member {loggedMember.MemberId}");
+        //            }
+        //            else
+        //            {
+        //                Console.WriteLine($"Balance sync failed for member {loggedMember.MemberId}: {response?.ResponseMessage}");
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine($"Error sync:" + ex.Message);
+        //    }
+        //}
 
         private void exchangeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Text = title + "<< Echange Transfer Page >>";
+            this.Text = title + " << Exchange Transfer Page >>";
             route(new ExchangePage(loggedMember));
         }
     }
