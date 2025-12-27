@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Corvus.Data;
+﻿using Corvus.Data;
 using Corvus.Models;
 using Corvus.Services;
 
-namespace Corvus.Forms
+namespace Corvus.Forms.AdminMenus
 {
     public partial class MemberPage : UserControl
     {
@@ -24,7 +14,7 @@ namespace Corvus.Forms
         private void MemberPage_Load(object sender, EventArgs e)
         {
             loadGridMember();
-            string? id = labelCardId.Text;
+            string? id = labelId.Text;
             if (id == null || id == "" || id == "...")
             {
                 buttonUpdate.Visible = false;
@@ -41,17 +31,18 @@ namespace Corvus.Forms
             dataGridViewMember.Columns[1].DataPropertyName = "MemberId";
             dataGridViewMember.Columns[2].DataPropertyName = "Fullname";
             dataGridViewMember.Columns[3].DataPropertyName = "ModDate";
+
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             AppDbContext db = new AppDbContext();
             MemberService service = new MemberService(db);
-            int memberId = int.Parse(labelMemberId.Text);
+            int memberId = int.Parse(labelId.Text);
             Member? member = service.FindById(memberId);
             if (member != null)
             {
-                if (comboBoxStatus.SelectedIndex == 0)
+                if (comboStatus.SelectedIndex == 0)
                     member.IsActive = true;
                 else
                     member.IsActive = false;
@@ -80,11 +71,12 @@ namespace Corvus.Forms
                     labelJoinDate.Text = member.JoinDate.ToString("f");
                     labelMemberId.Text = member.MemberId;
                     labelCardId.Text = member.IdCard;
-                    labelMemberId.Text = member.Id.ToString();
+                    labelId.Text = member.Id.ToString();
                     if (member.IsActive)
-                        comboBoxStatus.SelectedIndex = 0;
+                        comboStatus.SelectedIndex = 0;
                     else
-                        comboBoxStatus.SelectedIndex = 1;
+                        comboStatus.SelectedIndex = 1;
+
                     buttonUpdate.Visible = true;
                 }
                 else

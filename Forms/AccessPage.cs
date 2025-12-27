@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 using Corvus.Data;
 using Corvus.Models;
 using Corvus.Services;
 
-namespace Corvus.Forms
+namespace Corvus.Forms.AdminMenus
 {
     public partial class AccessPage : UserControl
     {
@@ -27,8 +19,8 @@ namespace Corvus.Forms
             AppDbContext db = new AppDbContext();
             MemberService memberService = new MemberService(db);
             AccessService accessService = new AccessService(db);
-            string accessList = string.Join(",", listBoxAccess.CheckedItems.Cast<string>());
-            int id = cmbMember.SelectedValue as int? ?? 0;
+            string accessList = string.Join(", ", listBoxAccess.CheckedItems.Cast<string>());
+            int id = comboMember.SelectedValue as int? ?? 0;
             Member? member = id != 0 ? memberService.FindById(id) : null;
             if (member != null)
             {
@@ -57,13 +49,13 @@ namespace Corvus.Forms
                 listBoxAccess.SetItemChecked(i, false);
             }
 
-            cmbMember.SelectedItem = null;
+            comboMember.SelectedItem = null;
             labelFullName.Text = "";
             labelAddress.Text = "";
             labelEmail.Text = "";
             labelJoinDate.Text = "";
             labelPhone.Text = "";
-            labePhoneAlt.Text = "";
+            labelPhoneAlt.Text = "";
         }
 
         private void listBoxAccess_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,8 +86,8 @@ namespace Corvus.Forms
         {
             var memberService = new MemberService(db);
             memberBindingSource.DataSource = memberService.SetDropdown();
-            cmbMember.DisplayMember = "DisplayName";
-            cmbMember.ValueMember = "Id";
+            comboMember.DisplayMember = "DisplayName";
+            comboMember.ValueMember = "Id";
         }
 
         private void loadAccessList(AppDbContext db)
@@ -108,13 +100,14 @@ namespace Corvus.Forms
             dataGridViewAccess.Columns[2].DataPropertyName = "AccessList";
             dataGridViewAccess.Columns[2].Width = 220;
             dataGridViewAccess.Columns[3].DataPropertyName = "updateOn";
+
         }
 
-        private void cmbMember_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboMember_SelectedIndexChanged(object sender, EventArgs e)
         {
             AppDbContext db = new AppDbContext();
             MemberService memberService = new MemberService(db);
-            int id = cmbMember.SelectedValue as int? ?? 0;
+            int id = comboMember.SelectedValue as int? ?? 0;
             Member? member = id != 0 ? memberService.FindById(id) : null;
             if (member != null)
             {
@@ -123,7 +116,7 @@ namespace Corvus.Forms
                 labelEmail.Text = member.Email;
                 labelJoinDate.Text = member.JoinDate.ToString("f");
                 labelPhone.Text = member.Phone;
-                labePhoneAlt.Text = member.PhoneAlt;
+                labelPhoneAlt.Text = member.PhoneAlt;
             }
             else
             {
@@ -132,7 +125,7 @@ namespace Corvus.Forms
                 labelEmail.Text = "";
                 labelJoinDate.Text = "";
                 labelPhone.Text = "";
-                labePhoneAlt.Text = "";
+                labelPhoneAlt.Text = "";
             }
         }
 
@@ -146,10 +139,10 @@ namespace Corvus.Forms
                 Access? access = accessService.findById(accessId);
                 if (access != null)
                 {
-                    cmbMember.SelectedValue = access.MemberId;
+                    comboMember.SelectedValue = access.MemberId;
                     string[] accessList = access.AccessList.Split(",");
                     for (int i = 0; i < accessList.Length; i++)
-                    {
+                    {                      
                         if (accessList[i].Trim() == "Grant All")
                             listBoxAccess.SetItemChecked(0, true);
                         if (accessList[i].Trim() == "Loan")
@@ -158,7 +151,7 @@ namespace Corvus.Forms
                             listBoxAccess.SetItemChecked(2, true);
                         if (accessList[i].Trim() == "Transfer - Inhouse")
                             listBoxAccess.SetItemChecked(3, true);
-                        if (accessList[i].Trim() == "Transfer - Across")
+                        if (accessList[i].Trim() == "Transfer - Accross")
                             listBoxAccess.SetItemChecked(4, true);
                         if (accessList[i].Trim() == "Exchange")
                             listBoxAccess.SetItemChecked(5, true);
