@@ -29,10 +29,6 @@ namespace Corvus.Forms
             this.panelDisplay.Dock = DockStyle.Fill;
             this.panelDisplay.Controls.Add(control);
         }
-        private void AdminForm_Load(object sender, EventArgs e)
-        {
-            route(new DashboardAdminPage(loggedMember));
-        }
         private void accessToolStripMenuItem_Click(object sender, EventArgs e)
         {
             route(new AccessPage(loggedMember));
@@ -48,26 +44,35 @@ namespace Corvus.Forms
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
         }
-        private void memberToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            route(new MemberPage());
-        }
-        private void productToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            route(new ProductPage());
-        }
-        private void acrossCooperationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //route(new AcrossPage());
-        }
-        private void approvalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            route(new ApprovalPage(loggedMember));
-        }
 
         private void acrossToolStripMenuItem_Click(object sender, EventArgs e)
         {
             route(new AccrossPage());
+        }
+
+        private void AdminForm_Load_1(object sender, EventArgs e)
+        {
+            route(new DashboardAdminPage(loggedMember));
+        }
+
+        private void memberToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            route(new MemberPage());
+        }
+
+        private void accessToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            route(new AccessPage(loggedMember));
+        }
+
+        private void productToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            route(new ProductPage());
+        }
+
+        private void approvalToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            route(new ApprovalPage(loggedMember));
         }
     }
 }

@@ -16,13 +16,8 @@ namespace Corvus.Forms
         private Member? loggedMember;
         public DashboardAdminPage(Member? member)
         {
-            loggedMember = member;
             InitializeComponent();
-        }
-
-        private void DashboardAdminPage_Load(object sender, EventArgs e)
-        {
-
+            loggedMember = member;
         }
     }
 }

@@ -33,8 +33,20 @@
             label3 = new Label();
             dgvCoop = new DataGridView();
             dgvMember = new DataGridView();
+            memberCode = new DataGridViewTextBoxColumn();
+            memberName = new DataGridViewTextBoxColumn();
+            belanceAmount = new DataGridViewTextBoxColumn();
             dgvTransfer = new DataGridView();
+            transferCode = new DataGridViewTextBoxColumn();
+            transferCoopCode = new DataGridViewTextBoxColumn();
+            transferCodeOrigin = new DataGridViewTextBoxColumn();
+            transferCodeBenef = new DataGridViewTextBoxColumn();
             btnRefresh = new Button();
+            transferAmount = new DataGridViewTextBoxColumn();
+            transferRemarks = new DataGridViewTextBoxColumn();
+            coopCode = new DataGridViewTextBoxColumn();
+            coopName = new DataGridViewTextBoxColumn();
+            coopAddress = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvCoop).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvMember).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvTransfer).BeginInit();
@@ -73,6 +85,7 @@
             // dgvCoop
             // 
             dgvCoop.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCoop.Columns.AddRange(new DataGridViewColumn[] { coopCode, coopName, coopAddress });
             dgvCoop.Location = new Point(37, 91);
             dgvCoop.Margin = new Padding(5);
             dgvCoop.Name = "dgvCoop";
@@ -83,6 +96,7 @@
             // dgvMember
             // 
             dgvMember.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMember.Columns.AddRange(new DataGridViewColumn[] { memberCode, memberName, belanceAmount });
             dgvMember.Location = new Point(1146, 91);
             dgvMember.Margin = new Padding(5);
             dgvMember.Name = "dgvMember";
@@ -90,15 +104,65 @@
             dgvMember.Size = new Size(1035, 413);
             dgvMember.TabIndex = 4;
             // 
+            // memberCode
+            // 
+            memberCode.HeaderText = "MEMBER CODE";
+            memberCode.MinimumWidth = 10;
+            memberCode.Name = "memberCode";
+            memberCode.Width = 200;
+            // 
+            // memberName
+            // 
+            memberName.HeaderText = "MEMBER NAME";
+            memberName.MinimumWidth = 10;
+            memberName.Name = "memberName";
+            memberName.Width = 200;
+            // 
+            // belanceAmount
+            // 
+            belanceAmount.HeaderText = "BELANCE AMOUNT";
+            belanceAmount.MinimumWidth = 10;
+            belanceAmount.Name = "belanceAmount";
+            belanceAmount.Width = 200;
+            // 
             // dgvTransfer
             // 
             dgvTransfer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTransfer.Columns.AddRange(new DataGridViewColumn[] { transferCode, transferCoopCode, transferCodeOrigin, transferCodeBenef, transferAmount, transferRemarks });
             dgvTransfer.Location = new Point(37, 627);
             dgvTransfer.Margin = new Padding(5);
             dgvTransfer.Name = "dgvTransfer";
             dgvTransfer.RowHeadersWidth = 51;
             dgvTransfer.Size = new Size(2143, 485);
             dgvTransfer.TabIndex = 5;
+            // 
+            // transferCode
+            // 
+            transferCode.HeaderText = "TRANSFER CODE";
+            transferCode.MinimumWidth = 10;
+            transferCode.Name = "transferCode";
+            transferCode.Width = 200;
+            // 
+            // transferCoopCode
+            // 
+            transferCoopCode.HeaderText = "TRANSFER COOP CODE";
+            transferCoopCode.MinimumWidth = 10;
+            transferCoopCode.Name = "transferCoopCode";
+            transferCoopCode.Width = 200;
+            // 
+            // transferCodeOrigin
+            // 
+            transferCodeOrigin.HeaderText = "TRANSFER CODE ORIGIN";
+            transferCodeOrigin.MinimumWidth = 10;
+            transferCodeOrigin.Name = "transferCodeOrigin";
+            transferCodeOrigin.Width = 200;
+            // 
+            // transferCodeBenef
+            // 
+            transferCodeBenef.HeaderText = "TRANSFER CODE BENEF";
+            transferCodeBenef.MinimumWidth = 10;
+            transferCodeBenef.Name = "transferCodeBenef";
+            transferCodeBenef.Width = 200;
             // 
             // btnRefresh
             // 
@@ -110,6 +174,41 @@
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
             btnRefresh.Click += btnRefresh_Click;
+            // 
+            // transferAmount
+            // 
+            transferAmount.HeaderText = "TRANSFER AMOUNT";
+            transferAmount.MinimumWidth = 10;
+            transferAmount.Name = "transferAmount";
+            transferAmount.Width = 200;
+            // 
+            // transferRemarks
+            // 
+            transferRemarks.HeaderText = "TRANSFER REMARKS";
+            transferRemarks.MinimumWidth = 10;
+            transferRemarks.Name = "transferRemarks";
+            transferRemarks.Width = 200;
+            // 
+            // coopCode
+            // 
+            coopCode.HeaderText = "COOP CODE";
+            coopCode.MinimumWidth = 10;
+            coopCode.Name = "coopCode";
+            coopCode.Width = 200;
+            // 
+            // coopName
+            // 
+            coopName.HeaderText = "COOP NAME";
+            coopName.MinimumWidth = 10;
+            coopName.Name = "coopName";
+            coopName.Width = 200;
+            // 
+            // coopAddress
+            // 
+            coopAddress.HeaderText = "COOP ADDRESS";
+            coopAddress.MinimumWidth = 10;
+            coopAddress.Name = "coopAddress";
+            coopAddress.Width = 200;
             // 
             // AccrossPage
             // 
@@ -142,5 +241,17 @@
         private DataGridView dgvMember;
         private DataGridView dgvTransfer;
         private Button btnRefresh;
+        private DataGridViewTextBoxColumn memberCode;
+        private DataGridViewTextBoxColumn memberName;
+        private DataGridViewTextBoxColumn belanceAmount;
+        private DataGridViewTextBoxColumn transferCode;
+        private DataGridViewTextBoxColumn transferCoopCode;
+        private DataGridViewTextBoxColumn transferCodeOrigin;
+        private DataGridViewTextBoxColumn transferCodeBenef;
+        private DataGridViewTextBoxColumn coopCode;
+        private DataGridViewTextBoxColumn coopName;
+        private DataGridViewTextBoxColumn coopAddress;
+        private DataGridViewTextBoxColumn transferAmount;
+        private DataGridViewTextBoxColumn transferRemarks;
     }
 }
