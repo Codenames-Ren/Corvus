@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-using Corvus.Forms;
+﻿using Corvus.Forms.AdminMenus;
 using Corvus.Models;
 
 namespace Corvus.Forms
@@ -20,23 +10,32 @@ namespace Corvus.Forms
         {
             loggedMember = member; // admin
             InitializeComponent();
-            this.Text = "Corvus Cooperation (Administrator: " +
+            this.Text = "Brave Hero Cooperation (Administrator: " +
                 loggedMember.MemberId + " - " + loggedMember.FullName + ")";
         }
+
         public void route(System.Windows.Forms.Control control)
         {
             this.panelDisplay.Controls.Clear();
             this.panelDisplay.Dock = DockStyle.Fill;
             this.panelDisplay.Controls.Add(control);
         }
+
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+            route(new DashboardAdminPage(loggedMember));
+        }
+
         private void accessToolStripMenuItem_Click(object sender, EventArgs e)
         {
             route(new AccessPage(loggedMember));
         }
+
         private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             route(new ConfigPage());
         }
+
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loggedMember = null;
@@ -45,32 +44,22 @@ namespace Corvus.Forms
             loginForm.ShowDialog();
         }
 
-        private void acrossToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            route(new AccrossPage());
-        }
-
-        private void AdminForm_Load_1(object sender, EventArgs e)
-        {
-            route(new DashboardAdminPage(loggedMember));
-        }
-
-        private void memberToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void memberToolStripMenuItem_Click(object sender, EventArgs e)
         {
             route(new MemberPage());
         }
 
-        private void accessToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            route(new AccessPage(loggedMember));
-        }
-
-        private void productToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void productToolStripMenuItem_Click(object sender, EventArgs e)
         {
             route(new ProductPage());
         }
 
-        private void approvalToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void acrossCooperationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            route(new AcrossPage());
+        }
+
+        private void approvalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             route(new ApprovalPage(loggedMember));
         }

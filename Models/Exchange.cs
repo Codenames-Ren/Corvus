@@ -1,5 +1,4 @@
-﻿using Corvus.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,10 +14,11 @@ namespace Corvus.Models
         public Member Member { get; set; } = null!;
         public string ExchangeId { get; set; }
         public decimal Amount { get; set; }
-        public decimal AmountExchanged { get; set; }
+        public decimal AmountExchanged {  get; set; }
         public decimal Fee { get; set; }
         public decimal Rate { get; set; }
         public DateTime ExchangeDate { get; set; }
         public decimal TotalAmountExchanged { get; set; }
+
     }
 }

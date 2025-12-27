@@ -22,10 +22,10 @@ namespace Corvus.Services
                 balance = new Balance
                 {
                     MemberCode = memberCode,
-                    amount = 0,
-                    updateOn = DateTime.UtcNow,
-                    transactionName = "-",
-                    flow = "-"
+                    Amount = 0,
+                    UpdateOn = DateTime.UtcNow,
+                    TransactionName = "-",
+                    Flow = "-"
                 };
                 _db.Balances.Add(balance);
                 _db.SaveChanges();
@@ -37,10 +37,10 @@ namespace Corvus.Services
             return await _db.Balances.FirstOrDefaultAsync(b => b.MemberCode == memberCode);
         }
 
-        public async void Update(Balance balance)
+        public void Update(Balance balance)
         {
             _db.Balances.Update(balance);
-            await _db.SaveChangesAsync();
+            _db.SaveChanges();
         }
     }
 }

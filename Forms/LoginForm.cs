@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Corvus.Data;
+﻿using Corvus.Data;
 using Corvus.Models;
 using Corvus.Services;
 
@@ -15,7 +6,7 @@ namespace Corvus.Forms
 {
     public partial class LoginForm : Form
     {
-        public Member? LoggedInUser {  get; set; }
+        public Member? LoggedInUser { get; private set; }
         public LoginForm()
         {
             InitializeComponent();
@@ -23,44 +14,33 @@ namespace Corvus.Forms
 
         public void setSuccessAlert(String message)
         {
-            lblValidate.Text = message;
-            lblValidate.Visible = true;
+            labelSuccess.Text = message;
+            labelSuccess.Visible = true;
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private async void buttonSubmit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void btnSubmit_Click(object sender, EventArgs e)
-        {
-            lblValidate.Visible = false;
+            labelSuccess.Visible = false;
             using var db = new AppDbContext();
             var auth = new AuthService(db);
-            var user = await auth.LoginAsync(txtUsername.Text, txtPassword.Text);
+            var user = await auth.LoginAsync(textUsername.Text, textPassword.Text);
             if (user != null)
             {
                 LoggedInUser = user;
-                if (LoggedInUser.Level == "admin")
+                if (LoggedInUser.level == "admin")
                 {
-                    this.Hide();
+                    this.Hide(); // this = form login
                     AdminForm form = new AdminForm(LoggedInUser);
                     form.ShowDialog();
-                }
-                else
+                } else
                 {
                     AccessService accessService = new AccessService(db);
                     Access access = await accessService.GetAccess(user.Id);
                     if (access == null)
                     {
-                        lblValidate.Text = "Access Is Not Granted By Admin!";
-                        lblValidate.ForeColor = Color.Red;
-                        lblValidate.Visible = true;
+                        labelSuccess.Text = "Access Is Not Granted By Admin!";
+                        labelSuccess.ForeColor = Color.Red;
+                        labelSuccess.Visible = true;
                     }
                     else
                     {
@@ -68,28 +48,27 @@ namespace Corvus.Forms
                         HomeForm form = new HomeForm(LoggedInUser);
                         form.ShowDialog();
                     }
-                }
+                }       
             }
             else
             {
-                lblValidate.Text = "Invalid Credentials";
-                lblValidate.ForeColor = Color.Red;
-                lblValidate.Visible = true;
+                labelSuccess.Text = "Invalid Credentials";
+                labelSuccess.ForeColor = Color.Red;
+                labelSuccess.Visible = true;
             }
-
         }
 
-        private void linkLblForgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            ForgotPassword form = new ForgotPassword();
+            ForgotPasswordForm form = new ForgotPasswordForm();
             form.ShowDialog();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void buttonRegistration_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RegisterForm form = new RegisterForm();
+            RegistrationForm form = new RegistrationForm();
             form.ShowDialog();
         }
     }

@@ -20,7 +20,7 @@ namespace Corvus.Migrations
                 .HasAnnotation("ProductVersion", "9.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            NpgsqlModelBuilderExtensions.UseSerialColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("Corvus.Models.Access", b =>
                 {
@@ -55,27 +55,32 @@ namespace Corvus.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("Id"));
 
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("Flow")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("MemberCode")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<decimal>("amount")
-                        .HasColumnType("numeric");
-
-                    b.Property<string>("flow")
+                    b.Property<string>("TransactionName")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("transactionName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("updateOn")
+                    b.Property<DateTime>("UpdateOn")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
                     b.ToTable("Balances");
+                });
+
+            modelBuilder.Entity("Corvus.Models.BalanceHistory", b =>
+                {
+                    b.ToTable("BalanceHistories");
                 });
 
             modelBuilder.Entity("Corvus.Models.Configuration", b =>
@@ -89,17 +94,17 @@ namespace Corvus.Migrations
                     b.Property<decimal>("exchangeRate")
                         .HasColumnType("numeric");
 
-                    b.Property<string>("terminolog3")
-                        .IsRequired()
-                        .HasMaxLength(4000)
-                        .HasColumnType("character varying(4000)");
-
                     b.Property<string>("terminologi1")
                         .IsRequired()
                         .HasMaxLength(4000)
                         .HasColumnType("character varying(4000)");
 
                     b.Property<string>("terminologi2")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("character varying(4000)");
+
+                    b.Property<string>("terminologi3")
                         .IsRequired()
                         .HasMaxLength(4000)
                         .HasColumnType("character varying(4000)");
@@ -175,8 +180,9 @@ namespace Corvus.Migrations
                     b.Property<int>("OriginId")
                         .HasColumnType("integer");
 
-                    b.Property<decimal>("Remarks")
-                        .HasColumnType("numeric");
+                    b.Property<string>("Remarks")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("TransferDate")
                         .HasColumnType("timestamp with time zone");
@@ -202,9 +208,6 @@ namespace Corvus.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("numeric");
-
                     b.Property<int>("LoanId")
                         .HasColumnType("integer");
 
@@ -213,6 +216,9 @@ namespace Corvus.Migrations
 
                     b.Property<string>("ProofPath")
                         .HasColumnType("text");
+
+                    b.Property<decimal>("amount")
+                        .HasColumnType("numeric");
 
                     b.HasKey("Id");
 
@@ -368,10 +374,6 @@ namespace Corvus.Migrations
                     b.Property<DateTime>("JoinDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("Level")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("MemberId")
                         .IsRequired()
                         .HasColumnType("text");
@@ -403,6 +405,10 @@ namespace Corvus.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
+
+                    b.Property<string>("level")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("quest1")
                         .IsRequired()

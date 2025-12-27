@@ -13,7 +13,7 @@ namespace Corvus.Models
         [Required] public int MemberId { get; set; }
         public Member Member { get; set; } = null!;
         [Required] public int SavingId { get; set; }
-        public DateTime SavingDate { get; set; }
+        public DateTime SavingDate {  get; set; }
         public decimal Amount { get; set; }
         public decimal Fine { get; set; }
         public decimal WithdrawAmount { get; set; }
@@ -34,5 +34,6 @@ namespace Corvus.Models
         public string? KtpPath { get; set; }
         public string? KkPath { get; set; }
         public string? SlipGajiPath { get; set; }
+
     }
 }

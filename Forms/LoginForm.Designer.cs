@@ -28,139 +28,128 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             pictureBox1 = new PictureBox();
-            LoginLabel = new Label();
-            label2 = new Label();
+            buttonRegistration = new Button();
+            linkForgotPassword = new LinkLabel();
+            buttonSubmit = new Button();
             label3 = new Label();
-            txtUsername = new TextBox();
-            txtPassword = new TextBox();
-            btnSubmit = new Button();
-            linkLblForgot = new LinkLabel();
-            btnRegister = new Button();
-            lblValidate = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            textPassword = new TextBox();
+            textUsername = new TextBox();
+            labelSuccess = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(-8, -5);
+            pictureBox1.Location = new Point(1, 1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(427, 477);
-            pictureBox1.TabIndex = 0;
+            pictureBox1.Size = new Size(301, 359);
+            pictureBox1.TabIndex = 17;
             pictureBox1.TabStop = false;
             // 
-            // LoginLabel
+            // buttonRegistration
             // 
-            LoginLabel.AutoSize = true;
-            LoginLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LoginLabel.ForeColor = SystemColors.ButtonHighlight;
-            LoginLabel.Location = new Point(547, 62);
-            LoginLabel.Name = "LoginLabel";
-            LoginLabel.Size = new Size(188, 38);
-            LoginLabel.TabIndex = 1;
-            LoginLabel.Text = "Corvus Login";
+            buttonRegistration.Location = new Point(330, 314);
+            buttonRegistration.Name = "buttonRegistration";
+            buttonRegistration.Size = new Size(90, 23);
+            buttonRegistration.TabIndex = 16;
+            buttonRegistration.Text = "Registration";
+            buttonRegistration.UseVisualStyleBackColor = true;
+            buttonRegistration.Click += buttonRegistration_Click;
             // 
-            // label2
+            // linkForgotPassword
             // 
-            label2.AutoSize = true;
-            label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(458, 131);
-            label2.Name = "label2";
-            label2.Size = new Size(75, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Username";
+            linkForgotPassword.AutoSize = true;
+            linkForgotPassword.Location = new Point(498, 232);
+            linkForgotPassword.Name = "linkForgotPassword";
+            linkForgotPassword.Size = new Size(95, 15);
+            linkForgotPassword.TabIndex = 15;
+            linkForgotPassword.TabStop = true;
+            linkForgotPassword.Text = "Forgot Password";
+            linkForgotPassword.VisitedLinkColor = Color.Blue;
+            linkForgotPassword.LinkClicked += linkForgotPassword_LinkClicked;
+            // 
+            // buttonSubmit
+            // 
+            buttonSubmit.Location = new Point(330, 228);
+            buttonSubmit.Name = "buttonSubmit";
+            buttonSubmit.Size = new Size(75, 23);
+            buttonSubmit.TabIndex = 14;
+            buttonSubmit.Text = "Submit";
+            buttonSubmit.UseVisualStyleBackColor = true;
+            buttonSubmit.Click += buttonSubmit_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(458, 215);
+            label3.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            label3.Location = new Point(417, 65);
             label3.Name = "label3";
-            label3.Size = new Size(70, 20);
-            label3.TabIndex = 3;
-            label3.Text = "Password";
-            label3.Click += label3_Click;
+            label3.Size = new Size(80, 30);
+            label3.TabIndex = 13;
+            label3.Text = "LOGIN";
             // 
-            // txtUsername
+            // label2
             // 
-            txtUsername.Location = new Point(458, 168);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(344, 27);
-            txtUsername.TabIndex = 4;
-            txtUsername.TextChanged += txtUsername_TextChanged;
+            label2.AutoSize = true;
+            label2.Location = new Point(333, 170);
+            label2.Name = "label2";
+            label2.Size = new Size(57, 15);
+            label2.TabIndex = 12;
+            label2.Text = "Password";
             // 
-            // txtPassword
+            // label1
             // 
-            txtPassword.Location = new Point(458, 258);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(344, 27);
-            txtPassword.TabIndex = 5;
+            label1.AutoSize = true;
+            label1.Location = new Point(333, 115);
+            label1.Name = "label1";
+            label1.Size = new Size(60, 15);
+            label1.TabIndex = 11;
+            label1.Text = "Username";
             // 
-            // btnSubmit
+            // textPassword
             // 
-            btnSubmit.BackColor = Color.DimGray;
-            btnSubmit.ForeColor = SystemColors.ButtonHighlight;
-            btnSubmit.Location = new Point(483, 307);
-            btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(107, 43);
-            btnSubmit.TabIndex = 6;
-            btnSubmit.Text = "Submit";
-            btnSubmit.UseVisualStyleBackColor = false;
-            btnSubmit.Click += btnSubmit_Click;
+            textPassword.Location = new Point(330, 188);
+            textPassword.Name = "textPassword";
+            textPassword.Size = new Size(265, 23);
+            textPassword.TabIndex = 10;
             // 
-            // linkLblForgot
+            // textUsername
             // 
-            linkLblForgot.ActiveLinkColor = Color.WhiteSmoke;
-            linkLblForgot.AutoSize = true;
-            linkLblForgot.LinkColor = Color.White;
-            linkLblForgot.Location = new Point(591, 381);
-            linkLblForgot.Name = "linkLblForgot";
-            linkLblForgot.Size = new Size(118, 20);
-            linkLblForgot.TabIndex = 8;
-            linkLblForgot.TabStop = true;
-            linkLblForgot.Text = "Forgot Password";
-            linkLblForgot.LinkClicked += linkLblForgot_LinkClicked;
+            textUsername.Location = new Point(330, 133);
+            textUsername.Name = "textUsername";
+            textUsername.Size = new Size(265, 23);
+            textUsername.TabIndex = 9;
             // 
-            // btnRegister
+            // labelSuccess
             // 
-            btnRegister.BackColor = Color.DimGray;
-            btnRegister.ForeColor = SystemColors.ButtonHighlight;
-            btnRegister.Location = new Point(678, 307);
-            btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(107, 43);
-            btnRegister.TabIndex = 9;
-            btnRegister.Text = "Register";
-            btnRegister.UseVisualStyleBackColor = false;
-            btnRegister.Click += btnRegister_Click;
-            // 
-            // lblValidate
-            // 
-            lblValidate.AutoSize = true;
-            lblValidate.Location = new Point(453, 27);
-            lblValidate.Name = "lblValidate";
-            lblValidate.Size = new Size(18, 20);
-            lblValidate.TabIndex = 10;
-            lblValidate.Text = "...";
+            labelSuccess.AutoSize = true;
+            labelSuccess.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelSuccess.ForeColor = Color.Green;
+            labelSuccess.Location = new Point(330, 22);
+            labelSuccess.Name = "labelSuccess";
+            labelSuccess.Size = new Size(22, 21);
+            labelSuccess.TabIndex = 18;
+            labelSuccess.Text = "...";
+            labelSuccess.Visible = false;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DimGray;
-            ClientSize = new Size(837, 474);
-            Controls.Add(lblValidate);
-            Controls.Add(btnRegister);
-            Controls.Add(linkLblForgot);
-            Controls.Add(btnSubmit);
-            Controls.Add(txtPassword);
-            Controls.Add(txtUsername);
+            ClientSize = new Size(632, 361);
+            Controls.Add(labelSuccess);
+            Controls.Add(pictureBox1);
+            Controls.Add(buttonRegistration);
+            Controls.Add(linkForgotPassword);
+            Controls.Add(buttonSubmit);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(LoginLabel);
-            Controls.Add(pictureBox1);
+            Controls.Add(label1);
+            Controls.Add(textPassword);
+            Controls.Add(textUsername);
             Name = "LoginForm";
             Text = "LoginForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -171,14 +160,14 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Label LoginLabel;
-        private Label label2;
+        private Button buttonRegistration;
+        private LinkLabel linkForgotPassword;
+        private Button buttonSubmit;
         private Label label3;
-        private TextBox txtUsername;
-        private TextBox txtPassword;
-        private Button btnSubmit;
-        private LinkLabel linkLblForgot;
-        private Button btnRegister;
-        private Label lblValidate;
+        private Label label2;
+        private Label label1;
+        private TextBox textPassword;
+        private TextBox textUsername;
+        private Label labelSuccess;
     }
 }
