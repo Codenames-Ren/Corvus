@@ -155,7 +155,7 @@ namespace Corvus.Forms.AdminMenus
                                 { 
                                     CoopApiResponse? coopApiResponse = await connectorPost.CoopRegistrationAsync(new CoopPayload
                                     {
-                                        name = "Brave Hero Cooperation",
+                                        name = "Corvus",
                                         address = "Jakarta",
                                         code = ""
                                     });

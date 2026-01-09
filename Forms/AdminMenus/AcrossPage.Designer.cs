@@ -59,35 +59,45 @@
             dgvCoop.AllowUserToDeleteRows = false;
             dgvCoop.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCoop.Columns.AddRange(new DataGridViewColumn[] { CoopCode, CoopName, CoopAddress, IsDelete });
-            dgvCoop.Location = new Point(23, 37);
+            dgvCoop.Location = new Point(43, 79);
+            dgvCoop.Margin = new Padding(6, 6, 6, 6);
             dgvCoop.Name = "dgvCoop";
             dgvCoop.ReadOnly = true;
-            dgvCoop.Size = new Size(467, 192);
+            dgvCoop.RowHeadersWidth = 82;
+            dgvCoop.Size = new Size(867, 410);
             dgvCoop.TabIndex = 0;
             // 
             // CoopCode
             // 
             CoopCode.HeaderText = "Code";
+            CoopCode.MinimumWidth = 10;
             CoopCode.Name = "CoopCode";
             CoopCode.ReadOnly = true;
+            CoopCode.Width = 200;
             // 
             // CoopName
             // 
             CoopName.HeaderText = "Name";
+            CoopName.MinimumWidth = 10;
             CoopName.Name = "CoopName";
             CoopName.ReadOnly = true;
+            CoopName.Width = 200;
             // 
             // CoopAddress
             // 
             CoopAddress.HeaderText = "Address";
+            CoopAddress.MinimumWidth = 10;
             CoopAddress.Name = "CoopAddress";
             CoopAddress.ReadOnly = true;
+            CoopAddress.Width = 200;
             // 
             // IsDelete
             // 
             IsDelete.HeaderText = "Telah dihapus?";
+            IsDelete.MinimumWidth = 10;
             IsDelete.Name = "IsDelete";
             IsDelete.ReadOnly = true;
+            IsDelete.Width = 200;
             // 
             // dgvBalance
             // 
@@ -95,29 +105,37 @@
             dgvBalance.AllowUserToDeleteRows = false;
             dgvBalance.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBalance.Columns.AddRange(new DataGridViewColumn[] { MemberCode, MemberName, Balance });
-            dgvBalance.Location = new Point(496, 37);
+            dgvBalance.Location = new Point(921, 79);
+            dgvBalance.Margin = new Padding(6, 6, 6, 6);
             dgvBalance.Name = "dgvBalance";
             dgvBalance.ReadOnly = true;
-            dgvBalance.Size = new Size(376, 192);
+            dgvBalance.RowHeadersWidth = 82;
+            dgvBalance.Size = new Size(698, 410);
             dgvBalance.TabIndex = 1;
             // 
             // MemberCode
             // 
             MemberCode.HeaderText = "Code";
+            MemberCode.MinimumWidth = 10;
             MemberCode.Name = "MemberCode";
             MemberCode.ReadOnly = true;
+            MemberCode.Width = 200;
             // 
             // MemberName
             // 
             MemberName.HeaderText = "Name";
+            MemberName.MinimumWidth = 10;
             MemberName.Name = "MemberName";
             MemberName.ReadOnly = true;
+            MemberName.Width = 200;
             // 
             // Balance
             // 
             Balance.HeaderText = "Balance";
+            Balance.MinimumWidth = 10;
             Balance.Name = "Balance";
             Balance.ReadOnly = true;
+            Balance.Width = 200;
             // 
             // dgvTransfer
             // 
@@ -125,80 +143,98 @@
             dgvTransfer.AllowUserToDeleteRows = false;
             dgvTransfer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTransfer.Columns.AddRange(new DataGridViewColumn[] { TransferCode, Origin, Benef, Amount, TransferOn, Remarks });
-            dgvTransfer.Location = new Point(23, 261);
+            dgvTransfer.Location = new Point(43, 557);
+            dgvTransfer.Margin = new Padding(6, 6, 6, 6);
             dgvTransfer.Name = "dgvTransfer";
             dgvTransfer.ReadOnly = true;
-            dgvTransfer.Size = new Size(849, 186);
+            dgvTransfer.RowHeadersWidth = 82;
+            dgvTransfer.Size = new Size(1577, 397);
             dgvTransfer.TabIndex = 2;
             // 
             // TransferCode
             // 
             TransferCode.HeaderText = "Transfer Code";
+            TransferCode.MinimumWidth = 10;
             TransferCode.Name = "TransferCode";
             TransferCode.ReadOnly = true;
+            TransferCode.Width = 200;
             // 
             // Origin
             // 
             Origin.HeaderText = "Origin";
+            Origin.MinimumWidth = 10;
             Origin.Name = "Origin";
             Origin.ReadOnly = true;
+            Origin.Width = 200;
             // 
             // Benef
             // 
             Benef.HeaderText = "Benef";
+            Benef.MinimumWidth = 10;
             Benef.Name = "Benef";
             Benef.ReadOnly = true;
+            Benef.Width = 200;
             // 
             // Amount
             // 
             Amount.HeaderText = "Amount";
+            Amount.MinimumWidth = 10;
             Amount.Name = "Amount";
             Amount.ReadOnly = true;
+            Amount.Width = 200;
             // 
             // TransferOn
             // 
             TransferOn.HeaderText = "Transfer On";
+            TransferOn.MinimumWidth = 10;
             TransferOn.Name = "TransferOn";
             TransferOn.ReadOnly = true;
+            TransferOn.Width = 200;
             // 
             // Remarks
             // 
             Remarks.HeaderText = "Remarks";
+            Remarks.MinimumWidth = 10;
             Remarks.Name = "Remarks";
             Remarks.ReadOnly = true;
+            Remarks.Width = 200;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(25, 19);
+            label1.Location = new Point(46, 41);
+            label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(36, 15);
+            label1.Size = new Size(71, 32);
             label1.TabIndex = 3;
             label1.Text = "Coop";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(496, 19);
+            label2.Location = new Point(921, 41);
+            label2.Margin = new Padding(6, 0, 6, 0);
             label2.Name = "label2";
-            label2.Size = new Size(52, 15);
+            label2.Size = new Size(105, 32);
             label2.TabIndex = 4;
             label2.Text = "Member";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(23, 243);
+            label3.Location = new Point(43, 518);
+            label3.Margin = new Padding(6, 0, 6, 0);
             label3.Name = "label3";
-            label3.Size = new Size(48, 15);
+            label3.Size = new Size(98, 32);
             label3.TabIndex = 5;
             label3.Text = "Transfer";
             // 
             // buttonRefresh
             // 
-            buttonRefresh.Location = new Point(439, 453);
+            buttonRefresh.Location = new Point(815, 966);
+            buttonRefresh.Margin = new Padding(6, 6, 6, 6);
             buttonRefresh.Name = "buttonRefresh";
-            buttonRefresh.Size = new Size(75, 23);
+            buttonRefresh.Size = new Size(139, 49);
             buttonRefresh.TabIndex = 6;
             buttonRefresh.Text = "Refresh";
             buttonRefresh.UseVisualStyleBackColor = true;
@@ -206,7 +242,7 @@
             // 
             // AcrossPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(buttonRefresh);
             Controls.Add(label3);
@@ -215,8 +251,9 @@
             Controls.Add(dgvTransfer);
             Controls.Add(dgvBalance);
             Controls.Add(dgvCoop);
+            Margin = new Padding(6, 6, 6, 6);
             Name = "AcrossPage";
-            Size = new Size(921, 492);
+            Size = new Size(1710, 1050);
             Load += AcrossPage_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCoop).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvBalance).EndInit();

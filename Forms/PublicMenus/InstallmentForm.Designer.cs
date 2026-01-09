@@ -50,9 +50,10 @@
             // 
             // buttonSubmit
             // 
-            buttonSubmit.Location = new Point(312, 240);
+            buttonSubmit.Location = new Point(579, 512);
+            buttonSubmit.Margin = new Padding(6, 6, 6, 6);
             buttonSubmit.Name = "buttonSubmit";
-            buttonSubmit.Size = new Size(91, 23);
+            buttonSubmit.Size = new Size(169, 49);
             buttonSubmit.TabIndex = 30;
             buttonSubmit.Text = "Submit";
             buttonSubmit.UseVisualStyleBackColor = true;
@@ -66,10 +67,12 @@
             dataGridViewInstallment.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewInstallment.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, amountDataGridViewTextBoxColumn, paymentDateDataGridViewTextBoxColumn, proofPathDataGridViewTextBoxColumn });
             dataGridViewInstallment.DataSource = installmentBindingSource;
-            dataGridViewInstallment.Location = new Point(2, 2);
+            dataGridViewInstallment.Location = new Point(4, 4);
+            dataGridViewInstallment.Margin = new Padding(6, 6, 6, 6);
             dataGridViewInstallment.Name = "dataGridViewInstallment";
             dataGridViewInstallment.ReadOnly = true;
-            dataGridViewInstallment.Size = new Size(291, 390);
+            dataGridViewInstallment.RowHeadersWidth = 82;
+            dataGridViewInstallment.Size = new Size(540, 832);
             dataGridViewInstallment.TabIndex = 29;
             dataGridViewInstallment.CellClick += dataGridViewInstallment_CellClick;
             // 
@@ -77,29 +80,37 @@
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.MinimumWidth = 10;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Width = 200;
             // 
             // amountDataGridViewTextBoxColumn
             // 
             amountDataGridViewTextBoxColumn.DataPropertyName = "amount";
             amountDataGridViewTextBoxColumn.HeaderText = "amount";
+            amountDataGridViewTextBoxColumn.MinimumWidth = 10;
             amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
             amountDataGridViewTextBoxColumn.ReadOnly = true;
+            amountDataGridViewTextBoxColumn.Width = 200;
             // 
             // paymentDateDataGridViewTextBoxColumn
             // 
             paymentDateDataGridViewTextBoxColumn.DataPropertyName = "PaymentDate";
             paymentDateDataGridViewTextBoxColumn.HeaderText = "PaymentDate";
+            paymentDateDataGridViewTextBoxColumn.MinimumWidth = 10;
             paymentDateDataGridViewTextBoxColumn.Name = "paymentDateDataGridViewTextBoxColumn";
             paymentDateDataGridViewTextBoxColumn.ReadOnly = true;
+            paymentDateDataGridViewTextBoxColumn.Width = 200;
             // 
             // proofPathDataGridViewTextBoxColumn
             // 
             proofPathDataGridViewTextBoxColumn.DataPropertyName = "ProofPath";
             proofPathDataGridViewTextBoxColumn.HeaderText = "ProofPath";
+            proofPathDataGridViewTextBoxColumn.MinimumWidth = 10;
             proofPathDataGridViewTextBoxColumn.Name = "proofPathDataGridViewTextBoxColumn";
             proofPathDataGridViewTextBoxColumn.ReadOnly = true;
+            proofPathDataGridViewTextBoxColumn.Width = 200;
             // 
             // installmentBindingSource
             // 
@@ -107,59 +118,66 @@
             // 
             // textLoanId
             // 
-            textLoanId.Location = new Point(312, 27);
+            textLoanId.Location = new Point(579, 58);
+            textLoanId.Margin = new Padding(6, 6, 6, 6);
             textLoanId.Name = "textLoanId";
             textLoanId.ReadOnly = true;
-            textLoanId.Size = new Size(212, 23);
+            textLoanId.Size = new Size(390, 39);
             textLoanId.TabIndex = 31;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(315, 9);
+            label1.Location = new Point(585, 19);
+            label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(47, 15);
+            label1.Size = new Size(95, 32);
             label1.TabIndex = 32;
             label1.Text = "Loan ID";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(315, 64);
+            label2.Location = new Point(585, 137);
+            label2.Margin = new Padding(6, 0, 6, 0);
             label2.Name = "label2";
-            label2.Size = new Size(51, 15);
+            label2.Size = new Size(100, 32);
             label2.TabIndex = 34;
             label2.Text = "Amount";
             // 
             // textAmount
             // 
-            textAmount.Location = new Point(312, 82);
+            textAmount.Location = new Point(579, 175);
+            textAmount.Margin = new Padding(6, 6, 6, 6);
             textAmount.Name = "textAmount";
-            textAmount.Size = new Size(212, 23);
+            textAmount.Size = new Size(390, 39);
             textAmount.TabIndex = 33;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(315, 123);
+            label3.Location = new Point(585, 262);
+            label3.Margin = new Padding(6, 0, 6, 0);
             label3.Name = "label3";
-            label3.Size = new Size(46, 15);
+            label3.Size = new Size(92, 32);
             label3.TabIndex = 36;
             label3.Text = "Receipt";
             // 
             // textPath
             // 
-            textPath.Location = new Point(312, 141);
+            textPath.Location = new Point(579, 301);
+            textPath.Margin = new Padding(6, 6, 6, 6);
             textPath.Name = "textPath";
             textPath.ReadOnly = true;
-            textPath.Size = new Size(212, 23);
+            textPath.Size = new Size(390, 39);
             textPath.TabIndex = 35;
             // 
             // buttonNew
             // 
-            buttonNew.Location = new Point(412, 240);
+            buttonNew.Location = new Point(765, 512);
+            buttonNew.Margin = new Padding(6, 6, 6, 6);
             buttonNew.Name = "buttonNew";
-            buttonNew.Size = new Size(112, 23);
+            buttonNew.Size = new Size(208, 49);
             buttonNew.TabIndex = 37;
             buttonNew.Text = "New Installment";
             buttonNew.UseVisualStyleBackColor = true;
@@ -167,9 +185,10 @@
             // 
             // buttonReceipt
             // 
-            buttonReceipt.Location = new Point(451, 170);
+            buttonReceipt.Location = new Point(838, 363);
+            buttonReceipt.Margin = new Padding(6, 6, 6, 6);
             buttonReceipt.Name = "buttonReceipt";
-            buttonReceipt.Size = new Size(73, 23);
+            buttonReceipt.Size = new Size(136, 49);
             buttonReceipt.TabIndex = 38;
             buttonReceipt.Text = "Browse";
             buttonReceipt.UseVisualStyleBackColor = true;
@@ -177,9 +196,9 @@
             // 
             // InstallmentForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(541, 406);
+            ClientSize = new Size(1005, 866);
             ControlBox = false;
             Controls.Add(buttonReceipt);
             Controls.Add(buttonNew);
@@ -191,6 +210,7 @@
             Controls.Add(textLoanId);
             Controls.Add(buttonSubmit);
             Controls.Add(dataGridViewInstallment);
+            Margin = new Padding(6, 6, 6, 6);
             Name = "InstallmentForm";
             Text = "Installment";
             Load += InstallmentForm_Load;

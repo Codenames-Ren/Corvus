@@ -10,7 +10,7 @@ namespace Corvus.Forms
         {
             loggedMember = member; // admin
             InitializeComponent();
-            this.Text = "Brave Hero Cooperation (Administrator: " +
+            this.Text = "Corvus (Administrator: " +
                 loggedMember.MemberId + " - " + loggedMember.FullName + ")";
         }
 
