@@ -50,13 +50,15 @@
             // 
             // buttonSubmit
             // 
+            buttonSubmit.BackColor = Color.Purple;
+            buttonSubmit.ForeColor = Color.White;
             buttonSubmit.Location = new Point(579, 512);
-            buttonSubmit.Margin = new Padding(6, 6, 6, 6);
+            buttonSubmit.Margin = new Padding(6);
             buttonSubmit.Name = "buttonSubmit";
             buttonSubmit.Size = new Size(169, 49);
             buttonSubmit.TabIndex = 30;
             buttonSubmit.Text = "Submit";
-            buttonSubmit.UseVisualStyleBackColor = true;
+            buttonSubmit.UseVisualStyleBackColor = false;
             buttonSubmit.Click += buttonSubmit_Click;
             // 
             // dataGridViewInstallment
@@ -68,7 +70,7 @@
             dataGridViewInstallment.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, amountDataGridViewTextBoxColumn, paymentDateDataGridViewTextBoxColumn, proofPathDataGridViewTextBoxColumn });
             dataGridViewInstallment.DataSource = installmentBindingSource;
             dataGridViewInstallment.Location = new Point(4, 4);
-            dataGridViewInstallment.Margin = new Padding(6, 6, 6, 6);
+            dataGridViewInstallment.Margin = new Padding(6);
             dataGridViewInstallment.Name = "dataGridViewInstallment";
             dataGridViewInstallment.ReadOnly = true;
             dataGridViewInstallment.RowHeadersWidth = 82;
@@ -119,7 +121,7 @@
             // textLoanId
             // 
             textLoanId.Location = new Point(579, 58);
-            textLoanId.Margin = new Padding(6, 6, 6, 6);
+            textLoanId.Margin = new Padding(6);
             textLoanId.Name = "textLoanId";
             textLoanId.ReadOnly = true;
             textLoanId.Size = new Size(390, 39);
@@ -128,6 +130,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = Color.White;
             label1.Location = new Point(585, 19);
             label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
@@ -138,6 +141,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = Color.White;
             label2.Location = new Point(585, 137);
             label2.Margin = new Padding(6, 0, 6, 0);
             label2.Name = "label2";
@@ -148,7 +152,7 @@
             // textAmount
             // 
             textAmount.Location = new Point(579, 175);
-            textAmount.Margin = new Padding(6, 6, 6, 6);
+            textAmount.Margin = new Padding(6);
             textAmount.Name = "textAmount";
             textAmount.Size = new Size(390, 39);
             textAmount.TabIndex = 33;
@@ -156,6 +160,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = Color.White;
             label3.Location = new Point(585, 262);
             label3.Margin = new Padding(6, 0, 6, 0);
             label3.Name = "label3";
@@ -166,7 +171,7 @@
             // textPath
             // 
             textPath.Location = new Point(579, 301);
-            textPath.Margin = new Padding(6, 6, 6, 6);
+            textPath.Margin = new Padding(6);
             textPath.Name = "textPath";
             textPath.ReadOnly = true;
             textPath.Size = new Size(390, 39);
@@ -174,30 +179,35 @@
             // 
             // buttonNew
             // 
+            buttonNew.BackColor = Color.Purple;
+            buttonNew.ForeColor = Color.White;
             buttonNew.Location = new Point(765, 512);
-            buttonNew.Margin = new Padding(6, 6, 6, 6);
+            buttonNew.Margin = new Padding(6);
             buttonNew.Name = "buttonNew";
             buttonNew.Size = new Size(208, 49);
             buttonNew.TabIndex = 37;
             buttonNew.Text = "New Installment";
-            buttonNew.UseVisualStyleBackColor = true;
+            buttonNew.UseVisualStyleBackColor = false;
             buttonNew.Click += buttonNew_Click;
             // 
             // buttonReceipt
             // 
+            buttonReceipt.BackColor = Color.Purple;
+            buttonReceipt.ForeColor = Color.White;
             buttonReceipt.Location = new Point(838, 363);
-            buttonReceipt.Margin = new Padding(6, 6, 6, 6);
+            buttonReceipt.Margin = new Padding(6);
             buttonReceipt.Name = "buttonReceipt";
             buttonReceipt.Size = new Size(136, 49);
             buttonReceipt.TabIndex = 38;
             buttonReceipt.Text = "Browse";
-            buttonReceipt.UseVisualStyleBackColor = true;
+            buttonReceipt.UseVisualStyleBackColor = false;
             buttonReceipt.Click += buttonReceipt_Click;
             // 
             // InstallmentForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(64, 0, 64);
             ClientSize = new Size(1005, 866);
             ControlBox = false;
             Controls.Add(buttonReceipt);
@@ -210,7 +220,7 @@
             Controls.Add(textLoanId);
             Controls.Add(buttonSubmit);
             Controls.Add(dataGridViewInstallment);
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(6);
             Name = "InstallmentForm";
             Text = "Installment";
             Load += InstallmentForm_Load;

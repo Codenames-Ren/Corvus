@@ -60,7 +60,7 @@
             dgvCoop.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCoop.Columns.AddRange(new DataGridViewColumn[] { CoopCode, CoopName, CoopAddress, IsDelete });
             dgvCoop.Location = new Point(43, 79);
-            dgvCoop.Margin = new Padding(6, 6, 6, 6);
+            dgvCoop.Margin = new Padding(6);
             dgvCoop.Name = "dgvCoop";
             dgvCoop.ReadOnly = true;
             dgvCoop.RowHeadersWidth = 82;
@@ -106,7 +106,7 @@
             dgvBalance.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBalance.Columns.AddRange(new DataGridViewColumn[] { MemberCode, MemberName, Balance });
             dgvBalance.Location = new Point(921, 79);
-            dgvBalance.Margin = new Padding(6, 6, 6, 6);
+            dgvBalance.Margin = new Padding(6);
             dgvBalance.Name = "dgvBalance";
             dgvBalance.ReadOnly = true;
             dgvBalance.RowHeadersWidth = 82;
@@ -144,7 +144,7 @@
             dgvTransfer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTransfer.Columns.AddRange(new DataGridViewColumn[] { TransferCode, Origin, Benef, Amount, TransferOn, Remarks });
             dgvTransfer.Location = new Point(43, 557);
-            dgvTransfer.Margin = new Padding(6, 6, 6, 6);
+            dgvTransfer.Margin = new Padding(6);
             dgvTransfer.Name = "dgvTransfer";
             dgvTransfer.ReadOnly = true;
             dgvTransfer.RowHeadersWidth = 82;
@@ -202,6 +202,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = Color.White;
             label1.Location = new Point(46, 41);
             label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
@@ -212,6 +213,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = Color.White;
             label2.Location = new Point(921, 41);
             label2.Margin = new Padding(6, 0, 6, 0);
             label2.Name = "label2";
@@ -222,6 +224,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = Color.White;
             label3.Location = new Point(43, 518);
             label3.Margin = new Padding(6, 0, 6, 0);
             label3.Name = "label3";
@@ -232,7 +235,7 @@
             // buttonRefresh
             // 
             buttonRefresh.Location = new Point(815, 966);
-            buttonRefresh.Margin = new Padding(6, 6, 6, 6);
+            buttonRefresh.Margin = new Padding(6);
             buttonRefresh.Name = "buttonRefresh";
             buttonRefresh.Size = new Size(139, 49);
             buttonRefresh.TabIndex = 6;
@@ -244,6 +247,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(64, 0, 64);
             Controls.Add(buttonRefresh);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -251,7 +255,8 @@
             Controls.Add(dgvTransfer);
             Controls.Add(dgvBalance);
             Controls.Add(dgvCoop);
-            Margin = new Padding(6, 6, 6, 6);
+            ForeColor = Color.White;
+            Margin = new Padding(6);
             Name = "AcrossPage";
             Size = new Size(1710, 1050);
             Load += AcrossPage_Load;

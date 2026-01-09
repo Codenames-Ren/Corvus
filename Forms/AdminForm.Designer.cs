@@ -43,6 +43,7 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = Color.Purple;
             menuStrip1.ImageScalingSize = new Size(32, 32);
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, memberToolStripMenuItem, accessToolStripMenuItem, productToolStripMenuItem, approvalToolStripMenuItem, acrossCooperationToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
@@ -54,27 +55,34 @@
             // 
             // fileToolStripMenuItem
             // 
+            fileToolStripMenuItem.BackColor = Color.Purple;
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { configurationToolStripMenuItem, logoutToolStripMenuItem });
+            fileToolStripMenuItem.ForeColor = Color.White;
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(71, 36);
             fileToolStripMenuItem.Text = "File";
             // 
             // configurationToolStripMenuItem
             // 
+            configurationToolStripMenuItem.BackColor = Color.Purple;
+            configurationToolStripMenuItem.ForeColor = Color.White;
             configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
-            configurationToolStripMenuItem.Size = new Size(294, 44);
+            configurationToolStripMenuItem.Size = new Size(359, 44);
             configurationToolStripMenuItem.Text = "Configuration";
             configurationToolStripMenuItem.Click += configurationToolStripMenuItem_Click;
             // 
             // logoutToolStripMenuItem
             // 
+            logoutToolStripMenuItem.BackColor = Color.Purple;
+            logoutToolStripMenuItem.ForeColor = Color.White;
             logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            logoutToolStripMenuItem.Size = new Size(294, 44);
+            logoutToolStripMenuItem.Size = new Size(359, 44);
             logoutToolStripMenuItem.Text = "Logout";
             logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
             // memberToolStripMenuItem
             // 
+            memberToolStripMenuItem.ForeColor = Color.White;
             memberToolStripMenuItem.Name = "memberToolStripMenuItem";
             memberToolStripMenuItem.Size = new Size(125, 36);
             memberToolStripMenuItem.Text = "Member";
@@ -82,6 +90,7 @@
             // 
             // accessToolStripMenuItem
             // 
+            accessToolStripMenuItem.ForeColor = Color.White;
             accessToolStripMenuItem.Name = "accessToolStripMenuItem";
             accessToolStripMenuItem.Size = new Size(104, 36);
             accessToolStripMenuItem.Text = "Access";
@@ -89,6 +98,7 @@
             // 
             // productToolStripMenuItem
             // 
+            productToolStripMenuItem.ForeColor = Color.White;
             productToolStripMenuItem.Name = "productToolStripMenuItem";
             productToolStripMenuItem.Size = new Size(116, 36);
             productToolStripMenuItem.Text = "Product";
@@ -96,6 +106,7 @@
             // 
             // approvalToolStripMenuItem
             // 
+            approvalToolStripMenuItem.ForeColor = Color.White;
             approvalToolStripMenuItem.Name = "approvalToolStripMenuItem";
             approvalToolStripMenuItem.Size = new Size(129, 36);
             approvalToolStripMenuItem.Text = "Approval";
@@ -103,6 +114,7 @@
             // 
             // acrossCooperationToolStripMenuItem
             // 
+            acrossCooperationToolStripMenuItem.ForeColor = Color.White;
             acrossCooperationToolStripMenuItem.Name = "acrossCooperationToolStripMenuItem";
             acrossCooperationToolStripMenuItem.Size = new Size(241, 36);
             acrossCooperationToolStripMenuItem.Text = "Across Cooperation";
@@ -110,8 +122,9 @@
             // 
             // panelDisplay
             // 
+            panelDisplay.BackColor = Color.FromArgb(64, 0, 64);
             panelDisplay.Location = new Point(0, 58);
-            panelDisplay.Margin = new Padding(6, 6, 6, 6);
+            panelDisplay.Margin = new Padding(6);
             panelDisplay.Name = "panelDisplay";
             panelDisplay.Size = new Size(1486, 905);
             panelDisplay.TabIndex = 1;
@@ -124,7 +137,7 @@
             Controls.Add(panelDisplay);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(6);
             Name = "AdminForm";
             Text = "Corvus";
             Load += AdminForm_Load;

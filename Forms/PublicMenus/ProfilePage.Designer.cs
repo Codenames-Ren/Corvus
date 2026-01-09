@@ -52,27 +52,32 @@
             // labelMemberId
             // 
             labelMemberId.AutoSize = true;
-            labelMemberId.Location = new Point(123, 24);
+            labelMemberId.Location = new Point(228, 51);
+            labelMemberId.Margin = new Padding(6, 0, 6, 0);
             labelMemberId.Name = "labelMemberId";
-            labelMemberId.Size = new Size(16, 15);
+            labelMemberId.Size = new Size(29, 32);
             labelMemberId.TabIndex = 43;
             labelMemberId.Text = "...";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(24, 24);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(45, 51);
+            label11.Margin = new Padding(6, 0, 6, 0);
             label11.Name = "label11";
-            label11.Size = new Size(65, 15);
+            label11.Size = new Size(132, 32);
             label11.TabIndex = 42;
             label11.Text = "Member Id";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(24, 50);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(45, 107);
+            label9.Margin = new Padding(6, 0, 6, 0);
             label9.Name = "label9";
-            label9.Size = new Size(76, 15);
+            label9.Size = new Size(151, 32);
             label9.TabIndex = 40;
             label9.Text = "Card Id (KTP)";
             label9.Click += label9_Click;
@@ -80,141 +85,167 @@
             // labelJoinDate
             // 
             labelJoinDate.AutoSize = true;
-            labelJoinDate.Location = new Point(123, 108);
+            labelJoinDate.Location = new Point(228, 230);
+            labelJoinDate.Margin = new Padding(6, 0, 6, 0);
             labelJoinDate.Name = "labelJoinDate";
-            labelJoinDate.Size = new Size(16, 15);
+            labelJoinDate.Size = new Size(29, 32);
             labelJoinDate.TabIndex = 35;
             labelJoinDate.Text = "...";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(24, 223);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(45, 476);
+            label7.Margin = new Padding(6, 0, 6, 0);
             label7.Name = "label7";
-            label7.Size = new Size(49, 15);
+            label7.Size = new Size(98, 32);
             label7.TabIndex = 33;
             label7.Text = "Address";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(24, 194);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(45, 414);
+            label8.Margin = new Padding(6, 0, 6, 0);
             label8.Name = "label8";
-            label8.Size = new Size(59, 15);
+            label8.Size = new Size(118, 32);
             label8.TabIndex = 32;
             label8.Text = "Phone Alt";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(24, 165);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(45, 352);
+            label5.Margin = new Padding(6, 0, 6, 0);
             label5.Name = "label5";
-            label5.Size = new Size(41, 15);
+            label5.Size = new Size(82, 32);
             label5.TabIndex = 31;
             label5.Text = "Phone";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(24, 136);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(45, 290);
+            label6.Margin = new Padding(6, 0, 6, 0);
             label6.Name = "label6";
-            label6.Size = new Size(36, 15);
+            label6.Size = new Size(71, 32);
             label6.TabIndex = 30;
             label6.Text = "Email";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(24, 110);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(45, 235);
+            label4.Margin = new Padding(6, 0, 6, 0);
             label4.Name = "label4";
-            label4.Size = new Size(55, 15);
+            label4.Size = new Size(114, 32);
             label4.TabIndex = 29;
             label4.Text = "Join Date";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(24, 79);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(45, 169);
+            label3.Margin = new Padding(6, 0, 6, 0);
             label3.Name = "label3";
-            label3.Size = new Size(61, 15);
+            label3.Size = new Size(123, 32);
             label3.TabIndex = 28;
             label3.Text = "Full Name";
             // 
             // listBoxAccess
             // 
+            listBoxAccess.BackColor = Color.FromArgb(64, 0, 64);
             listBoxAccess.Enabled = false;
+            listBoxAccess.ForeColor = Color.White;
             listBoxAccess.FormattingEnabled = true;
             listBoxAccess.Items.AddRange(new object[] { "Grant All", "Loan", "Saving", "Transfer - Inhouse", "Transfer - Accross", "Exchange" });
-            listBoxAccess.Location = new Point(310, 40);
+            listBoxAccess.Location = new Point(576, 85);
+            listBoxAccess.Margin = new Padding(6, 6, 6, 6);
             listBoxAccess.Name = "listBoxAccess";
-            listBoxAccess.Size = new Size(153, 130);
+            listBoxAccess.Size = new Size(281, 256);
             listBoxAccess.TabIndex = 46;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(313, 22);
+            label10.Location = new Point(581, 47);
+            label10.Margin = new Padding(6, 0, 6, 0);
             label10.Name = "label10";
-            label10.Size = new Size(63, 15);
+            label10.Size = new Size(125, 32);
             label10.TabIndex = 47;
             label10.Text = "My Access";
             // 
             // textCardId
             // 
-            textCardId.Location = new Point(123, 47);
+            textCardId.Location = new Point(228, 100);
+            textCardId.Margin = new Padding(6, 6, 6, 6);
             textCardId.Name = "textCardId";
-            textCardId.Size = new Size(170, 23);
+            textCardId.Size = new Size(312, 39);
             textCardId.TabIndex = 48;
             // 
             // textFullname
             // 
-            textFullname.Location = new Point(123, 76);
+            textFullname.Location = new Point(228, 162);
+            textFullname.Margin = new Padding(6, 6, 6, 6);
             textFullname.Name = "textFullname";
-            textFullname.Size = new Size(170, 23);
+            textFullname.Size = new Size(312, 39);
             textFullname.TabIndex = 49;
             // 
             // textEmail
             // 
-            textEmail.Location = new Point(123, 133);
+            textEmail.Location = new Point(228, 284);
+            textEmail.Margin = new Padding(6, 6, 6, 6);
             textEmail.Name = "textEmail";
-            textEmail.Size = new Size(170, 23);
+            textEmail.Size = new Size(312, 39);
             textEmail.TabIndex = 50;
             // 
             // textPhone
             // 
-            textPhone.Location = new Point(123, 162);
+            textPhone.Location = new Point(228, 346);
+            textPhone.Margin = new Padding(6, 6, 6, 6);
             textPhone.Name = "textPhone";
-            textPhone.Size = new Size(170, 23);
+            textPhone.Size = new Size(312, 39);
             textPhone.TabIndex = 51;
             // 
             // textPhoneAlt
             // 
-            textPhoneAlt.Location = new Point(123, 191);
+            textPhoneAlt.Location = new Point(228, 407);
+            textPhoneAlt.Margin = new Padding(6, 6, 6, 6);
             textPhoneAlt.Name = "textPhoneAlt";
-            textPhoneAlt.Size = new Size(170, 23);
+            textPhoneAlt.Size = new Size(312, 39);
             textPhoneAlt.TabIndex = 52;
             // 
             // textAddress
             // 
-            textAddress.Location = new Point(123, 220);
+            textAddress.Location = new Point(228, 469);
+            textAddress.Margin = new Padding(6, 6, 6, 6);
             textAddress.Multiline = true;
             textAddress.Name = "textAddress";
-            textAddress.Size = new Size(170, 75);
+            textAddress.Size = new Size(312, 155);
             textAddress.TabIndex = 53;
             // 
             // buttonSubmit
             // 
-            buttonSubmit.Location = new Point(310, 186);
+            buttonSubmit.BackColor = Color.Purple;
+            buttonSubmit.Location = new Point(576, 397);
+            buttonSubmit.Margin = new Padding(6, 6, 6, 6);
             buttonSubmit.Name = "buttonSubmit";
-            buttonSubmit.Size = new Size(153, 23);
+            buttonSubmit.Size = new Size(284, 49);
             buttonSubmit.TabIndex = 54;
             buttonSubmit.Text = "Update";
-            buttonSubmit.UseVisualStyleBackColor = true;
+            buttonSubmit.UseVisualStyleBackColor = false;
             // 
             // ProfilePage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(64, 0, 64);
             Controls.Add(buttonSubmit);
             Controls.Add(textAddress);
             Controls.Add(textPhoneAlt);
@@ -234,8 +265,10 @@
             Controls.Add(label6);
             Controls.Add(label4);
             Controls.Add(label3);
+            ForeColor = Color.White;
+            Margin = new Padding(6, 6, 6, 6);
             Name = "ProfilePage";
-            Size = new Size(475, 314);
+            Size = new Size(882, 670);
             Load += ProfilePage_Load;
             ResumeLayout(false);
             PerformLayout();

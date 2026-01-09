@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Success";
+            SuspendLayout();
+            // 
+            // SuccessAlert
+            // 
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Purple;
+            ClientSize = new Size(800, 450);
+            ForeColor = Color.White;
+            Name = "SuccessAlert";
+            Text = "Success";
+            ResumeLayout(false);
         }
 
         #endregion

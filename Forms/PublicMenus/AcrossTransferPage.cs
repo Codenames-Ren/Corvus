@@ -28,6 +28,10 @@ namespace Corvus.Forms.MemberMenus
         {
             SetupOutgoingGrid();
             SetupIncomingGrid();
+
+            FixGridColor(dgvOutgoing);
+            FixGridColor(dgvIncoming);
+
             String dateUtc = DateTime.UtcNow.ToString();
             textTransRef.Text = dateUtc.Substring(0, 10);
 
@@ -161,7 +165,8 @@ namespace Corvus.Forms.MemberMenus
                         MessageBox.Show("Transfer Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-            } else
+            }
+            else
             {
                 MessageBox.Show("Transfer Failed\n" + response.ResponseMessage, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -336,6 +341,40 @@ namespace Corvus.Forms.MemberMenus
             textAmount.Text = "";
             textBenef.Text = "";
             textRemarks.Text = "";
+        }
+
+        private void FixGridColor(DataGridView dgv)
+        {
+            // ===== ROW / CELL =====
+            dgv.BackgroundColor = Color.RebeccaPurple;
+
+            dgv.DefaultCellStyle.BackColor = Color.Purple;
+            dgv.DefaultCellStyle.ForeColor = Color.White;
+
+            dgv.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(180, 150, 220);   // ungu muda pas di select
+            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            dgv.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(155, 89, 182);    // ungu beda tipis
+
+            // ===== HEADER =====
+            dgv.EnableHeadersVisualStyles = false;
+
+            dgv.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.RebeccaPurple;                    // ungu header
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;                     // teks putih
+            dgv.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 9, FontStyle.Bold);
+
+            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+        }
+
+
+        private void dgvOutgoing_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

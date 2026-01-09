@@ -84,9 +84,10 @@
             // 
             // textAmount
             // 
-            textAmount.Location = new Point(243, 42);
+            textAmount.Location = new Point(451, 90);
+            textAmount.Margin = new Padding(6, 6, 6, 6);
             textAmount.Name = "textAmount";
-            textAmount.Size = new Size(204, 23);
+            textAmount.Size = new Size(375, 39);
             textAmount.TabIndex = 0;
             // 
             // installmentBindingSource
@@ -101,10 +102,12 @@
             dataGridViewLoan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewLoan.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn1, LoanId, outstanding, tenorLeft, Fine });
             dataGridViewLoan.DataSource = loanBindingSource;
-            dataGridViewLoan.Location = new Point(464, 42);
+            dataGridViewLoan.Location = new Point(862, 90);
+            dataGridViewLoan.Margin = new Padding(6, 6, 6, 6);
             dataGridViewLoan.Name = "dataGridViewLoan";
             dataGridViewLoan.ReadOnly = true;
-            dataGridViewLoan.Size = new Size(491, 337);
+            dataGridViewLoan.RowHeadersWidth = 82;
+            dataGridViewLoan.Size = new Size(912, 719);
             dataGridViewLoan.TabIndex = 2;
             dataGridViewLoan.CellClick += dataGridViewLoan_CellClick;
             // 
@@ -112,36 +115,46 @@
             // 
             idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
             idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            idDataGridViewTextBoxColumn1.MinimumWidth = 10;
             idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
             idDataGridViewTextBoxColumn1.ReadOnly = true;
+            idDataGridViewTextBoxColumn1.Width = 200;
             // 
             // LoanId
             // 
             LoanId.DataPropertyName = "LoanId";
             LoanId.HeaderText = "LoanId";
+            LoanId.MinimumWidth = 10;
             LoanId.Name = "LoanId";
             LoanId.ReadOnly = true;
+            LoanId.Width = 200;
             // 
             // outstanding
             // 
             outstanding.DataPropertyName = "outstanding";
             outstanding.HeaderText = "outstanding";
+            outstanding.MinimumWidth = 10;
             outstanding.Name = "outstanding";
             outstanding.ReadOnly = true;
+            outstanding.Width = 200;
             // 
             // tenorLeft
             // 
             tenorLeft.DataPropertyName = "tenorLeft";
             tenorLeft.HeaderText = "tenorLeft";
+            tenorLeft.MinimumWidth = 10;
             tenorLeft.Name = "tenorLeft";
             tenorLeft.ReadOnly = true;
+            tenorLeft.Width = 200;
             // 
             // Fine
             // 
             Fine.DataPropertyName = "Fine";
             Fine.HeaderText = "Fine";
+            Fine.MinimumWidth = 10;
             Fine.Name = "Fine";
             Fine.ReadOnly = true;
+            Fine.Width = 200;
             // 
             // loanBindingSource
             // 
@@ -154,18 +167,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(246, 24);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(457, 51);
+            label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(51, 15);
+            label1.Size = new Size(100, 32);
             label1.TabIndex = 3;
             label1.Text = "Amount";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(26, 74);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(48, 158);
+            label2.Margin = new Padding(6, 0, 6, 0);
             label2.Name = "label2";
-            label2.Size = new Size(60, 15);
+            label2.Size = new Size(123, 32);
             label2.TabIndex = 4;
             label2.Text = "Loan Type";
             // 
@@ -173,222 +190,271 @@
             // 
             comboLoanMaster.DataSource = loanMasterBindingSource;
             comboLoanMaster.FormattingEnabled = true;
-            comboLoanMaster.Location = new Point(23, 92);
+            comboLoanMaster.Location = new Point(43, 196);
+            comboLoanMaster.Margin = new Padding(6, 6, 6, 6);
             comboLoanMaster.Name = "comboLoanMaster";
-            comboLoanMaster.Size = new Size(204, 23);
+            comboLoanMaster.Size = new Size(375, 40);
             comboLoanMaster.TabIndex = 5;
             comboLoanMaster.SelectedIndexChanged += comboLoanMaster_SelectedIndexChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(246, 118);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(457, 252);
+            label3.Margin = new Padding(6, 0, 6, 0);
             label3.Name = "label3";
-            label3.Size = new Size(36, 15);
+            label3.Size = new Size(74, 32);
             label3.TabIndex = 7;
             label3.Text = "Tenor";
             // 
             // textTenor
             // 
-            textTenor.Location = new Point(243, 136);
+            textTenor.Location = new Point(451, 290);
+            textTenor.Margin = new Padding(6, 6, 6, 6);
             textTenor.Name = "textTenor";
             textTenor.ReadOnly = true;
-            textTenor.Size = new Size(204, 23);
+            textTenor.Size = new Size(375, 39);
             textTenor.TabIndex = 6;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(246, 74);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(457, 158);
+            label4.Margin = new Padding(6, 0, 6, 0);
             label4.Name = "label4";
-            label4.Size = new Size(46, 15);
+            label4.Size = new Size(94, 32);
             label4.TabIndex = 9;
             label4.Text = "Interest";
             // 
             // textInterest
             // 
-            textInterest.Location = new Point(243, 92);
+            textInterest.Location = new Point(451, 196);
+            textInterest.Margin = new Padding(6, 6, 6, 6);
             textInterest.Name = "textInterest";
             textInterest.ReadOnly = true;
-            textInterest.Size = new Size(204, 23);
+            textInterest.Size = new Size(375, 39);
             textInterest.TabIndex = 8;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(26, 207);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(48, 442);
+            label5.Margin = new Padding(6, 0, 6, 0);
             label5.Name = "label5";
-            label5.Size = new Size(71, 15);
+            label5.Size = new Size(146, 32);
             label5.TabIndex = 11;
             label5.Text = "Interest Fine";
             // 
             // textInterestFine
             // 
-            textInterestFine.Location = new Point(23, 225);
+            textInterestFine.Location = new Point(43, 480);
+            textInterestFine.Margin = new Padding(6, 6, 6, 6);
             textInterestFine.Name = "textInterestFine";
             textInterestFine.ReadOnly = true;
-            textInterestFine.Size = new Size(204, 23);
+            textInterestFine.Size = new Size(375, 39);
             textInterestFine.TabIndex = 10;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(26, 252);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(48, 538);
+            label6.Margin = new Padding(6, 0, 6, 0);
             label6.Name = "label6";
-            label6.Size = new Size(55, 15);
+            label6.Size = new Size(115, 32);
             label6.TabIndex = 13;
             label6.Text = "Due Date";
             // 
             // textDueDate
             // 
-            textDueDate.Location = new Point(23, 270);
+            textDueDate.Location = new Point(43, 576);
+            textDueDate.Margin = new Padding(6, 6, 6, 6);
             textDueDate.Name = "textDueDate";
-            textDueDate.Size = new Size(204, 23);
+            textDueDate.Size = new Size(375, 39);
             textDueDate.TabIndex = 12;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(246, 300);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(457, 640);
+            label7.Margin = new Padding(6, 0, 6, 0);
             label7.Name = "label7";
-            label7.Size = new Size(108, 15);
+            label7.Size = new Size(219, 32);
             label7.TabIndex = 19;
             label7.Text = "Document Slip Gaji";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(246, 207);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(457, 442);
+            label8.Margin = new Padding(6, 0, 6, 0);
             label8.Name = "label8";
-            label8.Size = new Size(86, 15);
+            label8.Size = new Size(173, 32);
             label8.TabIndex = 17;
             label8.Text = "Document KTP";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(26, 300);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(48, 640);
+            label9.Margin = new Padding(6, 0, 6, 0);
             label9.Name = "label9";
-            label9.Size = new Size(80, 15);
+            label9.Size = new Size(161, 32);
             label9.TabIndex = 15;
             label9.Text = "Document KK";
             // 
             // textDocSlip
             // 
-            textDocSlip.Location = new Point(243, 318);
+            textDocSlip.Location = new Point(451, 678);
+            textDocSlip.Margin = new Padding(6, 6, 6, 6);
             textDocSlip.Name = "textDocSlip";
             textDocSlip.ReadOnly = true;
-            textDocSlip.Size = new Size(204, 23);
+            textDocSlip.Size = new Size(375, 39);
             textDocSlip.TabIndex = 22;
             // 
             // textDocKtp
             // 
-            textDocKtp.Location = new Point(243, 225);
+            textDocKtp.Location = new Point(451, 480);
+            textDocKtp.Margin = new Padding(6, 6, 6, 6);
             textDocKtp.Name = "textDocKtp";
             textDocKtp.ReadOnly = true;
-            textDocKtp.Size = new Size(204, 23);
+            textDocKtp.Size = new Size(375, 39);
             textDocKtp.TabIndex = 21;
             // 
             // textDocKK
             // 
-            textDocKK.Location = new Point(23, 318);
+            textDocKK.Location = new Point(43, 678);
+            textDocKK.Margin = new Padding(6, 6, 6, 6);
             textDocKK.Name = "textDocKK";
             textDocKK.ReadOnly = true;
-            textDocKK.Size = new Size(204, 23);
+            textDocKK.Size = new Size(375, 39);
             textDocKK.TabIndex = 20;
             // 
             // buttonFileKTP
             // 
-            buttonFileKTP.Location = new Point(243, 254);
+            buttonFileKTP.BackColor = Color.Purple;
+            buttonFileKTP.ForeColor = Color.White;
+            buttonFileKTP.Location = new Point(451, 542);
+            buttonFileKTP.Margin = new Padding(6, 6, 6, 6);
             buttonFileKTP.Name = "buttonFileKTP";
-            buttonFileKTP.Size = new Size(74, 23);
+            buttonFileKTP.Size = new Size(137, 49);
             buttonFileKTP.TabIndex = 23;
             buttonFileKTP.Text = "Browse";
-            buttonFileKTP.UseVisualStyleBackColor = true;
+            buttonFileKTP.UseVisualStyleBackColor = false;
             buttonFileKTP.Click += buttonFileKTP_Click;
             // 
             // buttonFileKK
             // 
-            buttonFileKK.Location = new Point(23, 347);
+            buttonFileKK.BackColor = Color.Purple;
+            buttonFileKK.ForeColor = Color.White;
+            buttonFileKK.Location = new Point(43, 740);
+            buttonFileKK.Margin = new Padding(6, 6, 6, 6);
             buttonFileKK.Name = "buttonFileKK";
-            buttonFileKK.Size = new Size(74, 23);
+            buttonFileKK.Size = new Size(137, 49);
             buttonFileKK.TabIndex = 24;
             buttonFileKK.Text = "Browse";
-            buttonFileKK.UseVisualStyleBackColor = true;
+            buttonFileKK.UseVisualStyleBackColor = false;
             buttonFileKK.Click += buttonFileKK_Click;
             // 
             // buttonFileSlip
             // 
-            buttonFileSlip.Location = new Point(243, 347);
+            buttonFileSlip.BackColor = Color.Purple;
+            buttonFileSlip.ForeColor = Color.White;
+            buttonFileSlip.Location = new Point(451, 740);
+            buttonFileSlip.Margin = new Padding(6, 6, 6, 6);
             buttonFileSlip.Name = "buttonFileSlip";
-            buttonFileSlip.Size = new Size(74, 23);
+            buttonFileSlip.Size = new Size(137, 49);
             buttonFileSlip.TabIndex = 25;
             buttonFileSlip.Text = "Browse";
-            buttonFileSlip.UseVisualStyleBackColor = true;
+            buttonFileSlip.UseVisualStyleBackColor = false;
             buttonFileSlip.Click += buttonFileSlip_Click;
             // 
             // buttonApply
             // 
-            buttonApply.Location = new Point(92, 400);
+            buttonApply.BackColor = Color.Purple;
+            buttonApply.ForeColor = Color.White;
+            buttonApply.Location = new Point(171, 853);
+            buttonApply.Margin = new Padding(6, 6, 6, 6);
             buttonApply.Name = "buttonApply";
-            buttonApply.Size = new Size(135, 23);
+            buttonApply.Size = new Size(251, 49);
             buttonApply.TabIndex = 26;
             buttonApply.Text = "Apply Loan";
-            buttonApply.UseVisualStyleBackColor = true;
+            buttonApply.UseVisualStyleBackColor = false;
             buttonApply.Click += buttonApply_Click;
             // 
             // buttonNewLoan
             // 
-            buttonNewLoan.Location = new Point(243, 400);
+            buttonNewLoan.BackColor = Color.Purple;
+            buttonNewLoan.ForeColor = Color.White;
+            buttonNewLoan.Location = new Point(451, 853);
+            buttonNewLoan.Margin = new Padding(6, 6, 6, 6);
             buttonNewLoan.Name = "buttonNewLoan";
-            buttonNewLoan.Size = new Size(125, 23);
+            buttonNewLoan.Size = new Size(232, 49);
             buttonNewLoan.TabIndex = 27;
             buttonNewLoan.Text = "New Loan";
-            buttonNewLoan.UseVisualStyleBackColor = true;
+            buttonNewLoan.UseVisualStyleBackColor = false;
             buttonNewLoan.Click += buttonNewLoan_Click;
             // 
             // buttonShowDocKtp
             // 
-            buttonShowDocKtp.Location = new Point(373, 254);
+            buttonShowDocKtp.BackColor = Color.Purple;
+            buttonShowDocKtp.ForeColor = Color.White;
+            buttonShowDocKtp.Location = new Point(693, 542);
+            buttonShowDocKtp.Margin = new Padding(6, 6, 6, 6);
             buttonShowDocKtp.Name = "buttonShowDocKtp";
-            buttonShowDocKtp.Size = new Size(74, 23);
+            buttonShowDocKtp.Size = new Size(137, 49);
             buttonShowDocKtp.TabIndex = 29;
             buttonShowDocKtp.Text = "Show";
-            buttonShowDocKtp.UseVisualStyleBackColor = true;
+            buttonShowDocKtp.UseVisualStyleBackColor = false;
             // 
             // buttonShowDocKk
             // 
-            buttonShowDocKk.Location = new Point(153, 347);
+            buttonShowDocKk.BackColor = Color.Purple;
+            buttonShowDocKk.ForeColor = Color.White;
+            buttonShowDocKk.Location = new Point(284, 740);
+            buttonShowDocKk.Margin = new Padding(6, 6, 6, 6);
             buttonShowDocKk.Name = "buttonShowDocKk";
-            buttonShowDocKk.Size = new Size(74, 23);
+            buttonShowDocKk.Size = new Size(137, 49);
             buttonShowDocKk.TabIndex = 30;
             buttonShowDocKk.Text = "Show";
-            buttonShowDocKk.UseVisualStyleBackColor = true;
+            buttonShowDocKk.UseVisualStyleBackColor = false;
             // 
             // buttonShowDocSlip
             // 
-            buttonShowDocSlip.Location = new Point(373, 347);
+            buttonShowDocSlip.BackColor = Color.Purple;
+            buttonShowDocSlip.ForeColor = Color.White;
+            buttonShowDocSlip.Location = new Point(693, 740);
+            buttonShowDocSlip.Margin = new Padding(6, 6, 6, 6);
             buttonShowDocSlip.Name = "buttonShowDocSlip";
-            buttonShowDocSlip.Size = new Size(74, 23);
+            buttonShowDocSlip.Size = new Size(137, 49);
             buttonShowDocSlip.TabIndex = 31;
             buttonShowDocSlip.Text = "Show";
-            buttonShowDocSlip.UseVisualStyleBackColor = true;
+            buttonShowDocSlip.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(467, 24);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(867, 51);
+            label10.Margin = new Padding(6, 0, 6, 0);
             label10.Name = "label10";
-            label10.Size = new Size(33, 15);
+            label10.Size = new Size(65, 32);
             label10.TabIndex = 32;
             label10.Text = "Loan";
             // 
             // labelId
             // 
             labelId.AutoSize = true;
-            labelId.Location = new Point(153, 25);
+            labelId.Location = new Point(284, 53);
+            labelId.Margin = new Padding(6, 0, 6, 0);
             labelId.Name = "labelId";
-            labelId.Size = new Size(16, 15);
+            labelId.Size = new Size(29, 32);
             labelId.TabIndex = 34;
             labelId.Text = "...";
             labelId.Visible = false;
@@ -396,85 +462,101 @@
             // labelLoanID
             // 
             labelLoanID.AutoSize = true;
-            labelLoanID.Location = new Point(26, 25);
+            labelLoanID.ForeColor = Color.White;
+            labelLoanID.Location = new Point(48, 53);
+            labelLoanID.Margin = new Padding(6, 0, 6, 0);
             labelLoanID.Name = "labelLoanID";
-            labelLoanID.Size = new Size(47, 15);
+            labelLoanID.Size = new Size(95, 32);
             labelLoanID.TabIndex = 35;
             labelLoanID.Text = "Loan ID";
             // 
             // textLoanId
             // 
-            textLoanId.Location = new Point(23, 42);
+            textLoanId.Location = new Point(43, 90);
+            textLoanId.Margin = new Padding(6, 6, 6, 6);
             textLoanId.Name = "textLoanId";
             textLoanId.ReadOnly = true;
-            textLoanId.Size = new Size(204, 23);
+            textLoanId.Size = new Size(375, 39);
             textLoanId.TabIndex = 36;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(26, 118);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(48, 252);
+            label11.Margin = new Padding(6, 0, 6, 0);
             label11.Name = "label11";
-            label11.Size = new Size(64, 15);
+            label11.Size = new Size(129, 32);
             label11.TabIndex = 38;
             label11.Text = "Admin Fee";
             // 
             // textAdminFee
             // 
-            textAdminFee.Location = new Point(23, 136);
+            textAdminFee.Location = new Point(43, 290);
+            textAdminFee.Margin = new Padding(6, 6, 6, 6);
             textAdminFee.Name = "textAdminFee";
             textAdminFee.ReadOnly = true;
-            textAdminFee.Size = new Size(204, 23);
+            textAdminFee.Size = new Size(375, 39);
             textAdminFee.TabIndex = 37;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(26, 163);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(48, 348);
+            label12.Margin = new Padding(6, 0, 6, 0);
             label12.Name = "label12";
-            label12.Size = new Size(75, 15);
+            label12.Size = new Size(149, 32);
             label12.TabIndex = 42;
             label12.Text = "Min Amount";
             // 
             // textMinAmount
             // 
-            textMinAmount.Location = new Point(23, 181);
+            textMinAmount.Location = new Point(43, 386);
+            textMinAmount.Margin = new Padding(6, 6, 6, 6);
             textMinAmount.Name = "textMinAmount";
             textMinAmount.ReadOnly = true;
-            textMinAmount.Size = new Size(204, 23);
+            textMinAmount.Size = new Size(375, 39);
             textMinAmount.TabIndex = 41;
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(246, 163);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(457, 348);
+            label13.Margin = new Padding(6, 0, 6, 0);
             label13.Name = "label13";
-            label13.Size = new Size(77, 15);
+            label13.Size = new Size(152, 32);
             label13.TabIndex = 40;
             label13.Text = "Max Amount";
             // 
             // textMaxAmount
             // 
-            textMaxAmount.Location = new Point(243, 181);
+            textMaxAmount.Location = new Point(451, 386);
+            textMaxAmount.Margin = new Padding(6, 6, 6, 6);
             textMaxAmount.Name = "textMaxAmount";
             textMaxAmount.ReadOnly = true;
-            textMaxAmount.Size = new Size(204, 23);
+            textMaxAmount.Size = new Size(375, 39);
             textMaxAmount.TabIndex = 39;
             // 
             // buttonReload
             // 
-            buttonReload.Location = new Point(646, 400);
+            buttonReload.BackColor = Color.Purple;
+            buttonReload.ForeColor = Color.White;
+            buttonReload.Location = new Point(1200, 853);
+            buttonReload.Margin = new Padding(6, 6, 6, 6);
             buttonReload.Name = "buttonReload";
-            buttonReload.Size = new Size(125, 23);
+            buttonReload.Size = new Size(232, 49);
             buttonReload.TabIndex = 43;
             buttonReload.Text = "Reload";
-            buttonReload.UseVisualStyleBackColor = true;
+            buttonReload.UseVisualStyleBackColor = false;
             buttonReload.Click += buttonReload_Click;
             // 
             // LoanPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(64, 0, 64);
             Controls.Add(buttonReload);
             Controls.Add(label12);
             Controls.Add(textMinAmount);
@@ -513,8 +595,9 @@
             Controls.Add(label1);
             Controls.Add(dataGridViewLoan);
             Controls.Add(textAmount);
+            Margin = new Padding(6, 6, 6, 6);
             Name = "LoanPage";
-            Size = new Size(976, 442);
+            Size = new Size(1813, 943);
             Load += LoanPage_Load;
             ((System.ComponentModel.ISupportInitialize)installmentBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLoan).EndInit();
